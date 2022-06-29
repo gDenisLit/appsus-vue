@@ -1,0 +1,8 @@
+.note-tools {
+  justify-content: space-between;
+  width: 100%;
+}
+
+.note-tools a {
+  cursor: pointer;
+}
