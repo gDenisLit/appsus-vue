@@ -1,24 +1,31 @@
 export default {
     template: `
         <section>
-            <input type="search">
+            <input type="search" v-model="filterBy" @input="search">
             <label>
                 Date
-                <input type="radio" value="date">
+                <input type="radio" v-model="sortBy.date" >
             </label>
-            <label>
+            <!-- <label>
                 Title
-                <input type="radio" value="title">
-            </label>
-
+                <input type="radio" v-model="sortBy.title">
+            </label> -->
         </section>
     `,
  
     data() {
-        return {}
+        return {
+            filterBy: null,
+            sortBy: {
+                date: null,
+                title: null,
+            }
+        }
     },
     methods: {
-           
+        search() {
+            this.$emit('onSearch', this.filterBy)
+        },
     },
     computed: {
  
