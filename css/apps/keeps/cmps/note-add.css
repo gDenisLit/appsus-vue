@@ -1,9 +1,15 @@
-.note-add {
-  background-color: var(--gray3);
-  max-width: 500px;
+.note-add-container {
+  max-width: 700px;
   margin: 0 auto;
+  background-color: var(--gray3);
+  display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+.note-add {
+  /* max-width: 500px; */
+  flex-grow: 1;
   padding: var(--spacing-medium);
   border-radius: 3px;
 }
@@ -13,13 +19,15 @@
   background-color: var(--gray3);
   color: var(--gray6);
   padding: 0.5rem;
+  outline: none;
 }
 
 .note-add input::placeholder {
   color: var(--gray6);
+  font-weight: 700;
 }
 
-.note-add .note-type-picker a {
+.note-add-container .note-type-picker a {
   font-size: 1.2rem;
   display: inline-block;
   margin-inline-end: var(--spacing-small);

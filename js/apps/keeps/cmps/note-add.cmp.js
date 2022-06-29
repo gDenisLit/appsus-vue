@@ -4,10 +4,16 @@ import addNoteVideo from './add-cmps/add-note-video.cmp.js'
 
 export default {
   template: `
-    <div class="note-add-container">
-      <section v-if="!type" class="note-add flex">
+    <section class="note-add-container">
+      <div v-if="!type" class="note-add flex">
         <p @click="changeType('txt')">Take a note...</p>
-        <div class="note-type-picker">
+      </div>
+
+      <add-note-txt v-if="type === 'txt'" @added="type = null" />
+      <add-note-img v-if="type === 'img'" @added="type = null" />
+      <add-note-video v-if="type === 'video'" @added="type = null" />
+
+      <div class="note-type-picker">
           <a @click="changeType('txt')"><i class="fa-solid fa-font"></i></a>
           <a @click="changeType('img')"><i class="fa-solid fa-image"></i></a>
           <a @click="changeType('video')"><i class="fa-brands fa-youtube"></i></a>
@@ -15,12 +21,7 @@ export default {
           <a><i class="fa-solid fa-volume-high"></i></a>
           <a><i class="fa-solid fa-paintbrush"></i></a>
         </div>
-      </section>
-
-      <add-note-txt v-if="type === 'txt'" @added="type = null" />
-      <add-note-img v-if="type === 'img'" @added="type = null" />
-      <add-note-video v-if="type === 'video'" @added="type = null" />
-    </div>
+    </section>
     `,
   components: {
     addNoteTxt,
