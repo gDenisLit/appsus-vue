@@ -1,20 +1,19 @@
 import emailCompose from "./email-compose.cmp.js"
+import emailSideSort from "./email-side-sort.cmp.js"
 
 export default {
     template: `
         <section class="side-nav flex column">
-            <button @click="composeMode" class="email-compose">+Compose</button>
-            <button class="nav-btn">Inbox</button>
-            <button class="nav-btn">Starred</button>
-            <button class="nav-btn">Sent</button>
-            <button class="nav-btn">Drafts</button>
-            <button class="nav-btn">Trash</button>
+            <button class="email-compose" 
+                @click="composeMode">+Compose
+            </button>
+            <email-side-sort />
         </section>
+        
         <section v-if="compose" >
             <email-compose @newEmail="sendNewEmail"/>
         </section>
     `,
- 
     data() {
         return {
             compose: false,
@@ -22,7 +21,6 @@ export default {
     },
     methods: {
         sendNewEmail(newEmail) {
-            console.log(newEmail)
             this.$emit('send', newEmail)
             this.compose = !this.compose
         },
@@ -44,5 +42,6 @@ export default {
     ],
     components: {
         emailCompose,
+        emailSideSort,
     },
 }
