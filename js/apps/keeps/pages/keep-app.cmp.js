@@ -1,5 +1,8 @@
 export default {
   template: `
+    <section class="keep-app">
+
+    </section>
 `,
   data() {
     return {}
