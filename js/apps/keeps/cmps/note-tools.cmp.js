@@ -15,7 +15,7 @@ export default {
           </span>
             <note-color-palette @picked="changeBgc" />
         </a>
-        <a><i class="fa-solid fa-pen-to-square"></i></a>
+        <a @click="$emit('updating')"><i class="fa-solid fa-pen-to-square"></i></a>
         <a><i class="fa-solid fa-clone"></i></a>
         <a><i class="fa-solid fa-envelope-open-text"></i></a>
         <a @click="removeNote()"><i class="fa-solid fa-trash-can"></i></a>

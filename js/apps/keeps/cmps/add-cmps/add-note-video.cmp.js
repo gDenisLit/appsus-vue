@@ -4,6 +4,9 @@ export default {
   template: ` 
     <section class="note-add" @keyup.enter="addNote">
       <div class="add-note-txt flex">
+      <input type="text"
+              v-model="note.info.title"
+             placeholder="Pick a title first">
         <input v-model="url" type="url" placeholder="Enter video url from YouTube...">
       </div>
     </section>
@@ -14,6 +17,7 @@ export default {
         type: 'note-video',
         info: {
           videoId: '',
+          title: '',
         },
       },
       url: '',
