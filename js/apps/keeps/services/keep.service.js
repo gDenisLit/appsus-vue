@@ -12,6 +12,7 @@ export const keepService = {
   get,
   save,
   changeNoteBgc,
+  addNote,
 }
 
 function query() {
@@ -29,6 +30,19 @@ function get(noteId) {
 function save(note) {
   if (note.id) return storageService.put(NOTES_KEY, note)
   else return storageService.post(NOTES_KEY, note)
+}
+
+function addNote(note) {
+  const { type, info } = note
+  const newNote = {
+    type,
+    info,
+    style: {
+      backgroundColor: '#495057',
+    },
+  }
+
+  return save(newNote)
 }
 
 function changeNoteBgc({ color, noteId }) {

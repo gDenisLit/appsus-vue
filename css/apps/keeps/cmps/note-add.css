@@ -10,6 +10,13 @@
 
 .note-add input {
   border: none;
+  background-color: var(--gray3);
+  color: var(--gray6);
+  padding: 0.5rem;
+}
+
+.note-add input::placeholder {
+  color: var(--gray6);
 }
 
 .note-add .note-type-picker a {
@@ -17,4 +24,10 @@
   display: inline-block;
   margin-inline-end: var(--spacing-small);
   cursor: pointer;
+}
+
+.add-note-txt,
+.add-note-img {
+  flex-direction: column;
+  width: 100%;
 }
