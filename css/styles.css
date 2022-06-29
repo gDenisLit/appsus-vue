@@ -21,3 +21,4 @@
 
 /* EMAIL APP  */
 @import 'apps/emails/cmps/email-preview.css';
+@import './apps/emails/cmps/email-side.css';

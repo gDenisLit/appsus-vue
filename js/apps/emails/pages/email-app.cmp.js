@@ -1,12 +1,13 @@
 import { emailService } from "../services/email.service.js"
 import emailList from "../cmps/email-list.cmp.js"
+import emailSide from "../cmps/email-side.cmp.js"
 
 export default {
     template: `
 
-        <section>
+        <section class="flex">
+            <email-side />
             <email-list @selected="showEmail" :emails="emails"/>
-
         </section>
     `,
     data() {
@@ -31,5 +32,6 @@ export default {
     },
     components: {
         emailList,
+        emailSide,
     },
 }
