@@ -23,6 +23,7 @@ export default {
     this.getNotes()
     eventBus.on('changed-bgc', this.changeNoteBgc)
     eventBus.on('added-note', this.addNote)
+    eventBus.on('removed', this.removeNote)
   },
   methods: {
     getNotes() {
@@ -40,6 +41,12 @@ export default {
     },
     addNote(note) {
       keepService.addNote(note).then(note => this.notes.push(note))
+    },
+    removeNote(noteId) {
+      keepService.remove(noteId).then(() => {
+        const idx = this.notes.findIndex(note => note.id === noteId)
+        this.notes.splice(idx, 1)
+      })
     },
   },
   computed: {},
