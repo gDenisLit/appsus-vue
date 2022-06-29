@@ -3,7 +3,7 @@ import emailPreview from "../cmps/email-preview.cmp.js"
 
 export default {
     template: `
-        <section class="email-preview" v-for="email in emails">
+        <section v-for="email in emails">
             <email-preview :email="email"/>
         </section>
     `,
