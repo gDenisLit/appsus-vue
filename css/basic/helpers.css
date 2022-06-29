@@ -12,6 +12,10 @@
   justify-content: center;
 }
 
+.flex.justify-start {
+  justify-content: start;
+}
+
 .flex.align-center {
   align-items: center;
 }
