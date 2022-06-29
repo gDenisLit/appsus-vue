@@ -3,7 +3,11 @@ export default {
   template: `
     <section class="note-video">
       <iframe
-         :src="info.url">
+         :src="url"
+
+         frameborder="0" allow="accelerometer; autoplay; 
+         encrypted-media; gyroscope; picture-in-picture"
+         allowfullscreen>
       </iframe> 
     </section>
     `,
@@ -12,6 +16,11 @@ export default {
   },
   created() {},
   methods: {},
-  computed: {},
+  computed: {
+    url() {
+      console.log(this.info.videoId)
+      return 'https://www.youtube.com/embed/' + this.info.videoId
+    },
+  },
   unmounted() {},
 }
