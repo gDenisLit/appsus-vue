@@ -12,11 +12,10 @@
 /* GENERAL COMPONENTS  */
 @import 'cmps/header.css';
 @import 'cmps/footer.css';
-<<<<<<< HEAD
-@import './cmps/email-preview.css';
-=======
 
 /* KEEP APP  */
 @import 'apps/keeps/cmps/notes.css';
 @import 'apps/keeps/cmps/note-img.css';
->>>>>>> b6a99a93cdc87e9d3722a6e1f510f87e510cfab5
+
+/* EMAIL APP  */
+@import 'apps/books/cmps/email-preview.css';
