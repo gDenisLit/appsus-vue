@@ -21,12 +21,16 @@ const routes = [
     path: "/email",
     component: emailApp,
     children: [
-      {
-        path: "/details",
-        components: emailDetails,
-      },
+      // {
+      //   path: "/inbox/",
+      //   components: emailDetails,
+      // },
     ],
   },
+  {
+    path: "/email/:emailId",
+    component: emailDetails
+  }
   // {
   //   path: '/book',
   //   component: bookApp,

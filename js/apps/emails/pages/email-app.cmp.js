@@ -12,12 +12,11 @@ export default {
     data() {
         return {
             emails: emailService.query(),
-            selectedEmail: null
         }
     },
     methods: {
-        showEmail(email) {
-            this.selectedEmail = email
+        showEmail(emailId) {
+            this.$router.push(`/email/${emailId}`)
         },
     },
     computed: {

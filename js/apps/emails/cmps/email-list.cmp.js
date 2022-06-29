@@ -3,7 +3,7 @@ import emailPreview from "./email-preview.cmp.js"
 export default {
     template: `
         <section v-for="email in emails">
-            <email-preview @click.native="select(email)" :email="email" />
+            <email-preview @click.native="select(email.id)" :email="email" />
         </section>
     `,
     props: [
