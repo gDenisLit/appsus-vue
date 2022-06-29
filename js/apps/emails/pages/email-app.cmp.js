@@ -1,10 +1,13 @@
 import { emailService } from "../services/email.service.js"
 import emailList from "../cmps/email-list.cmp.js"
 import emailSide from "../cmps/email-side.cmp.js"
+import emailFilter from "../cmps/email-filter.cmp.js"
 
 export default {
     template: `
-
+        <header>
+            <email-filter />
+        </header>
         <section class="flex" >
             <email-side @sort="sortStateEmails" @send="sendEmail"/>
             <email-list @selected="showEmail" 
@@ -16,6 +19,8 @@ export default {
         return {
             emails: null,
             sortState: 'all',
+            sortBy: null,
+            filterBy: null,
         }
     },
     methods: {
@@ -54,5 +59,6 @@ export default {
     components: {
         emailList,
         emailSide,
+        emailFilter,
     },
 }
