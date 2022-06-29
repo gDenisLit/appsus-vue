@@ -1,19 +1,15 @@
 export default {
     template: `
-    
         <span class="email-to" :class="unread">{{from}}</span>
         <span class="email-sub" :class="unread">{{email.subject}}</span>
         <span>- {{shortBody}}</span>
         <span class="sent-at" :class="unread">{{date}}</span>
-        
     `,
     props: [
         'email'
     ],
     data() {
-        return {
-
-        }
+        return {}
     },
     methods: {
            
@@ -33,7 +29,6 @@ export default {
         },
         unread() {
             return {unread: (!this.email.isRead)}
-
         },
     },
     created() {
@@ -42,7 +37,4 @@ export default {
     unmounted() {
  
     },
-    emits: [
-        'selected'
-    ],
 }

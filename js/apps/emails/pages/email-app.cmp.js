@@ -7,7 +7,9 @@ export default {
 
         <section class="flex" >
             <email-side @send="sendEmail"/>
-            <email-list @selected="showEmail" :emails="emails"/>
+            <email-list @selected="showEmail" 
+                @delete="deleteEmail" :emails="emails"
+            />
         </section>
     `,
     data() {
@@ -22,6 +24,11 @@ export default {
         sendEmail(email) {
             emailService.save(email)
             .then(email => this.emails.push(email))
+        },
+        deleteEmail(emailId) {
+            emailService.remove(emailId)
+            const idx = this.emails.findIndex(email => email.id === emailId)
+            this.emails.splice(idx, 1)
         },
     },
     computed: {
@@ -38,7 +45,4 @@ export default {
         emailList,
         emailSide,
     },
-    // emits: [
-    //     'send',
-    // ],
 }
