@@ -20,6 +20,10 @@ const routes = [
     path: '/email',
     component: emailApp,
   },
+  // {
+  //   path: '/book',
+  //   component: bookApp,
+  // },
 ]
 
 export const router = VueRouter.createRouter({
