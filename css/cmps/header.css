@@ -1,3 +1,11 @@
 header {
   background-color: var(--primary-color);
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+  margin-bottom: var(--spacing-large);
+}
+
+header .logo img {
+  width: 100px;
 }

@@ -1,7 +1,10 @@
 export default {
   template: `
     <header>
-      <h1>Hello i am header</h1>
+      
+    <div class="logo">
+      <img src="assets/img/logo.png" alt="">
+    </div>
       <nav class="nav-bar">
       <router-link to="/">Home</router-link>
           <!-- <router-link to="/book">Books</router-link> -->

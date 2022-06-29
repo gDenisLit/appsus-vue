@@ -5,8 +5,8 @@
 }
 
 body {
-  background-color: var(--gray1);
-  color: #fff;
+  background-color: var(--gray2);
+  color: var(--gray6);
   line-height: 1.4;
   font-family: Roboto-regular, sans-serif;
 }
