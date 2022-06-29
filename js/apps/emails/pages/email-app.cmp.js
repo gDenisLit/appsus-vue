@@ -6,7 +6,7 @@ import emailFilter from "../cmps/email-filter.cmp.js"
 export default {
     template: `
         <header>
-            <email-filter />
+            <email-filter @onSearch="filter"/>
         </header>
         <section class="flex" >
             <email-side @sort="sortStateEmails" @send="sendEmail"/>
@@ -38,10 +38,20 @@ export default {
         },
         sortStateEmails(type) {
             this.sortState = type
-        }
+        },
+        filter(txt) {
+            this.filterBy = txt
+        },
     },
     computed: {
         emailsToShow() {
+            if (this.filterBy) {
+                return this.emails.filter(email => {
+                    email.subject.includes(this.filterBy) 
+                    // email.to.includes(this.filterBy) ||
+                    // email.body.includes(this.filterBy)
+                })
+            }
             if (this.sortState === 'all') return this.emails
             if (this.sortState === 'unread') {
                 return this.emails.filter(email => !email.isRead)
