@@ -38,3 +38,7 @@ export function changeBgcEmit(color, noteId) {
   const noteProps = { color, noteId }
   emit('changed-bgc', noteProps)
 }
+
+export function addNoteEmit(note) {
+  emit('added-note', note)
+}

@@ -22,6 +22,7 @@ export default {
   created() {
     this.getNotes()
     eventBus.on('changed-bgc', this.changeNoteBgc)
+    eventBus.on('added-note', this.addNote)
   },
   methods: {
     getNotes() {
@@ -36,6 +37,9 @@ export default {
         const note = this.notes.find(note => note.id === noteId)
         note.style.backgroundColor = color
       })
+    },
+    addNote(note) {
+      keepService.addNote(note).then(note => this.notes.push(note))
     },
   },
   computed: {},
