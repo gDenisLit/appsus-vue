@@ -28,5 +28,6 @@
 
 .unread {
     font-family: Roboto-bold;
+    color: rgb(234, 234, 134);
     font-size: 0.9rem;
 }

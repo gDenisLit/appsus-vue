@@ -6,7 +6,7 @@ export default {
     template: `
 
         <section class="flex" >
-            <email-side @sort="sortEmails" @send="sendEmail"/>
+            <email-side @sort="sortStateEmails" @send="sendEmail"/>
             <email-list @selected="showEmail" 
                 @delete="deleteEmail" :emails="emailsToShow"
             />
@@ -15,7 +15,7 @@ export default {
     data() {
         return {
             emails: null,
-            sortBy: 'all',
+            sortState: 'all',
         }
     },
     methods: {
@@ -31,17 +31,17 @@ export default {
             const idx = this.emails.findIndex(email => email.id === emailId)
             this.emails.splice(idx, 1)
         },
-        sortEmails(type) {
-            this.sortBy = type
+        sortStateEmails(type) {
+            this.sortState = type
         }
     },
     computed: {
         emailsToShow() {
-            if (this.sortBy === 'all') return this.emails
-            if (this.sortBy === 'unread') {
+            if (this.sortState === 'all') return this.emails
+            if (this.sortState === 'unread') {
                 return this.emails.filter(email => !email.isRead)
             }
-            return this.emails.filter(email => email.state === this.sortBy)
+            return this.emails.filter(email => email.state === this.sortState)
         },
     },
     created() {
