@@ -1,0 +1,12 @@
+.compose-email {
+    background-color: var(--gray4);
+    position: absolute;
+    bottom: 0;
+    padding: 1rem;
+}
+
+.compose-email>* {
+    font-family: Roboto-regular;
+    margin-block-end: 1rem;
+}
+

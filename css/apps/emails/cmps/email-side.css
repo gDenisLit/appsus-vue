@@ -1,5 +1,6 @@
 .side-nav {
     flex-basis: 20%;
+    position: relative;
 }
 
 .side-nav>* {
