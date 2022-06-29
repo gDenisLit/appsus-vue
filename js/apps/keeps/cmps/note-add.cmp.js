@@ -1,4 +1,5 @@
 import addNoteTxt from './add-cmps/add-note-txt.cmp.js'
+import addNoteImg from './add-cmps/add-note-img.cmp.js'
 
 export default {
   template: `
@@ -7,7 +8,7 @@ export default {
         <p @click="changeType('txt')">Take a note...</p>
         <div class="note-type-picker">
           <a @click="changeType('txt')"><i class="fa-solid fa-font"></i></a>
-          <a><i class="fa-solid fa-image"></i></a>
+          <a @click="changeType('img')"><i class="fa-solid fa-image"></i></a>
           <a><i class="fa-brands fa-youtube"></i></a>
           <a><i class="fa-solid fa-list"></i></a>
           <a><i class="fa-solid fa-volume-high"></i></a>
@@ -16,10 +17,12 @@ export default {
       </section>
 
       <add-note-txt v-if="type === 'txt'" @added="type = null" />
+      <add-note-img v-if="type === 'img'" @added="type = null" />
     </div>
     `,
   components: {
     addNoteTxt,
+    addNoteImg,
   },
   data() {
     return {

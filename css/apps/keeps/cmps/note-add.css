@@ -26,7 +26,8 @@
   cursor: pointer;
 }
 
-.add-note-txt {
+.add-note-txt,
+.add-note-img {
   flex-direction: column;
   width: 100%;
 }

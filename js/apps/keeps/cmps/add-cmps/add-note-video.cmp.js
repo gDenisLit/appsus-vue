@@ -4,18 +4,16 @@ export default {
   template: ` 
     <section class="note-add" @keyup.enter="addNote">
       <div class="add-note-txt flex">
-        <input v-model="note.info.title" type="text" placeholder="Title">
-        <input v-model="note.info.txt" type="text" placeholder="Take a note...">
+        <input v-model="note.info.url" type="url" placeholder="Enter video url...">
       </div>
     </section>
 `,
   data() {
     return {
       note: {
-        type: 'note-txt',
+        type: 'note-video',
         info: {
-          title: '',
-          txt: '',
+          url: '',
         },
       },
     }
