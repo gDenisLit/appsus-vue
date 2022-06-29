@@ -35,7 +35,7 @@
     "id": "n104",
     "type": "note-todos",
     "info": {
-      "label": "Get my stuff together",
+      "title": "Get my stuff together",
       "todos": [
         { "txt": "Driving liscence", "isDone": true, "doneAt": null },
         { "txt": "Coding power", "isDone": false, "doneAt": 187111111 }
@@ -49,7 +49,7 @@
     "id": "n105",
     "type": "note-todos",
     "info": {
-      "label": "Get my stuff together",
+      "title": "Get my stuff together",
       "todos": [
         { "txt": "Driving liscence", "doneAt": null },
         { "txt": "Coding power", "doneAt": 187111111 }
@@ -63,7 +63,7 @@
     "id": "n106",
     "type": "note-todos",
     "info": {
-      "label": "Get my stuff together",
+      "title": "Get my stuff together",
       "todos": [
         { "txt": "Driving liscence", "doneAt": null },
         { "txt": "Coding power", "doneAt": 187111111 }

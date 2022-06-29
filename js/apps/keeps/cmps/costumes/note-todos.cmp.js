@@ -4,7 +4,7 @@ export default {
   props: ['note'],
   template: `
       <section class="note-todos">
-          <h3>{{ info.label }}</h3>
+          <h3>{{ info.title }}</h3>
           <ul class="clean-list">
             <li v-for="(todo, idx) in info.todos" class="flex space-between">
               <span :class="{ done: todo.isDone }" @click="toggleIsDone(idx)">{{ todo.txt }}</span>

@@ -2,6 +2,7 @@ import noteColorPalette from './note-color-palette.cmp.js'
 import {
   changeBgcEmit,
   removeNoteEmit,
+  addNoteEmit,
 } from '../../../services/eventBus.service.js'
 
 export default {
@@ -16,7 +17,7 @@ export default {
             <note-color-palette @picked="changeBgc" />
         </a>
         <a @click="$emit('updating')"><i class="fa-solid fa-pen-to-square"></i></a>
-        <a><i class="fa-solid fa-clone"></i></a>
+        <a @click="addClone"><i class="fa-solid fa-clone"></i></a>
         <a><i class="fa-solid fa-envelope-open-text"></i></a>
         <a @click="removeNote()"><i class="fa-solid fa-trash-can"></i></a>
       </section>
@@ -36,6 +37,10 @@ export default {
     },
     removeNote() {
       removeNoteEmit(this.note.id)
+    },
+    addClone() {
+      const newNote = JSON.parse(JSON.stringify(this.note))
+      addNoteEmit(newNote)
     },
   },
   computed: {},

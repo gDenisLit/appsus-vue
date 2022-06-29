@@ -5,13 +5,12 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  border-radius: 3px;
 }
 
 .note-add {
-  /* max-width: 500px; */
   flex-grow: 1;
   padding: var(--spacing-medium);
-  border-radius: 3px;
 }
 
 .note-add input {
