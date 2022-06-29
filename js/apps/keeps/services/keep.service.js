@@ -6,7 +6,7 @@ const NOTES_KEY = 'notesDB'
 
 _createNotes()
 
-export const noteService = {
+export const keepService = {
   query,
   remove,
   get,
@@ -36,5 +36,6 @@ function _createNotes() {
     notes = notesData
     utilService.saveToStorage(NOTES_KEY, notes)
   }
+  console.log(notes)
   return notes
 }

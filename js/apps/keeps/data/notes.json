@@ -11,8 +11,18 @@
     "id": "n102",
     "type": "note-img",
     "info": {
-      "url": "http://some-img/me",
+      "url": "https://images.pexels.com/photos/1293120/pexels-photo-1293120.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
       "title": "Bobi and Me"
+    },
+    "style": {
+      "backgroundColor": "#00d"
+    }
+  },
+  {
+    "id": "n102",
+    "type": "note-video",
+    "info": {
+      "url": "https://www.youtube.com/embed/tgbNymZ7vqY"
     },
     "style": {
       "backgroundColor": "#00d"
