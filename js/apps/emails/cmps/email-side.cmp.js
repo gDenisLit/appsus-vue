@@ -5,11 +5,12 @@ export default {
     template: `
         <section class="side-nav flex column">
             <button class="email-compose" 
-                @click="composeMode">+Compose
+                @click="composeMode">
+                +Compose
             </button>
-            <email-side-sort />
+            <email-side-sort @sort="setSort"/>
         </section>
-        
+
         <section v-if="compose" >
             <email-compose @newEmail="sendNewEmail"/>
         </section>
@@ -17,6 +18,7 @@ export default {
     data() {
         return {
             compose: false,
+            sortBy: null,
         }
     },
     methods: {
@@ -26,6 +28,9 @@ export default {
         },
         composeMode() {
             this.compose = !this.compose
+        },
+        setSort(type) {
+            this.$emit('sort', type)
         },
     },
     computed: {
@@ -38,7 +43,8 @@ export default {
  
     },
     emits: [
-        'send'
+        'send',
+        'sort',
     ],
     components: {
         emailCompose,
