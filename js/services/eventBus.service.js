@@ -42,3 +42,7 @@ export function changeBgcEmit(color, noteId) {
 export function addNoteEmit(note) {
   emit('added-note', note)
 }
+
+export function removeNoteEmit(noteId) {
+  emit('removed', noteId)
+}
