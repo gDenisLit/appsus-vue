@@ -28,13 +28,14 @@ export default {
                 subject: null,
                 body: null,
                 sentAt: null,
-                state: 'sent',
+                state: null,
             },
             user: 'denislit@gmail.com'
         }
     },
     methods: {
         send() {
+            this.newEmail.state = 'sent'
             this.newEmail.sentAt = Date.now()
             this.$emit('newEmail', this.newEmail)
         },
