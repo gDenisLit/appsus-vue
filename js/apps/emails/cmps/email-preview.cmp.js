@@ -1,10 +1,10 @@
 export default {
     template: `
         <article class="email-preview flex">
-            <span class="email-to">{{from}}</span>
-            <span class="email-sub">{{email.subject}}</span>
-            <span class="">- {{shortBody}}</span>
-            <span class="sent-at">{{date}}</span>
+            <span class="email-to" :class="unread">{{from}}</span>
+            <span class="email-sub" :class="unread">{{email.subject}}</span>
+            <span>- {{shortBody}}</span>
+            <span class="sent-at" :class="unread">{{date}}</span>
         </article>
     `,
     props: [
@@ -30,6 +30,10 @@ export default {
             var date = new Date(this.email.sentAt).toString()
                 .split(' ').splice(1, 2).join(' ')
             return date
+        },
+        unread() {
+            return {unread: (!this.email.isRead)}
+
         },
     },
     created() {

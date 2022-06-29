@@ -3,6 +3,7 @@ import { emailService } from "../services/email.service.js"
 export default {
     template: `
     <section v-if="email">
+        <pre>{{email}}</pre>
         <p>
             <span>From: </span>
             <span class="email-to">{{from}}</span>
@@ -36,6 +37,9 @@ export default {
         },
     },
     created() {
+      
+    },
+    mounted() {
 
     },
     unmounted() {
@@ -47,7 +51,11 @@ export default {
                 const { emailId } = this.$route.params
                 if (!emailId) return 
                 emailService.get(emailId)
-                    .then(email => this.email = email)
+                    .then(email => {
+                        this.email = email
+                        email.isRead = true
+                        emailService.save(email)
+                    })
             },
             immediate: true,
         }
