@@ -1,11 +1,11 @@
 export default {
     template: `
-        <article class="email-preview flex">
-            <span class="email-to" :class="unread">{{from}}</span>
-            <span class="email-sub" :class="unread">{{email.subject}}</span>
-            <span>- {{shortBody}}</span>
-            <span class="sent-at" :class="unread">{{date}}</span>
-        </article>
+    
+        <span class="email-to" :class="unread">{{from}}</span>
+        <span class="email-sub" :class="unread">{{email.subject}}</span>
+        <span>- {{shortBody}}</span>
+        <span class="sent-at" :class="unread">{{date}}</span>
+        
     `,
     props: [
         'email'
@@ -42,4 +42,7 @@ export default {
     unmounted() {
  
     },
+    emits: [
+        'selected'
+    ],
 }

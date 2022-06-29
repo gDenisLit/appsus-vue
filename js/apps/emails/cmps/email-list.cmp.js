@@ -2,9 +2,16 @@ import emailPreview from "./email-preview.cmp.js"
 
 export default {
     template: `
-        <section v-for="email in emails">
-            <email-preview @click.native="select(email.id)" :email="email" />
+        <section class="email-container flex column">
+
+            <article class="email-preview flex" v-for="email in emails" 
+                @click.native="select(email.id)"
+            >
+                <email-preview :email="email" />
+            </article>
+            
         </section>
+
     `,
     props: [
         'emails'
@@ -31,7 +38,4 @@ export default {
     components: {
         emailPreview,
     },
-    emits: [
-        'selected',
-    ],
 }
