@@ -1,17 +1,14 @@
 :root {
   /* COLORS  */
-  --primary-color: #6741d9;
+  --primary-color: #c0392b;
   --primary-light: #f3f0ff;
 
   --gray1: #212529;
-  --gray2: #495057;
-  --gray3: #adb5bd;
-  --gray4: #dee2e6;
-  --gray5: #f8f9fa;
-
-  --clr1: rgb(73, 72, 72);
-  --clr2: rgb(0, 0, 0);
-  --clr3: rgba(110, 110, 110, 0.105);
+  --gray2: #2c2a2e;
+  --gray3: #495057;
+  --gray4: #adb5bd;
+  --gray5: #dee2e6;
+  --gray6: #f8f9fa;
 
   --error: #e03131;
   --success: #40c057;
