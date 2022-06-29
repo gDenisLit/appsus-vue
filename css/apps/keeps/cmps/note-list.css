@@ -1,0 +1,6 @@
+.note-list {
+  margin: 0 auto 2em;
+  column-gap: 0.25em;
+  column-count: 4;
+  vertical-align: baseline;
+}

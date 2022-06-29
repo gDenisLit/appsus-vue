@@ -1,0 +1,23 @@
+.note-preview {
+  break-inside: avoid;
+  margin: 0 1rem 1rem 0;
+  vertical-align: baseline;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: #fdfdfd;
+  border-radius: 3px;
+  box-shadow: 0px 0px 3px 1px rgba(0, 0, 0, 0.15);
+}
+
+.note-preview img {
+  max-width: 100%;
+  object-fit: cover;
+  border-radius: 3px;
+}
+
+.note-preview iframe {
+  max-width: 100%;
+  object-fit: cover;
+  border-radius: 3px;
+}

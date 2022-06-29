@@ -14,7 +14,9 @@
 @import 'cmps/footer.css';
 
 /* KEEP APP  */
-@import 'apps/keeps/cmps/notes.css';
+@import 'apps/keeps/keep-app.css';
+@import 'apps/keeps/cmps/note-list.css';
+@import 'apps/keeps/cmps/note-preview.css';
 @import 'apps/keeps/cmps/note-img.css';
 
 /* EMAIL APP  */
