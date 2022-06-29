@@ -7,7 +7,7 @@
       "txt": "Fullstack Me Baby!"
     },
     "style": {
-      "backgroundColor": "#fff"
+      "backgroundColor": "#495057"
     }
   },
   {
@@ -18,17 +18,17 @@
       "title": "Bobi and Me"
     },
     "style": {
-      "backgroundColor": "#fff"
+      "backgroundColor": "#495057"
     }
   },
   {
     "id": "n103",
     "type": "note-video",
     "info": {
-      "url": "https://www.youtube.com/embed/tgbNymZ7vqY"
+      "videoId": "tgbNymZ7vqY"
     },
     "style": {
-      "backgroundColor": "#fff"
+      "backgroundColor": "#495057"
     }
   },
   {
@@ -42,7 +42,7 @@
       ]
     },
     "style": {
-      "backgroundColor": "#fff"
+      "backgroundColor": "#495057"
     }
   },
   {
@@ -56,7 +56,7 @@
       ]
     },
     "style": {
-      "backgroundColor": "#fff"
+      "backgroundColor": "#495057"
     }
   },
   {
@@ -70,7 +70,7 @@
       ]
     },
     "style": {
-      "backgroundColor": "#fff"
+      "backgroundColor": "#495057"
     }
   }
 ]
