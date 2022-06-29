@@ -1,15 +1,17 @@
-import { emailService } from "../services/email.service.js"
-import emailList from "../cmps/email-list.cmp.js"
+import emailPreview from "./email-preview.cmp.js"
 
 export default {
     template: `
-        <section>
-            <email-list :emails="emails"/>
+        <section v-for="email in emails">
+            <email-preview :email="email" />
         </section>
     `,
+    props: [
+        'emails'
+    ],
     data() {
         return {
-            emails: emailService.query()
+
         }
     },
     methods: {
@@ -19,12 +21,12 @@ export default {
  
     },
     created() {
-        
+ 
     },
     unmounted() {
  
     },
     components: {
-        emailList,
+        emailPreview,
     },
 }

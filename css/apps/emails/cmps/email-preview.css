@@ -6,7 +6,7 @@
 }
 
 .email-preview:hover {
-    box-shadow: 0px 2px 2px 1px rgba(0, 0, 0, 0.25)
+    box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.5);
 }
 
 .email-preview >* {
