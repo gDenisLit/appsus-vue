@@ -12,3 +12,4 @@
 /* COMPONENTS  */
 @import 'cmps/header.css';
 @import 'cmps/footer.css';
+@import './cmps/email-preview.css';

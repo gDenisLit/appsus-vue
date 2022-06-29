@@ -1,8 +1,11 @@
 import { emailService } from "../services/email.service.js"
+import emailPreview from "../cmps/email-preview.cmp.js"
 
 export default {
     template: `
-        
+        <section class="email-preview" v-for="email in emails">
+            <email-preview :email="email"/>
+        </section>
     `,
  
     data() {
@@ -17,9 +20,12 @@ export default {
  
     },
     created() {
-        console.log(this.emails)
+        
     },
     unmounted() {
  
+    },
+    components: {
+        emailPreview,
     },
 }
