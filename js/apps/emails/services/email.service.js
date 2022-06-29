@@ -1,9 +1,73 @@
-import emailsData from '../services/data/emails.json' assert { type: 'json' }
+// import emailsData from '../services/data/emails.json' assert { type: 'json' }
 import { storageService } from '../../../services/async-storage.service.js'
 import { utilService } from '../../../services/util.service.js'
 
 const EMAIL_KEY = 'emailDB'
-
+const emailsData = [
+  {
+      id: 'e101',
+      subject: "Miss you!",
+      body: "Would love to catch up sometimes",
+      isRead: false,
+      sentAt: 1551133930594,
+      to: "momo@momo.com",
+      state: 'inbox'
+  },
+  {
+      id: 'e102',
+      subject: "Miss you!",
+      body: "Would love to catch up sometimes",
+      isRead: false,
+      sentAt: 1551133930594,
+      to: "momo@momo.com",
+      state: 'sent'
+  },
+  {
+      id: 'e103',
+      subject: "Miss you!",
+      body: "Would love to catch up sometimes",
+      isRead: false,
+      sentAt: 1551133930594,
+      to: "momo@momo.com",
+      state: 'sent'
+  },
+  {
+      id: 'e104',
+      subject: "Miss you!",
+      body: "Would love to catch up sometimes",
+      isRead: false,
+      sentAt: 1551133930594,
+      to: "momo@momo.com",
+      state: 'inbox'
+  },
+  {
+      id: 'e105',
+      subject: "Miss you!",
+      body: "Would love to catch up sometimes",
+      isRead: false,
+      sentAt: 1551133930594,
+      to: "momo@momo.com",
+      state: 'trash'
+  },
+  {
+      id: 'e106',
+      subject: "Miss you!",
+      body: "Would love to catch up sometimes",
+      isRead: false,
+      sentAt: 1551133930594,
+      to: "momo@momo.com",
+      state: 'inbox'
+  },
+  {
+      id: 'e107',
+      subject: "Miss you!",
+      body: "Would love to catch up sometimes",
+      isRead: false,
+      sentAt: 1551133930594,
+      to: "momo@momo.com",
+      state: 'inbox'
+  },
+]
 _createEmails()
 
 export const emailService = {
@@ -38,3 +102,5 @@ function _createEmails() {
   }
   return emails
 }
+
+

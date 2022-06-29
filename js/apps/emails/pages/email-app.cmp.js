@@ -8,13 +8,14 @@ export default {
         <section class="flex" >
             <email-side @send="sendEmail"/>
             <email-list @selected="showEmail" 
-                @delete="deleteEmail" :emails="emails"
+                @delete="deleteEmail" :emails="emailsToShow"
             />
         </section>
     `,
     data() {
         return {
             emails: null,
+            sortBy: null,
         }
     },
     methods: {
@@ -32,7 +33,9 @@ export default {
         },
     },
     computed: {
-        
+        emailsToShow() {
+
+        },
     },
     created() {
         emailService.query()

@@ -4,7 +4,7 @@ export default {
             <h3>New Message</h3>
             <p>
                 <span>From</span>
-                <span>{{newEmail.from}}</span>
+                <span>{{user}}</span>
             </p>
             <p>
                 <span>To</span>
@@ -24,12 +24,13 @@ export default {
     data() {
         return {
             newEmail: {
-                from: 'Denis Lit',
-                to: '',
-                subject: '',
-                body: '',
+                to: null,
+                subject: null,
+                body: null,
                 sentAt: null,
+                state: 'sent',
             },
+            user: 'denislit@gmail.com'
         }
     },
     methods: {
