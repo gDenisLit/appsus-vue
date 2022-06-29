@@ -33,3 +33,8 @@ export function showSuccessMsg(txt) {
 export function showErrorMsg(txt) {
   showUserMsg({ txt, type: 'error' })
 }
+
+export function changeBgcEmit(color, noteId) {
+  const noteProps = { color, noteId }
+  emit('changed-bgc', noteProps)
+}

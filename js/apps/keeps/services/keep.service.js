@@ -11,6 +11,7 @@ export const keepService = {
   remove,
   get,
   save,
+  changeNoteBgc,
 }
 
 function query() {
@@ -28,6 +29,13 @@ function get(noteId) {
 function save(note) {
   if (note.id) return storageService.put(NOTES_KEY, note)
   else return storageService.post(NOTES_KEY, note)
+}
+
+function changeNoteBgc({ color, noteId }) {
+  return get(noteId).then(note => {
+    note.style.backgroundColor = color
+    return save(note)
+  })
 }
 
 function _createNotes() {

@@ -5,6 +5,9 @@
     "isPinned": true,
     "info": {
       "txt": "Fullstack Me Baby!"
+    },
+    "style": {
+      "backgroundColor": "#fff"
     }
   },
   {
@@ -15,21 +18,21 @@
       "title": "Bobi and Me"
     },
     "style": {
-      "backgroundColor": "#00d"
+      "backgroundColor": "#fff"
     }
   },
   {
-    "id": "n102",
+    "id": "n103",
     "type": "note-video",
     "info": {
       "url": "https://www.youtube.com/embed/tgbNymZ7vqY"
     },
     "style": {
-      "backgroundColor": "#00d"
+      "backgroundColor": "#fff"
     }
   },
   {
-    "id": "n103",
+    "id": "n104",
     "type": "note-todos",
     "info": {
       "label": "Get my stuff together",
@@ -37,10 +40,13 @@
         { "txt": "Driving liscence", "doneAt": null },
         { "txt": "Coding power", "doneAt": 187111111 }
       ]
+    },
+    "style": {
+      "backgroundColor": "#fff"
     }
   },
   {
-    "id": "n103",
+    "id": "n105",
     "type": "note-todos",
     "info": {
       "label": "Get my stuff together",
@@ -48,10 +54,13 @@
         { "txt": "Driving liscence", "doneAt": null },
         { "txt": "Coding power", "doneAt": 187111111 }
       ]
+    },
+    "style": {
+      "backgroundColor": "#fff"
     }
   },
   {
-    "id": "n103",
+    "id": "n106",
     "type": "note-todos",
     "info": {
       "label": "Get my stuff together",
@@ -59,6 +68,9 @@
         { "txt": "Driving liscence", "doneAt": null },
         { "txt": "Coding power", "doneAt": 187111111 }
       ]
+    },
+    "style": {
+      "backgroundColor": "#fff"
     }
   }
 ]

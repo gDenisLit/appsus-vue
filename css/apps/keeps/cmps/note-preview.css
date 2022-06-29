@@ -8,7 +8,7 @@
   align-items: center;
   background-color: #fdfdfd;
 
-  padding: var(--spacing-small);
+  padding: var(--spacing-medium);
   border-radius: 3px;
   box-shadow: 0px 0px 3px 1px rgba(0, 0, 0, 0.15);
 }

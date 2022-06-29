@@ -4,3 +4,14 @@
   column-count: 4;
   vertical-align: baseline;
 }
+
+.note-list a {
+  padding: var(--spacing-small);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.note-list a:hover {
+  background-color: var(--gray4);
+}
