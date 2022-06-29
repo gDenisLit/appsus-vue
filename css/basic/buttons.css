@@ -1,0 +1,28 @@
+.btn {
+  background-color: var(--primary-color);
+  padding: 5px 10px;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  cursor: pointer;
+  border-radius: 10px;
+  border: 2px dashed var(--primary-color);
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+    rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  transition: 0.4s;
+}
+
+.btn span:last-child {
+  display: none;
+}
+
+.btn:hover {
+  transition: 0.4s;
+  border: 2px dashed var(--primary-color);
+  background-color: #fff;
+  color: var(--primary-color);
+}
+
+.btn:active {
+  background-color: var(--primary-color);
+}

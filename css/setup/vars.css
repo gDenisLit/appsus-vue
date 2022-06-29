@@ -1,0 +1,23 @@
+:root {
+  /* COLORS  */
+  --primary-color: #6741d9;
+  --primary-light: #f3f0ff;
+
+  --gray1: #212529;
+  --gray2: #495057;
+  --gray3: #adb5bd;
+  --gray4: #dee2e6;
+  --gray5: #f8f9fa;
+
+  --error: #e03131;
+  --success: #40c057;
+
+  /* SPACING */
+  --spacing-smallest: 0.3rem;
+  --spacing-small: 0.5rem;
+  --spacing-medium: 0.8rem;
+  --spacing-medium2: 1rem;
+  --spacing-medium3: 1.5rem;
+  --spacing-large: 2rem;
+  --spacing-large2: 2.5rem;
+}

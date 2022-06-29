@@ -1,0 +1,13 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--gray5);
+  color: var(--gray1);
+  background-color: var(--primary-light);
+  line-height: 1.4;
+  font-family: Roboto-regular, sans-serif;
+}
