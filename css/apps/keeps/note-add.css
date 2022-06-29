@@ -1,0 +1,20 @@
+.note-add {
+  background-color: var(--gray2);
+  max-width: 500px;
+  margin: 0 auto;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--spacing-medium);
+  border-radius: 3px;
+}
+
+.note-add input {
+  border: none;
+}
+
+.note-add .note-type-picker a {
+  font-size: 1.2rem;
+  display: inline-block;
+  margin-inline-end: var(--spacing-small);
+  cursor: pointer;
+}

@@ -1,15 +1,18 @@
 import { keepService } from '../services/keep.service.js'
 import { eventBus } from '../../../services/eventBus.service.js'
+import noteAdd from '../cmps/note-add.cmp.js'
 import noteList from '../cmps/note-list.cmp.js'
 
 export default {
   template: `
     <section class="keep-app">
+      <note-add />
       <note-list :notes="notes" /> 
     </section>
 `,
   components: {
     noteList,
+    noteAdd,
   },
   data() {
     return {
