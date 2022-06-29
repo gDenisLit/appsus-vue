@@ -1,0 +1,18 @@
+.note-todos .done {
+  text-decoration: line-through;
+}
+
+.note-todos span {
+  cursor: pointer;
+}
+
+.note-todos input {
+  background-color: transparent;
+  outline: none;
+  border: none;
+  color: var(--gray6);
+}
+
+.note-todos input::placeholder {
+  color: var(--gray6);
+}

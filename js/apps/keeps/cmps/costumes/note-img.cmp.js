@@ -1,5 +1,3 @@
-import noteAddCmp from '../note-add.cmp'
-
 export default {
   props: ['note'],
   template: `
