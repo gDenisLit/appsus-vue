@@ -1,10 +1,10 @@
 export default {
     template: `
-        <article class="email-preview">
+        <article class="email-preview flex">
             <span class="email-to">{{from}}</span>
             <span class="email-sub">{{email.subject}}</span>
-            <span class="">{{shortBody}}</span>
-            <span>{{date}}</span>
+            <span class="">- {{shortBody}}</span>
+            <span class="sent-at">{{date}}</span>
         </article>
     `,
     props: [
@@ -24,7 +24,7 @@ export default {
             return this.email.to.slice(0, idx)
         },
         shortBody() {
-            return this.email.body.slice(0, 80) + '...'
+            return this.email.body.slice(0, 150) + '...'
         },
         date() {
             var date = new Date(this.email.sentAt).toString()

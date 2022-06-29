@@ -1,0 +1,29 @@
+.email-preview {
+    border-top: 0.01rem solid rgba(0, 0, 0, 0.147);
+    padding: 0.5rem;
+    position: relative;
+    cursor: pointer;
+}
+
+.email-preview:hover {
+    box-shadow: 0px 2px 2px 1px rgba(0, 0, 0, 0.25)
+}
+
+.email-preview >* {
+    margin-inline-end: 0.5rem;
+    font-family: Roboto-regular;
+    font-size: 0.85rem;
+}
+
+.email-preview .email-to {
+    text-transform: capitalize;
+    flex-basis: 20%;
+}
+
+.email-preview .sent-at {
+    position: fixed;
+    right: 0.5rem;
+}
+
+
+
