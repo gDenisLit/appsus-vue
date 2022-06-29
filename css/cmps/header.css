@@ -3,7 +3,6 @@ header {
   display: flex;
   justify-content: space-between;
   padding: 0.5rem;
-  margin-bottom: var(--spacing-large);
 }
 
 header .logo img {

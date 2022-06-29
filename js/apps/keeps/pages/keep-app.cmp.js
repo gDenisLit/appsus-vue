@@ -2,21 +2,32 @@ import { keepService } from '../services/keep.service.js'
 import { eventBus } from '../../../services/eventBus.service.js'
 import noteAdd from '../cmps/note-add.cmp.js'
 import noteList from '../cmps/note-list.cmp.js'
+import noteFilter from '../cmps/note-filter.cmp.js'
+import noteSide from '../cmps/note-side.cmp.js'
 
 export default {
   template: `
     <section class="keep-app">
-      <note-add />
-      <note-list :notes="notes" /> 
+      <noteFilter @filtered="setFilter" />
+      <div class="flex">
+        <note-side/>
+        <div class="notes">
+          <note-add />
+          <note-list :notes="notesToShow" /> 
+        </div>
+      </div>
     </section>
 `,
   components: {
     noteList,
     noteAdd,
+    noteFilter,
+    noteSide,
   },
   data() {
     return {
       notes: null,
+      filterBy: null,
     }
   },
   created() {
@@ -55,7 +66,23 @@ export default {
         this.notes.splice(idx, 1, noteUpdated)
       })
     },
+    setFilter(filterBy) {
+      this.filterBy = JSON.parse(JSON.stringify(filterBy))
+    },
   },
-  computed: {},
+  computed: {
+    notesToShow() {
+      if (!this.filterBy) return this.notes
+
+      let notes = this.notes
+
+      if (this.filterBy.title) {
+        const regex = new RegExp(this.filterBy.title, 'i')
+        notes = notes.filter(note => regex.test(note.info.title))
+      }
+
+      return notes
+    },
+  },
   unmounted() {},
 }

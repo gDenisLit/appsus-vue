@@ -1,0 +1,49 @@
+.app-header {
+  display: flex;
+  /* height: 3rem; */
+  /* justify-content: space-around; */
+  align-items: center;
+  padding: var(--spacing-small);
+  border-bottom: 1px solid var(--gray6);
+  margin-bottom: var(--spacing-medium2);
+}
+
+.app-header button {
+  background-color: var(--gray2);
+  color: var(--gray6);
+  font-size: 2rem;
+  border: none;
+  margin-inline-end: var(--spacing-large);
+  margin-inline-start: var(--spacing-medium);
+}
+
+.app-header img {
+  width: 4rem;
+  margin-inline-end: 5rem;
+}
+
+.app-header .search {
+  position: relative;
+}
+
+.app-header .search input {
+  width: 40rem;
+  padding: var(--spacing-medium2);
+  padding-left: 2.5rem;
+  background-color: var(--gray3);
+  border-radius: 9px;
+  border: none;
+  outline: none;
+  color: var(--gray6);
+  font-size: 1.2rem;
+}
+
+.app-header .search .icon {
+  position: absolute;
+  left: 0.7rem;
+  top: 1.2rem;
+}
+
+.app-header input::placeholder {
+  color: var(--gray6);
+}
