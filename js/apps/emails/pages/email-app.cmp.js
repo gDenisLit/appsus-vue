@@ -11,7 +11,7 @@ export default {
     `,
     data() {
         return {
-            emails: emailService.query(),
+            emails: null,
         }
     },
     methods: {
@@ -23,7 +23,8 @@ export default {
         
     },
     created() {
-        
+        emailService.query()
+            .then(emails => this.emails = emails)
     },
     unmounted() {
  

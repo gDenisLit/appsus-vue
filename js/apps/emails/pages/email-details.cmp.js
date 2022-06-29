@@ -2,7 +2,7 @@ import { emailService } from "../services/email.service.js"
 
 export default {
     template: `
-        <h1>selcted email</h1>
+    <section v-if="email">
         <p>
             <span>From: </span>
             <span class="email-to">{{from}}</span>
@@ -16,6 +16,7 @@ export default {
             <span class="sent-at">{{email.sentAt}}</span>
         </p>
         <pre>{{email.body}}</pre>
+    </section>
     `,
     props: [
        
@@ -43,9 +44,10 @@ export default {
     watch: {
         '$route.params.emailId': {
             handler() {
-                const id = this.$route.params.emailId
-                if (!id) return 
-                this.email = emailService.get(id)
+                const { emailId } = this.$route.params
+                if (!emailId) return 
+                emailService.get(emailId)
+                    .then(email => this.email = email)
             },
             immediate: true,
         }
