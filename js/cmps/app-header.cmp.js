@@ -3,7 +3,7 @@ export default {
     <header>
       
     <div class="logo">
-      <img src="assets/img/logo.png" alt="">
+      <img src="assets/img/logo2.png" alt="">
     </div>
       <nav class="nav-bar">
       <router-link to="/">Home</router-link>
