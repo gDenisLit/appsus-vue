@@ -3,14 +3,14 @@ import noteTxt from './costumes/note-txt.cmp.js'
 import noteTodos from './costumes/note-todos.cmp.js'
 import noteVideo from './costumes/note-video.cmp.js'
 import noteTools from './note-tools.cmp.js'
-import noteEdit from './costumes/note-edit.cmp.js'
+import noteEdit from './note-edit.cmp.js'
 
 export default {
   props: ['note'],
   template: `
       <section class="note-preview" :style="bgc">
         <component class="note" :is="note.type"  
-          :info="note.info"  >
+          :note="note"  >
         </component>
         <note-tools :note="note" @updating="isUpdating = true"/>
         <note-edit v-if="isUpdating" :note="cloneNote"/>

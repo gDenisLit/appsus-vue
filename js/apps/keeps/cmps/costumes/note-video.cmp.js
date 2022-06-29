@@ -1,5 +1,5 @@
 export default {
-  props: ['info'],
+  props: ['note'],
   template: `
     <section class="note-video">
       <iframe
@@ -21,6 +21,9 @@ export default {
     url() {
       console.log(this.info.videoId)
       return 'https://www.youtube.com/embed/' + this.info.videoId
+    },
+    info() {
+      return this.note.info
     },
   },
   unmounted() {},

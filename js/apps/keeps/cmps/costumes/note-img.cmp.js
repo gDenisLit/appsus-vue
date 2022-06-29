@@ -1,5 +1,7 @@
+import noteAddCmp from '../note-add.cmp'
+
 export default {
-  props: ['info'],
+  props: ['note'],
   template: `
     <section class="note-img">
         <img :src="info.url" alt="">
@@ -11,6 +13,10 @@ export default {
   },
   created() {},
   methods: {},
-  computed: {},
+  computed: {
+    info() {
+      return this.note.info
+    },
+  },
   unmounted() {},
 }

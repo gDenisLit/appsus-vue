@@ -1,4 +1,4 @@
-import { updateNoteEmit } from '../../../../services/eventBus.service.js'
+import { updateNoteEmit } from '../../../services/eventBus.service.js'
 
 export default {
   props: ['note'],
