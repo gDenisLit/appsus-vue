@@ -9,6 +9,7 @@ export default {
          encrypted-media; gyroscope; picture-in-picture"
          allowfullscreen>
       </iframe> 
+      <h4>{{ info.title }}</h4>
     </section>
     `,
   data() {

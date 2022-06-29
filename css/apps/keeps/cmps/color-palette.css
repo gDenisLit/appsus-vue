@@ -8,12 +8,12 @@
   pointer-events: none;
   grid-template-columns: repeat(6, 1fr);
   top: 20px;
-  left: 7px;
+  left: 15px;
   border-radius: 3px;
   background-color: var(--gray2);
   position: absolute;
   gap: 0.2rem;
-  padding: 0.2rem;
+  padding: 0.3rem;
   border-radius: 3px;
   z-index: 1;
   transition: opacity 0.3s;
@@ -26,8 +26,8 @@
 }
 
 .color-palette div {
-  width: 1rem;
-  height: 1rem;
+  width: 1.2rem;
+  height: 1.2rem;
   border-radius: 50%;
   border: solid 1px var(--gray1);
 }

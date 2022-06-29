@@ -46,3 +46,7 @@ export function addNoteEmit(note) {
 export function removeNoteEmit(noteId) {
   emit('removed', noteId)
 }
+
+export function updateNoteEmit(note) {
+  emit('updated', note)
+}
