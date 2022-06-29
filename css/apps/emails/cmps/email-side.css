@@ -1,5 +1,6 @@
 .side-nav {
     flex-basis: 20%;
+    position: relative;
 }
 
 .side-nav>* {
@@ -20,9 +21,11 @@
     background-color: transparent;
     padding: 0.4rem;
     font-size: 0.9rem;
+    text-align: start;
+    color: var(--clr4)
 }
 
 .side-nav .nav-btn:hover {
-    background-color: var(--clr3);
+    background-color: rgba(240, 222, 85, 0.732);
 }
 

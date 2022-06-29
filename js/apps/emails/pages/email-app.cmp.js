@@ -5,8 +5,8 @@ import emailSide from "../cmps/email-side.cmp.js"
 export default {
     template: `
 
-        <section class="flex">
-            <email-side />
+        <section class="flex" >
+            <email-side @send="sendEmail"/>
             <email-list @selected="showEmail" :emails="emails"/>
         </section>
     `,
@@ -18,6 +18,10 @@ export default {
     methods: {
         showEmail(emailId) {
             this.$router.push(`/email/${emailId}`)
+        },
+        sendEmail(email) {
+            emailService.save(email)
+            .then(email => this.emails.push(email))
         },
     },
     computed: {
@@ -34,4 +38,7 @@ export default {
         emailList,
         emailSide,
     },
+    // emits: [
+    //     'send',
+    // ],
 }
