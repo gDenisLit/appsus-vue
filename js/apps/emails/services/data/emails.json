@@ -1,0 +1,42 @@
+[
+  {
+    "id": "e101",
+    "subject": "Miss you!",
+    "body": "Would love to catch up sometimes",
+    "isRead": false,
+    "sentAt": 1551133930594,
+    "to": "momo@momo.com"
+  },
+  {
+    "id": "e102",
+    "subject": "Spring 3",
+    "body": "Would love to catch up sometimes",
+    "isRead": false,
+    "sentAt": 1551133930594,
+    "to": "momo@momo.com"
+  },
+  {
+    "id": "e103",
+    "subject": "Due Payment",
+    "body": "Would love to catch up sometimes",
+    "isRead": false,
+    "sentAt": 1551133930594,
+    "to": "momo@momo.com"
+  },
+  {
+    "id": "e104",
+    "subject": "Security Alert",
+    "body": "Would love to catch up sometimes",
+    "isRead": false,
+    "sentAt": 1551133930594,
+    "to": "momo@momo.com"
+  },
+  {
+    "id": "e105",
+    "subject": " A first-party GitHub ",
+    "body": "Would love to catch up sometimes",
+    "isRead": false,
+    "sentAt": 1551133930594,
+    "to": "momo@momo.com"
+  }
+]
