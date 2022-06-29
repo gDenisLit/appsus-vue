@@ -9,6 +9,10 @@
 @import 'basic/buttons.css';
 @import 'basic/input.css';
 
-/* COMPONENTS  */
+/* GENERAL COMPONENTS  */
 @import 'cmps/header.css';
 @import 'cmps/footer.css';
+
+/* KEEP APP  */
+@import 'apps/keeps/cmps/notes.css';
+@import 'apps/keeps/cmps/note-img.css';
