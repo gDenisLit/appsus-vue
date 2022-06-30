@@ -4,6 +4,10 @@ import emailDetailsData from "../cmps/email-details-data.cmp.js"
 export default {
     template: `
         <section class="email-details-container" v-if="email">
+            <button class="back" @click="back">
+                <i class="fa-solid fa-arrow-left-long"></i>
+                <span>Back</span>
+            </button>
             <email-details-data :email="email"/>
             <div class="details-actions">
                 <button class="email-reply">
@@ -26,7 +30,9 @@ export default {
         }
     },
     methods: {
-           
+        back() {
+            this.$router.push('inbox')
+        }
     },
     computed: {
         

@@ -29,7 +29,7 @@ export default {
       },
       sortBy: {
         date: null,
-        direction: 0,
+        direction: null,
       },
       isDropDown: false,
     }
@@ -44,7 +44,7 @@ export default {
     },
     sortDir() {
       this.sortBy.direction = !this.sortBy.direction
-      this.$emit('sort', this.soryBy)
+      this.$emit('sort', this.sortBy)
     },
     showDropDown() {
       this.isDropDown = !this.isDropDown

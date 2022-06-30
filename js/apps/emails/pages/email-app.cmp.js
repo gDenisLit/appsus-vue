@@ -33,14 +33,18 @@ export default {
             emailService.remove(emailId)
             const idx = this.emails.findIndex(email => email.id === emailId)
             const email = this.emails[idx]
-            if (email.state !== 'trash') email.state = trash
+            if (email.state !== 'trash') email.state = 'trash'
             else this.emails.splice(idx, 1)
         },
         sort(type) {
             this.sortState = type
         },
-        sortEmails(sortBy) {
-            this.sortBy = sortBy
+        sortEmails({direction}) {
+            this.emails.sort((a, b) => {
+                if(a.sentAt > b.sentAt) return (direction)? 1 : -1
+                else if(a.sentAt < b.sentAt) return (direction)? -1 : 1
+                else return 0
+            })
         },
         filter(txt) {
             this.filterBy = txt
@@ -57,14 +61,6 @@ export default {
                     return (!email.isRead && email.state === 'inbox')
                 })
             }
-            // if(this.sortBy) {
-            //     this.email.sort((a, b) => {
-            //         console.log(a, b)
-            //         // if (a.sentAt > b.sentAt) return 1
-            //         // else if (a.sentAt < b.sentAt) return -1
-            //         // else return 0
-            //     })
-            // }
             return this.emails.filter(email => email.state === this.sortState)
         },
     },
