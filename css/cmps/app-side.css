@@ -22,6 +22,7 @@
 
 .side-nav .nav-btn i {
   margin-inline-end: 1rem;
+  margin-inline-start: 0.5rem;
 }
 
 .side-nav .nav-btn:hover {
