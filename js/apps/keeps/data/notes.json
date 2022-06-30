@@ -19,7 +19,19 @@
       "title": "Bobi and Me"
     },
     "style": {
-      "backgroundColor": "#495057"
+      "backgroundColor": "#f03e3e"
+    }
+  },
+  {
+    "id": "n107",
+    "type": "note-audio",
+    "isPinned": false,
+    "info": {
+      "url": "assets/audio/forest-lullaby.mp3",
+      "title": "Forest lullaby"
+    },
+    "style": {
+      "backgroundColor": "#228be6"
     }
   },
   {
@@ -30,7 +42,7 @@
       "videoId": "tgbNymZ7vqY"
     },
     "style": {
-      "backgroundColor": "#495057"
+      "backgroundColor": "#ff922b"
     }
   },
   {
@@ -45,7 +57,7 @@
       ]
     },
     "style": {
-      "backgroundColor": "#495057"
+      "backgroundColor": "#40c057"
     }
   },
   {
@@ -60,7 +72,7 @@
       ]
     },
     "style": {
-      "backgroundColor": "#495057"
+      "backgroundColor": "#fcc419"
     }
   },
   {
@@ -75,7 +87,7 @@
       ]
     },
     "style": {
-      "backgroundColor": "#495057"
+      "backgroundColor": "#7950f2"
     }
   }
 ]

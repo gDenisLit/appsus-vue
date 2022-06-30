@@ -24,3 +24,11 @@
   object-fit: cover;
   border-radius: 3px;
 }
+
+.note-preview .note-audio {
+  text-align: center;
+}
+
+.note-preview .note-audio h4 {
+  margin-block-end: var(--spacing-small);
+}
