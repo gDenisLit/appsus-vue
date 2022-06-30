@@ -31,6 +31,10 @@
     position: absolute;
 }
 
+.star.checked {
+    color: yellow;
+}
+
 .emails-preview >* {
     margin-inline-end: 0.5rem;
     font-family: Roboto-regular;

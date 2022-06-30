@@ -21,7 +21,8 @@ export default {
                 <li v-for="btn in navBtns" 
                 :key="btn.id"
                 @mouseenter="isCollapse = false"
-                @mouseleave="isCollapse = true"  >
+                @mouseleave="isCollapse = true"  
+                >
                   <a @click="sort(btn.type)">
                     <span class="icon"><i :class="btn.icon"></i></span>
                     <span class="text">{{btn.title}}</span>
@@ -33,8 +34,8 @@ export default {
       </div>
       <section v-if="compose" >
             <email-compose @closeCompose="composeMode"/>
-      </section>
-  `,
+          </section>
+          `,
   data() {
     return {
       navBtns: [
@@ -46,18 +47,24 @@ export default {
         },
         {
           id: 'btn2',
+          title: 'Starred',
+          type: 'starred',
+          icon: ['fa-solid', 'fa-star'],
+        },
+        {
+          id: 'btn3',
           title: 'Sent',
           type: 'sent',
           icon: ['fa-solid', 'fa-paper-plane'],
         },
         {
-          id: 'btn3',
+          id: 'btn4',
           title: 'Draft',
           type: 'draft',
           icon: ['fa-solid', 'fa-file'],
         },
         {
-          id: 'btn4',
+          id: 'btn5',
           title: 'Trash',
           type: 'trash',
           icon: ['fa-solid', 'fa-trash'],
