@@ -1,8 +1,8 @@
 export default {
     template: `
             <span class="email-to" :class="unread">{{to}}</span>
-            <span class="email-sub" :class="unread">{{email.subject}}</span>
-            <span class="email-body" :class="unread">- {{shortBody}}</span>
+            <span class="email-sub-body" :class="unread">{{email.subject}} - {{shortBody}}</span>
+            <!-- <span class="email-body" :class="unread">- {{shortBody}}</span> -->
             <span class="sent-at" :class="unread">{{date}}</span>
     `,
     props: [

@@ -18,6 +18,11 @@
 
 .email-preview .email-to {
     text-transform: capitalize;
+    flex-basis: 15%;
+}
+
+.email-preview.email-sub-body {
+    flex-basis: 80%;
 }
 
 .email-preview .sent-at {

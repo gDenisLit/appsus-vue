@@ -12,7 +12,7 @@ export default {
                 <button class="compose-title-btn">
                     <i class="fa-solid fa-up-right-and-down-left-from-center"></i>
                 </button>
-                <button class="compose-title-btn">
+                <button class="compose-title-btn" @click="saveDraft">
                     <i class="fa-solid fa-xmark"></i>
                 </button>
             </div>
@@ -48,6 +48,12 @@ export default {
             this.$emit('closeCompose')
             addEmit(this.newEmail)
         },
+        saveDraft() {
+            this.newEmail.state = 'draft'
+            this.$emit('closeCompose')
+            addEmit(this.newEmail)
+        }
+        
     },
     computed: {
  
