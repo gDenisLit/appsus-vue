@@ -5,6 +5,7 @@ export default {
             <div class="from">
                 <i class="fa-solid fa-circle-user"></i>
                 <span class="email-to">{{from}}</span>
+                <span>-</span>
                 <span class="sent-at">{{date}}</span>
             </div>
             <pre>{{email.body}}</pre>

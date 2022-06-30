@@ -48,6 +48,9 @@
 
 .email-details .from .email-to {
     text-transform: capitalize;
-    margin-inline-end: 1rem;
+    margin-inline-end: 0.5rem;
 }
 
+.email-details .from span {
+    margin-inline-end: 0.5rem;
+}
