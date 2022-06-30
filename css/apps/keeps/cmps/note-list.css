@@ -4,6 +4,7 @@
   column-count: 4;
   vertical-align: baseline;
   position: relative;
+  padding: var(--spacing-large);
 }
 
 .note-list a {

@@ -20,7 +20,6 @@
 }
 
 .app-header h2 {
-  
   margin-inline-end: 5rem;
   font-weight: 400;
 }
@@ -30,7 +29,6 @@
 }
 
 .app-header .search input {
-  
   width: 40rem;
   padding: var(--spacing-medium2);
   padding-left: 2.5rem;

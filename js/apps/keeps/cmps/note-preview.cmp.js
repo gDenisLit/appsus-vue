@@ -16,7 +16,7 @@ export default {
         <component class="note" :is="note.type"  
           :note="note"  >
         </component>
-        <note-tools v-if="isOver" :note="note" @updating="isUpdating = true"/>
+        <note-tools :note="note" @updating="isUpdating = true"/>
         <note-edit v-if="isUpdating" :note="cloneNote"/>
       </section>
     `,
@@ -31,7 +31,6 @@ export default {
   data() {
     return {
       isUpdating: false,
-      isOver: false,
     }
   },
   created() {},
