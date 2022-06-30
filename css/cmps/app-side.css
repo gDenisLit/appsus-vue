@@ -35,7 +35,7 @@
 
 .side-nav {
   position: fixed;
-  top: 155px;
+  top: 149px;
   left: 0;
   width: 220px;
   height: 100%;
@@ -89,4 +89,23 @@
 .hover-collapse .side-nav ul li a .icon {
   margin-inline-end: 0;
   margin-inline-start: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.side-nav ul li a.email-compose {
+  min-width: fit-content;
+  font-size: 1.2rem;
+  border-radius: 2rem;
+  padding: 0.7rem;
+  margin-block-end: 0.7rem;
+  cursor: pointer;
+  margin-inline-start: 0.5rem;
+  background-color: var(--gray5);
+  color: var(--gray1);
+}
+
+.side-nav ul li a.email-compose span.icon {
+  margin-right: 0.3rem;
 }

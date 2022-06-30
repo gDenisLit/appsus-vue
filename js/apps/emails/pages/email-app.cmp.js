@@ -52,8 +52,12 @@ export default {
         startEmail(emailId) {
             const currEmail = this.emails.find(email => email.id === emailId)
             currEmail.starred = !currEmail.starred
-            console.log(currEmail)
+ 
         },
+        markRead(emailId) {
+            const currEmail = this.emails.find(email => email.id === emailId)
+            currEmail.isRead = !currEmail.isRead
+        }
     },
     computed: {
         emailsToShow() {
@@ -77,6 +81,7 @@ export default {
         eventBus.on('added', this.sendEmail)
         eventBus.on('sortBy', this.sort)
         eventBus.on('starred', this.startEmail)
+        eventBus.on('isRead', this.markRead)
     },
     unmounted() {
  

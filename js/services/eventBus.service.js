@@ -67,3 +67,7 @@ export function toggleEmit() {
   console.log('called')
   emit('toggled')
 }
+
+export function readEmit(entity) {
+  emit('isRead', entity)
+}

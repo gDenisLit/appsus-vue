@@ -1,8 +1,10 @@
+import { toggleEmit } from '../../../services/eventBus.service.js'
+
 export default {
   template: `
 
       <section class="app-header">
-          <button href="#">☰</button>
+          <button href="#" @click="toggleSideNav">☰</button>
           <div class="logo">
               <img src="assets/img/logo-mail.png" alt="">
           </div>
@@ -48,6 +50,10 @@ export default {
     },
     showDropDown() {
       this.isDropDown = !this.isDropDown
+    },
+    toggleSideNav() {
+      toggleEmit()
+      console.log('called')
     },
   },
   computed: {},
