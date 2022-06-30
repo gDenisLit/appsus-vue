@@ -1,7 +1,9 @@
+import { toggleEmit } from '../../../services/eventBus.service.js'
+
 export default {
   template: `
     <section class="app-header">
-        <button href="#">☰</button>
+        <button href="#" @click="toggleSideNav">☰</button>
         <div class="logo">
             <img src="assets/img/logo-keep.png" alt="">
         </div>
@@ -24,6 +26,10 @@ export default {
   methods: {
     filter() {
       this.$emit('filtered', this.filterBy)
+    },
+    toggleSideNav() {
+      toggleEmit()
+      console.log('called')
     },
   },
   computed: {},

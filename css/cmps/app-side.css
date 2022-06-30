@@ -34,7 +34,7 @@
 } */
 
 .side-nav {
-  /* position: fixed; */
+  position: fixed;
   top: 155px;
   left: 0;
   width: 220px;
@@ -72,7 +72,7 @@
 }
 
 .hover-collapse .side-nav {
-  width: 60px;
+  width: 3.75rem;
 }
 
 .hover-collapse .side-nav ul li a .text {

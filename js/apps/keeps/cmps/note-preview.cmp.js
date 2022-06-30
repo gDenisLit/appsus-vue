@@ -11,7 +11,7 @@ export default {
   template: `
       <section class="note-preview" :style="bgc" 
       @mouseover="mouseOver" 
-      @mouseleave="isOver = false" 
+      @mouseleave="mouseLeave" 
       draggable="true" 
       @dragstart="startDrag($event)">
         <component class="note" :is="note.type"  
@@ -45,6 +45,10 @@ export default {
     mouseOver() {
       this.isOver = true
       document.body.style.cursor = 'grab'
+    },
+    mouseLeave() {
+      this.isOver = false
+      document.body.style.cursor = 'auto'
     },
   },
   computed: {

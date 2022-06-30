@@ -63,6 +63,7 @@ export function starEmit(entity) {
   emit('starred', entity)
 }
 
-// export function switchEmit(indexes) {
-//   emit('switched', indexes)
-// }
+export function toggleEmit() {
+  console.log('called')
+  emit('toggled')
+}

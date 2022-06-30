@@ -5,6 +5,7 @@
   vertical-align: baseline;
   position: relative;
   padding: var(--spacing-large);
+  margin-left: 3.75rem;
 }
 
 .note-list a {
