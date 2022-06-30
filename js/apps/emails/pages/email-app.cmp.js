@@ -1,4 +1,5 @@
 import { emailService } from "../services/email.service.js"
+import { eventBus } from "../../../services/eventBus.service.js"
 import emailList from "../cmps/email-list.cmp.js"
 import emailSide from "../cmps/email-side.cmp.js"
 import emailFilter from "../cmps/email-filter.cmp.js"
@@ -9,16 +10,16 @@ export default {
             <email-filter @onSearch="filter"/>
         </header>
         <section class="flex" >
-            <email-side @sort="sortStateEmails" @send="sendEmail"/>
+            <email-side />
             <email-list @selected="showEmail" 
-                @delete="deleteEmail" :emails="emailsToShow"
+                :emails="emailsToShow"
             />
         </section>
     `,
     data() {
         return {
             emails: null,
-            sortState: 'all',
+            sortState: 'inbox',
             sortBy: null,
             filterBy: null,
         }
@@ -36,7 +37,7 @@ export default {
             const idx = this.emails.findIndex(email => email.id === emailId)
             this.emails.splice(idx, 1)
         },
-        sortStateEmails(type) {
+        sort(type) {
             this.sortState = type
         },
         filter(txt) {
@@ -45,23 +46,22 @@ export default {
     },
     computed: {
         emailsToShow() {
-            if (this.filterBy) {
-                return this.emails.filter(email => {
-                    email.subject.includes(this.filterBy) 
-                    // email.to.includes(this.filterBy) ||
-                    // email.body.includes(this.filterBy)
-                })
-            }
-            if (this.sortState === 'all') return this.emails
+            if (!this.emails) return
             if (this.sortState === 'unread') {
-                return this.emails.filter(email => !email.isRead)
+                return this.emails.filter(email => {
+                    return (!email.isRead && email.state === 'inbox')
+                })
             }
             return this.emails.filter(email => email.state === this.sortState)
         },
     },
     created() {
         emailService.query()
-            .then(emails => this.emails = emails)
+        .then(emails => this.emails = emails)
+
+        eventBus.on('removed', this.deleteEmail )
+        eventBus.on('added', this.sendEmail)
+        eventBus.on('sortBy', this.sort)
     },
     unmounted() {
  

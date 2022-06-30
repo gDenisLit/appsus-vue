@@ -67,6 +67,24 @@ const emailsData = [
       to: "momo@momo.com",
       state: 'inbox'
   },
+  {
+      id: 'e108',
+      subject: "Miss you!",
+      body: "Would love to catch up sometimes",
+      isRead: false,
+      sentAt: 1551133930594,
+      to: "momo@momo.com",
+      state: 'draft'
+  },
+  {
+      id: 'e109',
+      subject: "sdfsdf",
+      body: "Wsdfsdfsdfsdfsdfsdf",
+      isRead: false,
+      sentAt: 1551133930594,
+      to: "momo@momo.com",
+      state: 'draft'
+  },
 ]
 _createEmails()
 

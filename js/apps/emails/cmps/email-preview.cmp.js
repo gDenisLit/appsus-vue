@@ -1,9 +1,11 @@
 export default {
     template: `
-        <span class="email-to" :class="unread">{{from}}</span>
-        <span class="email-sub" :class="unread">{{email.subject}}</span>
-        <span :class="unread">- {{shortBody}}</span>
-        <span class="sent-at" :class="unread">{{date}}</span>
+        <section>
+            <span class="email-to" :class="unread">{{from}}</span>
+            <span class="email-sub" :class="unread">{{email.subject}}</span>
+            <span :class="unread">- {{shortBody}}</span>
+            <span class="sent-at" :class="unread">{{date}}</span>
+        </section>
     `,
     props: [
         'email'
@@ -28,7 +30,7 @@ export default {
             return date
         },
         unread() {
-            return {unread: (!this.email.isRead)}
+            return {unread: (!this.email.isRead && this.email.state === 'inbox')}
         },
     },
     created() {

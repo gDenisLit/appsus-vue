@@ -1,3 +1,5 @@
+import { removeEmit } from '../../../services/eventBus.service.js'
+
 export default {
     template: `
         <section class="email-prev-actions">
@@ -14,7 +16,7 @@ export default {
     },
     methods: {
         select() {
-            this.$emit('selectedDel', this.emailId)
+            removeEmit(this.emailId)
         }, 
     },
     computed: {

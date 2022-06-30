@@ -1,3 +1,5 @@
+import { addEmit } from "../../../services/eventBus.service.js"
+
 export default {
     template: `
         <form class="compose-email">
@@ -8,7 +10,7 @@ export default {
             </p>
             <p>
                 <span>To</span>
-                <input type="email" id="email" required>
+                <input type="email" id="email" v-model="newEmail.to" required>
             </p>
             <p>
                 <span>Subject</span>
@@ -37,7 +39,8 @@ export default {
         send() {
             this.newEmail.state = 'sent'
             this.newEmail.sentAt = Date.now()
-            this.$emit('newEmail', this.newEmail)
+            this.$emit('closeCompose')
+            addEmit(this.newEmail)
         },
     },
     computed: {

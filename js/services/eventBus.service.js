@@ -50,3 +50,11 @@ export function removeEmit(entityId) {
 export function updateEmit(entity) {
   emit('updated', entity)
 }
+
+export function selectEmit(entity) {
+  emit('selected', entity)
+}
+
+export function sortEmit(entity) {
+  emit('sortBy', entity)
+}
