@@ -1,19 +1,14 @@
 export default {
     template: `
-        <pre>{{email}}</pre>
-            <p>
-                <span>From: </span>
+        <section class="email-details">
+            <h1 class="email-sub">{{email.subject}}</h1>
+            <div class="from">
+                <i class="fa-solid fa-circle-user"></i>
                 <span class="email-to">{{from}}</span>
-            </p>
-            <p>
-                <span>Subject: </span>
-                <span class="email-sub">{{email.subject}}</span>
-            </p>
-            <p>
-                <span>Date: </span>
-                <span class="sent-at">{{email.sentAt}}</span>
-            </p>
-        <pre>{{email.body}}</pre>
+                <span class="sent-at">{{date}}</span>
+            </div>
+            <pre>{{email.body}}</pre>
+        </section>
  
     `,
     props: [
@@ -32,6 +27,11 @@ export default {
             const idx = this.email.to.indexOf('@')
             return this.email.to.slice(0, idx)
         },
+        date() {
+            const date = new Date(this.email.sentAt).toString()
+            const idx = date.indexOf('GMT')
+            return date.slice(0, idx)
+        }
     },
     created() {
  

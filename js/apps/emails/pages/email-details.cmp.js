@@ -3,8 +3,18 @@ import emailDetailsData from "../cmps/email-details-data.cmp.js"
 
 export default {
     template: `
-        <section v-if="email">
+        <section class="email-details-container" v-if="email">
             <email-details-data :email="email"/>
+            <div class="details-actions">
+                <button class="email-reply">
+                    <i class="fa-solid fa-reply"></i>
+                    Reply
+                </button>
+                <button class="email-forward">
+                    Forward
+                    <i class="fa-solid fa-arrow-right"></i>
+                </button>
+            </div>
         </section>
     `,
     props: [

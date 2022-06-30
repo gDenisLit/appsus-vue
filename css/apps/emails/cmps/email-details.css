@@ -1,0 +1,53 @@
+.email-details-container {
+    padding: 2rem;
+    position: relative;
+}
+
+.email-details-container .details-actions {
+    position: absolute;
+    bottom: 3rem;
+}
+
+.details-actions .email-reply {
+    margin-inline-end: 1rem;
+}
+
+.email-reply, .email-forward {
+    font-family: Roboto-regular;
+    background-color: transparent;
+    border: 0.5px solid var(--gray4);
+    border-radius: 0.2rem;
+    color: var(--gray4);
+    padding: 1rem;
+    cursor: pointer;
+}
+
+.email-reply i, .email-forward i {
+    margin: 0.2rem;
+}
+
+.email-reply:hover, .email-forward:hover {
+    background-color: rgba(255, 255, 255, 0.063);
+}
+
+
+.email-details h1 {
+    font-family: Roboto-bold;
+    font-size: 2rem;
+    margin-block-end: 1rem;
+}
+
+.email-details .from i {
+    font-size: 2rem;
+    margin-inline-end: 0.6rem;
+}
+
+.email-details .from {
+    margin-block-end: 2rem;
+}
+
+.email-details .from .email-to {
+    text-transform: capitalize;
+    margin-inline-end: 1rem;
+}
+
