@@ -38,6 +38,7 @@ export default {
                 body: null,
                 sentAt: null,
                 state: null,
+                starred: false,
             },
         }
     },

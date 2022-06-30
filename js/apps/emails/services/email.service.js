@@ -11,7 +11,8 @@ const emailsData = [
       isRead: false,
       sentAt: 1551133930594,
       to: "momo@momo.com",
-      state: 'inbox'
+      state: 'inbox',
+      starred: false,
   },
   {
       id: 'e102',
@@ -20,7 +21,8 @@ const emailsData = [
       isRead: false,
       sentAt: 1551133940594,
       to: "denis@momo.com",
-      state: 'sent'
+      state: 'sent',
+      starred: false,
   },
   {
       id: 'e103',
@@ -29,7 +31,8 @@ const emailsData = [
       isRead: false,
       sentAt: 1551133930594,
       to: "guy@momo.com",
-      state: 'sent'
+      state: 'sent',
+      starred: false,
   },
   {
       id: 'e104',
@@ -38,7 +41,8 @@ const emailsData = [
       isRead: false,
       sentAt: 1551733930594,
       to: "momo@momo.com",
-      state: 'inbox'
+      state: 'inbox',
+      starred: false,
   },
   {
       id: 'e105',
@@ -47,7 +51,8 @@ const emailsData = [
       isRead: false,
       sentAt: 1551133530594,
       to: "googel@momo.com",
-      state: 'trash'
+      state: 'trash',
+      starred: false,
   },
   {
       id: 'e106',
@@ -56,7 +61,8 @@ const emailsData = [
       isRead: false,
       sentAt: 1581133930594,
       to: "guy@momo.com",
-      state: 'inbox'
+      state: 'inbox',
+      starred: false,
   },
   {
       id: 'e107',
@@ -65,7 +71,8 @@ const emailsData = [
       isRead: false,
       sentAt: 1251193930594,
       to: "momo@momo.com",
-      state: 'inbox'
+      state: 'inbox',
+      starred: false,
   },
   {
       id: 'e108',
@@ -74,7 +81,8 @@ const emailsData = [
       isRead: false,
       sentAt: 1551138930594,
       to: "momo@momo.com",
-      state: 'draft'
+      state: 'draft',
+      starred: false,
   },
   {
       id: 'e109',
@@ -83,7 +91,8 @@ const emailsData = [
       isRead: false,
       sentAt: 1651533930594,
       to: "momo@momo.com",
-      state: 'draft'
+      state: 'draft',
+      starred: false,
   },
 ]
 _createEmails()

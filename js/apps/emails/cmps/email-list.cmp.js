@@ -5,7 +5,7 @@ export default {
     template: `
         <section class="email-container flex column">
             <article class="emails-preview flex" v-for="email in emails" 
-                @click.native="select(email.id)" @mouseover=""
+                @click.native="select(email.id)" 
             >
                 <email-preview :email="email" />
                 <email-prev-actions :emailId="email.id"/>

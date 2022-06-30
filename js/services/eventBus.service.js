@@ -59,6 +59,10 @@ export function sortEmit(entity) {
   emit('sortBy', entity)
 }
 
+export function starEmit(entity) {
+  emit('starred', entity)
+}
+
 // export function switchEmit(indexes) {
 //   emit('switched', indexes)
 // }

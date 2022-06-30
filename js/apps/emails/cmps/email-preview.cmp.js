@@ -1,5 +1,10 @@
+import { starEmit } from "../../../services/eventBus.service.js"
+
 export default {
     template: `
+        <div v-if="show">
+            <input type="checkbox" @click.stop="toggleStar" v-model="isStar">
+        </div>
         <span class="email-to" :class="unread">{{to}}</span>
         <span class="email-sub-body" :class="unread">{{email.subject}} -</span>
         <span>{{shortBody}}</span>
@@ -9,10 +14,15 @@ export default {
         'email'
     ],
     data() {
-        return {}
+        return {
+            isStar: false,
+        }
     },
     methods: {
-           
+        toggleStar() {
+            this.isStar = !this.isStar
+            starEmit(this.email.id)
+        }
     },
     computed: {
         to() {
@@ -31,6 +41,9 @@ export default {
         unread() {
             return {unread: (!this.email.isRead && this.email.state === 'inbox')}
         },
+        show() {
+            return (this.email.state !== 'trash')
+        }
     },
     created() {
  
