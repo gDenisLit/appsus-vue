@@ -34,7 +34,9 @@ export default {
         deleteEmail(emailId) {
             emailService.remove(emailId)
             const idx = this.emails.findIndex(email => email.id === emailId)
-            this.emails.splice(idx, 1)
+            const email = this.emails[idx]
+            if (email.state !== 'trash') email.state = trash
+            else this.emails.splice(idx, 1)
         },
         sort(type) {
             this.sortState = type

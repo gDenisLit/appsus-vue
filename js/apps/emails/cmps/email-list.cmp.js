@@ -4,13 +4,12 @@ import emailPrevActions from "./email-prev-actions.cmp.js"
 export default {
     template: `
         <section class="email-container flex column">
-            <article class="email-preview flex" v-for="email in emails" 
-                @click.native="select(email.id)" 
+            <article class="emails-preview flex" v-for="email in emails" 
+                @click.native="select(email.id)" @mouseover=""
             >
                 <email-preview :email="email" />
                 <email-prev-actions :emailId="email.id"/>
             </article>
-            
         </section>
 
     `,

@@ -17,7 +17,7 @@ export default {
                 </button>
             </div>
         </div>
-        <form class="flex column">
+        <section class="compose-form flex column">
             <input type="email" v-model="newEmail.to" 
                 placeholder="Recipient" required
             >
@@ -26,7 +26,7 @@ export default {
             >
             <textarea v-model="newEmail.body"></textarea>
             <button class="send" @click.prevent="send">Send</button>
-        </form>
+        </section>
     </section>
     `,
  
@@ -43,6 +43,10 @@ export default {
     },
     methods: {
         send() {
+            if (!this.newEmail.to) {
+                this.saveDraft()
+                return
+            }
             this.newEmail.state = 'sent'
             this.newEmail.sentAt = Date.now()
             this.$emit('closeCompose')

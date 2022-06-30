@@ -44,11 +44,11 @@
     cursor: pointer;
 }
 
-.compose-email form {
+.compose-email .compose-form  {
     padding: 0 0.8rem 1rem 0.8rem;
 }
 
-.compose-email form input, textarea {
+.compose-email .compose-form  input, textarea {
     border: none;
     box-shadow: none;
     outline: none;
@@ -58,11 +58,11 @@
     padding: 0.5rem 0 0.5rem 0;
 }
 
-.compose-email form input::placeholder {
+.compose-email .compose-form  input::placeholder {
     color: var(--gray4)
 }
 
-.compose-email form textarea {
+.compose-email .compose-form  textarea {
     resize: none;
     height: 20rem; 
     border: none;
@@ -76,4 +76,5 @@
     border: none;
     color: whitesmoke;
     background-color: #2b87d8;
+    cursor: pointer;
 }

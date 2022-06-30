@@ -1,22 +1,10 @@
 import { emailService } from "../services/email.service.js"
+import emailDetailsData from "../cmps/email-details-data.cmp.js"
 
 export default {
     template: `
         <section v-if="email">
-            <pre>{{email}}</pre>
-            <p>
-                <span>From: </span>
-                <span class="email-to">{{from}}</span>
-            </p>
-            <p>
-                <span>Subject: </span>
-                <span class="email-sub">{{email.subject}}</span>
-            </p>
-            <p>
-                <span>Date: </span>
-                <span class="sent-at">{{email.sentAt}}</span>
-            </p>
-            <pre>{{email.body}}</pre>
+          <email-details-data :email="email"/>
         </section>
     `,
     props: [
@@ -31,10 +19,7 @@ export default {
            
     },
     computed: {
-        from() {
-            const idx = this.email.to.indexOf('@')
-            return this.email.to.slice(0, idx)
-        },
+        
     },
     created() {
       
@@ -59,5 +44,8 @@ export default {
             },
             immediate: true,
         }
+    },
+    components: {
+        emailDetailsData,
     },
 }
