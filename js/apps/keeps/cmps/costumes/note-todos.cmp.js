@@ -39,12 +39,12 @@ export default {
     removeTodo(idx) {
       const newNote = this.cloneNote()
       newNote.info.todos.splice(idx, 1)
-      updateNoteEmit(newNote)
+      updateEmit(newNote)
     },
     toggleIsDone(idx) {
       const newNote = this.cloneNote()
       newNote.info.todos[idx].isDone = !newNote.info.todos[idx].isDone
-      updateNoteEmit(newNote)
+      updateEmit(newNote)
     },
     cloneNote() {
       return JSON.parse(JSON.stringify(this.note))

@@ -9,6 +9,9 @@ export default {
   props: ['note'],
   template: `
       <section class="note-preview" :style="bgc">
+        <div v-if="note.isPinned" class="pinned">
+          <i class="fa-solid fa-thumbtack"></i>
+        </div>
         <component class="note" :is="note.type"  
           :note="note"  >
         </component>

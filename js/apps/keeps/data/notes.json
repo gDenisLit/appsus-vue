@@ -13,6 +13,7 @@
   {
     "id": "n102",
     "type": "note-img",
+    "isPinned": true,
     "info": {
       "url": "https://images.pexels.com/photos/1293120/pexels-photo-1293120.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
       "title": "Bobi and Me"
@@ -24,6 +25,7 @@
   {
     "id": "n103",
     "type": "note-video",
+    "isPinned": false,
     "info": {
       "videoId": "tgbNymZ7vqY"
     },
@@ -34,6 +36,7 @@
   {
     "id": "n104",
     "type": "note-todos",
+    "isPinned": false,
     "info": {
       "title": "Get my stuff together",
       "todos": [
@@ -48,6 +51,7 @@
   {
     "id": "n105",
     "type": "note-todos",
+    "isPinned": false,
     "info": {
       "title": "Get my stuff together",
       "todos": [
@@ -62,6 +66,7 @@
   {
     "id": "n106",
     "type": "note-todos",
+    "isPinned": true,
     "info": {
       "title": "Get my stuff together",
       "todos": [

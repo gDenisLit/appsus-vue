@@ -9,7 +9,7 @@ export default {
   props: ['note'],
   template: `
       <section class="note-tools flex">
-        <a><i class="fa-solid fa-thumbtack"></i></a>
+        <a @click="togglePin"><i class="fa-solid fa-thumbtack"></i></a>
         <a class="color-palette-btn">
           <span>
             <i class="fa-solid fa-palette"></i>
@@ -44,6 +44,11 @@ export default {
     addClone() {
       const newNote = this.clone()
       addEmit(newNote)
+    },
+    togglePin() {
+      const newNote = this.clone()
+      newNote.isPinned = !newNote.isPinned
+      updateEmit(newNote)
     },
     clone() {
       return JSON.parse(JSON.stringify(this.note))

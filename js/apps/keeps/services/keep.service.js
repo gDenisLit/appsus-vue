@@ -37,6 +37,7 @@ function addNote(note) {
   const newNote = {
     type,
     info,
+    isPinned: false,
     style: style || {
       backgroundColor: '#495057',
     },

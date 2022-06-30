@@ -7,7 +7,7 @@ import noteSide from '../cmps/note-side.cmp.js'
 
 export default {
   template: `
-    <section class="keep-app">
+    <section v-if="notes" class="keep-app">
       <noteFilter @filtered="setFilter" />
       <div class="flex">
         <note-side/>
@@ -68,10 +68,17 @@ export default {
     setFilter(filterBy) {
       this.filterBy = JSON.parse(JSON.stringify(filterBy))
     },
+    filterPinned(notes) {
+      console.log(notes)
+      const pinned = notes.filter(note => note.isPinned)
+      const unpinned = notes.filter(note => !note.isPinned)
+
+      return { pinned, unpinned }
+    },
   },
   computed: {
     notesToShow() {
-      if (!this.filterBy) return this.notes
+      if (!this.filterBy) return this.filterPinned(this.notes)
 
       let notes = this.notes
 
@@ -80,7 +87,7 @@ export default {
         notes = notes.filter(note => regex.test(note.info.title))
       }
 
-      return notes
+      return this.filterPinned(notes)
     },
   },
   unmounted() {},
