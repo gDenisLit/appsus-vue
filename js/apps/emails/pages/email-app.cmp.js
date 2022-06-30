@@ -6,9 +6,8 @@ import emailFilter from "../cmps/email-filter.cmp.js"
 
 export default {
     template: `
-        <header>
-            <email-filter @onSearch="filter"/>
-        </header>
+      
+        <email-filter @onSearch="filter"/>
         <section class="flex" >
             <email-side />
             <email-list @selected="showEmail" 
