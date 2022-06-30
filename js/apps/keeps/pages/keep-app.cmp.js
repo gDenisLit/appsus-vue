@@ -8,7 +8,7 @@ import noteSide from '../cmps/note-side.cmp.js'
 export default {
   template: `
     <section v-if="notes" class="keep-app">
-      <noteFilter @filtered="setFilter" />
+      <note-filter @filtered="setFilter" />
       <div class="flex">
         <note-side/>
         <div class="notes">

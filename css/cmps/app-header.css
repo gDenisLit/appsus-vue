@@ -19,7 +19,13 @@
 
 .app-header img {
   width: 4rem;
+  /* margin-inline-end: 5rem; */
+  margin-inline-end: var(--spacing-medium);
+}
+
+.app-header h2 {
   margin-inline-end: 5rem;
+  font-weight: 400;
 }
 
 .app-header .search {
