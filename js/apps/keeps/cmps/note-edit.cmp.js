@@ -1,4 +1,4 @@
-import { updateNoteEmit } from '../../../services/eventBus.service.js'
+import { updateEmit } from '../../../services/eventBus.service.js'
 
 export default {
   props: ['note'],
@@ -20,7 +20,7 @@ export default {
       console.log(this.note)
       if (this.title) this.note.info.title = this.title
       if (this.txt) this.note.info.txt = this.txt
-      updateNoteEmit(this.note)
+      updateEmit(this.note)
     },
   },
   computed: {},

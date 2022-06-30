@@ -33,11 +33,11 @@ function save(note) {
 }
 
 function addNote(note) {
-  const { type, info } = note
+  const { type, info, style } = note
   const newNote = {
     type,
     info,
-    style: {
+    style: style || {
       backgroundColor: '#495057',
     },
   }

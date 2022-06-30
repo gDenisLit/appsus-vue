@@ -1,4 +1,4 @@
-import { updateNoteEmit } from '../../../../services/eventBus.service.js'
+import { updateEmit } from '../../../../services/eventBus.service.js'
 
 export default {
   props: ['note'],
@@ -32,7 +32,7 @@ export default {
 
       newNote.info.todos.push(todo)
 
-      updateNoteEmit(newNote)
+      updateEmit(newNote)
 
       this.txtInput = ''
     },

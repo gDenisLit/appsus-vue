@@ -1,8 +1,8 @@
 import noteColorPalette from './note-color-palette.cmp.js'
 import {
-  changeBgcEmit,
-  removeNoteEmit,
-  addNoteEmit,
+  removeEmit,
+  updateEmit,
+  addEmit,
 } from '../../../services/eventBus.service.js'
 
 export default {
@@ -33,14 +33,20 @@ export default {
   created() {},
   methods: {
     changeBgc(color) {
-      changeBgcEmit(color, this.note.id)
+      const newNote = this.clone()
+      newNote.style.backgroundColor = color
+
+      updateEmit(newNote)
     },
     removeNote() {
-      removeNoteEmit(this.note.id)
+      removeEmit(this.note.id)
     },
     addClone() {
-      const newNote = JSON.parse(JSON.stringify(this.note))
-      addNoteEmit(newNote)
+      const newNote = this.clone()
+      addEmit(newNote)
+    },
+    clone() {
+      return JSON.parse(JSON.stringify(this.note))
     },
   },
   computed: {},

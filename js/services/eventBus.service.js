@@ -34,19 +34,19 @@ export function showErrorMsg(txt) {
   showUserMsg({ txt, type: 'error' })
 }
 
-export function changeBgcEmit(color, noteId) {
-  const noteProps = { color, noteId }
-  emit('changed-bgc', noteProps)
+// export function changeBgcEmit(color, noteId) {
+//   const noteProps = { color, noteId }
+//   emit('changed-bgc', noteProps)
+// }
+
+export function addEmit(entity) {
+  emit('added', entity)
 }
 
-export function addNoteEmit(note) {
-  emit('added-note', note)
+export function removeEmit(entityId) {
+  emit('removed', entityId)
 }
 
-export function removeNoteEmit(noteId) {
-  emit('removed', noteId)
-}
-
-export function updateNoteEmit(note) {
-  emit('updated', note)
+export function updateEmit(entity) {
+  emit('updated', entity)
 }

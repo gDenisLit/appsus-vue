@@ -32,8 +32,7 @@ export default {
   },
   created() {
     this.getNotes()
-    eventBus.on('changed-bgc', this.changeNoteBgc)
-    eventBus.on('added-note', this.addNote)
+    eventBus.on('added', this.addNote)
     eventBus.on('removed', this.removeNote)
     eventBus.on('updated', this.updateNote)
   },
@@ -44,13 +43,13 @@ export default {
         console.log(this.notes)
       })
     },
-    changeNoteBgc(noteProps) {
-      keepService.changeNoteBgc(noteProps).then(() => {
-        const { color, noteId } = noteProps
-        const note = this.notes.find(note => note.id === noteId)
-        note.style.backgroundColor = color
-      })
-    },
+    // changeNoteBgc(noteProps) {
+    //   keepService.changeNoteBgc(noteProps).then(() => {
+    //     const { color, noteId } = noteProps
+    //     const note = this.notes.find(note => note.id === noteId)
+    //     note.style.backgroundColor = color
+    //   })
+    // },
     addNote(note) {
       keepService.addNote(note).then(note => this.notes.push(note))
     },
