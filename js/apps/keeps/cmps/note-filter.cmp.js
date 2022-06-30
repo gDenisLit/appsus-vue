@@ -7,7 +7,7 @@ export default {
         </div>
         <h2>Keep</h2>
         <div class="search">
-          <input type="text" v-model="filterBy.title" @input="filter" placeholder="Search by title">
+          <input class="input-search" type="text" v-model="filterBy.title" @input="filter" placeholder="Search by title">
           <i class="icon fa-solid fa-magnifying-glass"></i>
         </div>
         

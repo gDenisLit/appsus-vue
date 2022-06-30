@@ -1,34 +1,62 @@
 export default {
   template: `
-      <section class="side-nav flex column">
-        <button class="nav-btn">
-        <i class="fa-solid fa-lightbulb"></i>
-          Notes
-        </button>
-        <button class="nav-btn">
-        <i class="fa-solid fa-file-lines"></i>
-          Text
-        </button>
-        <button class="nav-btn">
-          <i class="fa-solid fa-images"></i>
-          Images  
-        </button>
-          <button class="nav-btn">
-          <i class="fa-brands fa-youtube"></i>
-          Videos
-          </button>
-          <button class="nav-btn">
-          <i class="fa-solid fa-list-ul"></i>
-          Todos
-          </button>
-      </section>
+      <div :class="collapse">
+        <section class="side-nav">
+          <div class="side-nav-inner">
+            <ul>
+                <li v-for="btn in navBtns" 
+                :key="btn.id"
+                @mouseenter="isCollapse = false"
+                @mouseleave="isCollapse = true"  >
+                  <a href="#">
+                    <span class="icon"><i :class="btn.icon"></i></span>
+                    <span class="text">{{btn.title}}</span>
+                  </a>
+                </li>
+            </ul>
+          </div>
+        </section>
+      </div>
   `,
   data() {
-    return {}
+    return {
+      navBtns: [
+        {
+          id: 'btn1',
+          title: 'Notes',
+          icon: ['fa-solid', 'fa-lightbulb'],
+        },
+        {
+          id: 'btn2',
+          title: 'Text',
+          icon: ['fa-solid', 'fa-file-lines'],
+        },
+        {
+          id: 'btn3',
+          title: 'Images',
+          icon: ['fa-solid', 'fa-images'],
+        },
+        {
+          id: 'btn4',
+          title: 'Videos',
+          icon: ['fa-brands', 'fa-youtube'],
+        },
+        {
+          id: 'btn5',
+          title: 'Todos',
+          icon: ['fa-solid', 'fa-list-ul'],
+        },
+      ],
+      isCollapse: true,
+    }
   },
   components: {},
   methods: {},
-  computed: {},
+  computed: {
+    collapse() {
+      return { 'hover-collapse': this.isCollapse }
+    },
+  },
   created() {},
   unmounted() {},
 }

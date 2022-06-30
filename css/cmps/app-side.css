@@ -1,5 +1,4 @@
-.side-nav {
-  min-width: 15.5375rem;
+/* .side-nav {
   position: relative;
   padding: 0.5rem 0.5rem 0 0;
   border-inline-end: 0.05rem solid rgba(255, 255, 255, 0.11);
@@ -32,4 +31,62 @@
 .nav-btn.active {
   background-color: rgba(240, 222, 85, 0.762);
   font-family: Roboto-bold;
+} */
+
+.side-nav {
+  /* position: fixed; */
+  top: 155px;
+  left: 0;
+  width: 220px;
+  height: 100%;
+  background: var(--gray2);
+  z-index: 100;
+  padding: 0.5rem 0.5rem 0 0;
+  border-inline-end: 0.05rem solid rgba(255, 255, 255, 0.11);
+  transition: all 0.2s;
+}
+
+.side-nav ul li a {
+  display: block;
+  color: inherit;
+  padding: 0.4rem;
+  border-radius: 0 1.1rem 1.1rem 0;
+  font-family: Roboto-regular;
+  color: var(--clr4);
+}
+
+.side-nav ul li a .icon {
+  font-size: 1.2rem;
+  vertical-align: middle;
+  margin-inline-end: 1rem;
+  margin-inline-start: 0.5rem;
+}
+
+.side-nav ul li a .text {
+  font-size: 0.9rem;
+}
+
+.side-nav ul li a:hover {
+  background-color: rgba(240, 222, 85, 0.285);
+  color: #fff;
+}
+
+.hover-collapse .side-nav {
+  width: 60px;
+}
+
+.hover-collapse .side-nav ul li a .text {
+  display: none;
+}
+
+.hover-collapse .side-nav ul li a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.hover-collapse .side-nav ul li a .icon {
+  margin-inline-end: 0;
+  margin-inline-start: 0;
 }
