@@ -3,6 +3,7 @@
   align-items: center;
   padding: 0.45rem;
   border-bottom: 0.05rem solid rgba(255, 255, 255, 0.11);
+  position: relative;
 }
 
 .app-header button {
@@ -26,9 +27,11 @@
 
 .app-header .search {
   position: relative;
+  display: flex;
+  flex-direction: column;
 }
 
-.app-header .search input {
+.app-header .search .input-search {
   width: 40rem;
   padding: var(--spacing-medium2);
   padding-left: 2.5rem;
@@ -46,6 +49,46 @@
   top: 1.2rem;
 }
 
-.app-header input::placeholder {
+.app-header .input-search::placeholder {
   color: var(--gray6);
 }
+
+.app-header .fa-sliders {
+  position: absolute;
+  top: 35%;
+  right: 20px;
+  cursor: pointer;
+}
+
+.app-header .adv-filter {
+  position: absolute;
+  background-color: var(--gray4);
+  color:black;
+  bottom: -95px;
+  width: 100%;
+  border-radius: 0.5rem;
+  z-index: 300;
+  padding: 1rem;
+}
+
+.app-header .adv-filter h1 {
+  margin-block-end: 1rem;
+}
+
+.app-header .adv-filter .by-date>* {
+  margin-inline-end: 0.5rem;
+}
+
+.adv-filter .by-date .sort-date {
+  cursor: pointer;
+}
+
+.adv-filter .by-date i {
+  cursor: pointer;
+}
+/* .app-header .adv-filter .sort-date {
+  margin-block-end: 1rem;
+}  */
+
+
+

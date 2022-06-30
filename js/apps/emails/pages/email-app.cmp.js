@@ -7,7 +7,7 @@ import emailFilter from "../cmps/email-filter.cmp.js"
 export default {
     template: `
       
-        <email-filter @search="filter"/>
+        <email-filter @search="filter" @sort="sortEmails"/>
         <section class="main-container flex" >
             <email-side />
             <router-view :emails="emailsToShow" @selected="showEmail" />
@@ -39,6 +39,9 @@ export default {
         sort(type) {
             this.sortState = type
         },
+        sortEmails(sortBy) {
+            this.sortBy = sortBy
+        },
         filter(txt) {
             this.filterBy = txt
         },
@@ -54,6 +57,14 @@ export default {
                     return (!email.isRead && email.state === 'inbox')
                 })
             }
+            // if(this.sortBy) {
+            //     this.email.sort((a, b) => {
+            //         console.log(a, b)
+            //         // if (a.sentAt > b.sentAt) return 1
+            //         // else if (a.sentAt < b.sentAt) return -1
+            //         // else return 0
+            //     })
+            // }
             return this.emails.filter(email => email.state === this.sortState)
         },
     },
