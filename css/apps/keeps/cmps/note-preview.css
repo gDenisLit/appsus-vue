@@ -24,20 +24,3 @@
   object-fit: cover;
   border-radius: 3px;
 }
-
-.note-preview .pinned {
-  position: absolute;
-  backface-visibility: hidden;
-  top: 3px;
-  right: 3px;
-  height: 1.2rem;
-  width: 1.2rem;
-  background-color: #fab005;
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 0.8rem;
-  transform: rotate(45deg);
-  z-index: 1;
-}

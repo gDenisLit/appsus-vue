@@ -14,7 +14,7 @@ export default {
           <span>
             <i class="fa-solid fa-palette"></i>
           </span>
-            <note-color-palette @picked="changeBgc" />
+          <note-color-palette @picked="changeBgc" />
         </a>
         <a @click="$emit('updating')"><i class="fa-solid fa-pen-to-square"></i></a>
         <a @click="addClone"><i class="fa-solid fa-clone"></i></a>

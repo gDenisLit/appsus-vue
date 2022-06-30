@@ -8,14 +8,15 @@ import noteEdit from './note-edit.cmp.js'
 export default {
   props: ['note'],
   template: `
-      <section class="note-preview" :style="bgc">
-        <div v-if="note.isPinned" class="pinned">
-          <i class="fa-solid fa-thumbtack"></i>
-        </div>
+      <section class="note-preview" :style="bgc" 
+      @mouseover="mouseOver" 
+      @mouseleave="isOver = false" 
+      draggable="true" 
+      @dragstart="startDrag($event)">
         <component class="note" :is="note.type"  
           :note="note"  >
         </component>
-        <note-tools :note="note" @updating="isUpdating = true"/>
+        <note-tools v-if="isOver" :note="note" @updating="isUpdating = true"/>
         <note-edit v-if="isUpdating" :note="cloneNote"/>
       </section>
     `,
@@ -30,10 +31,21 @@ export default {
   data() {
     return {
       isUpdating: false,
+      isOver: false,
     }
   },
   created() {},
-  methods: {},
+  methods: {
+    startDrag(event) {
+      console.log(event, this.note)
+      const props = { event, note: this.note }
+      this.$emit('dragging', props)
+    },
+    mouseOver() {
+      this.isOver = true
+      document.body.style.cursor = 'grab'
+    },
+  },
   computed: {
     bgc() {
       return { backgroundColor: this.note.style.backgroundColor }

@@ -13,7 +13,7 @@ export default {
         <note-side/>
         <div class="notes">
           <note-add />
-          <note-list :notes="notesToShow" /> 
+          <note-list @switched="switchNotes" :notes="notesToShow" /> 
         </div>
       </div>
     </section>
@@ -43,13 +43,9 @@ export default {
         console.log(this.notes)
       })
     },
-    // changeNoteBgc(noteProps) {
-    //   keepService.changeNoteBgc(noteProps).then(() => {
-    //     const { color, noteId } = noteProps
-    //     const note = this.notes.find(note => note.id === noteId)
-    //     note.style.backgroundColor = color
-    //   })
-    // },
+    switchNotes(indexes) {
+      keepService.switchNotes(indexes).then(notes => (this.notes = notes))
+    },
     addNote(note) {
       keepService.addNote(note).then(note => this.notes.push(note))
     },
@@ -73,7 +69,7 @@ export default {
       const pinned = notes.filter(note => note.isPinned)
       const unpinned = notes.filter(note => !note.isPinned)
 
-      return { pinned, unpinned }
+      return [...pinned, ...unpinned]
     },
   },
   computed: {

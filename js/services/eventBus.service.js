@@ -58,3 +58,7 @@ export function selectEmit(entity) {
 export function sortEmit(entity) {
   emit('sortBy', entity)
 }
+
+// export function switchEmit(indexes) {
+//   emit('switched', indexes)
+// }
