@@ -1,8 +1,8 @@
 .side-nav {
-  flex-basis: 20%;
+  min-width: 15.5375rem;
   position: relative;
-  padding-inline-start: 0.5rem;
-  margin-inline-end: 0.5rem;
+  padding: 0.5rem 0.5rem 0 0;
+  border-inline-end: 0.05rem solid rgba(255, 255, 255, 0.11);
 }
 
 .side-nav > * {
@@ -17,8 +17,18 @@
   font-size: 0.9rem;
   text-align: start;
   color: var(--clr4);
+  cursor: pointer;
+}
+
+.side-nav .nav-btn i {
+  margin-inline-end: 1rem;
 }
 
 .side-nav .nav-btn:hover {
-  background-color: rgba(240, 222, 85, 0.732);
+  background-color: rgba(240, 222, 85, 0.285);
+}
+
+.nav-btn.active {
+  background-color: rgba(240, 222, 85, 0.762);
+  font-family: Roboto-bold;
 }

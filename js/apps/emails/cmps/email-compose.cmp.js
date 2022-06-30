@@ -2,25 +2,32 @@ import { addEmit } from "../../../services/eventBus.service.js"
 
 export default {
     template: `
-        <form class="compose-email">
+    <section class="compose-email">
+        <div class="compose-title flex space-between">
             <h3>New Message</h3>
-            <p>
-                <span>From</span>
-                <span>{{user}}</span>
-            </p>
-            <p>
-                <span>To</span>
-                <input type="email" id="email" v-model="newEmail.to" required>
-            </p>
-            <p>
-                <span>Subject</span>
-                <input type="text" v-model="newEmail.subject">
-            </p>
-            <p>
-                <textarea v-model="newEmail.body"></textarea>
-            </p>
-            <button @click.prevent="send">Send</button>
+            <div>
+                <button class="compose-title-btn">
+                    <i class="fa-solid fa-window-minimize"></i>
+                </button>
+                <button class="compose-title-btn">
+                    <i class="fa-solid fa-up-right-and-down-left-from-center"></i>
+                </button>
+                <button class="compose-title-btn">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+        </div>
+        <form class="flex column">
+            <input type="email" v-model="newEmail.to" 
+                placeholder="Recipient" required
+            >
+            <input type="text" v-model="newEmail.subject"
+                placeholder="Subject"
+            >
+            <textarea v-model="newEmail.body"></textarea>
+            <button class="send" @click.prevent="send">Send</button>
         </form>
+    </section>
     `,
  
     data() {
@@ -32,7 +39,6 @@ export default {
                 sentAt: null,
                 state: null,
             },
-            user: 'denislit@gmail.com'
         }
     },
     methods: {

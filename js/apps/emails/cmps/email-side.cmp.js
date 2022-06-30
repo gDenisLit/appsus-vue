@@ -6,7 +6,8 @@ export default {
         <section class="side-nav flex column">
             <button class="email-compose" 
                 @click="composeMode">
-                +Compose
+                <i class="fa-solid fa-plus"></i>
+                Compose
             </button>
             <email-side-sort />
         </section>

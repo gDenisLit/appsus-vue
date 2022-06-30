@@ -1,11 +1,9 @@
 export default {
     template: `
-        <section>
-            <span class="email-to" :class="unread">{{from}}</span>
+            <span class="email-to" :class="unread">{{to}}</span>
             <span class="email-sub" :class="unread">{{email.subject}}</span>
-            <span :class="unread">- {{shortBody}}</span>
+            <span class="email-body" :class="unread">- {{shortBody}}</span>
             <span class="sent-at" :class="unread">{{date}}</span>
-        </section>
     `,
     props: [
         'email'
@@ -17,7 +15,7 @@ export default {
            
     },
     computed: {
-        from() {
+        to() {
             const idx = this.email.to.indexOf('@')
             return this.email.to.slice(0, idx)
         },

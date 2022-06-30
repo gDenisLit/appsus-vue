@@ -1,29 +1,26 @@
 .app-header {
   display: flex;
-  /* height: 3rem; */
-  /* justify-content: space-around; */
   align-items: center;
-  padding: var(--spacing-small);
-  border-bottom: 1px solid var(--gray6);
-  margin-bottom: var(--spacing-medium2);
+  padding: 0.45rem;
+  border-bottom: 0.05rem solid rgba(255, 255, 255, 0.11);
 }
 
 .app-header button {
   background-color: var(--gray2);
   color: var(--gray6);
-  font-size: 2rem;
+  font-size: 1.2rem;
   border: none;
   margin-inline-end: var(--spacing-large);
   margin-inline-start: var(--spacing-medium);
 }
 
 .app-header img {
-  width: 4rem;
-  /* margin-inline-end: 5rem; */
+  width: 2.5rem;
   margin-inline-end: var(--spacing-medium);
 }
 
 .app-header h2 {
+  
   margin-inline-end: 5rem;
   font-weight: 400;
 }
@@ -33,6 +30,7 @@
 }
 
 .app-header .search input {
+  
   width: 40rem;
   padding: var(--spacing-medium2);
   padding-left: 2.5rem;
@@ -41,7 +39,7 @@
   border: none;
   outline: none;
   color: var(--gray6);
-  font-size: 1.2rem;
+  font-size: 1rem;
 }
 
 .app-header .search .icon {

@@ -1,12 +1,79 @@
 .compose-email {
-    background-color: var(--gray4);
+    background-color: var(--gray2);
     position: absolute;
     bottom: 0;
-    padding: 1rem;
+    right: 5rem;
+    
+    border-radius: 0.6rem 0.6rem 0 0;
+    width: 28rem;
+    z-index: 1000;
+
+    outline: 1px solid #f8f9fa79;
 }
 
 .compose-email>* {
     font-family: Roboto-regular;
-    margin-block-end: 1rem;
 }
 
+.compose-email .compose-title {
+    border-radius: 0.5rem 0.5rem 0 0;
+    background-color: var(--gray3);
+    font-size: 0.8rem;
+    padding: 0.6rem 0.8rem;
+}
+
+.compose-email .compose-title div>:last-child{
+    font-size: 1rem;
+}
+
+.compose-email .compose-title div>* {
+    margin-inline-start: 0.5rem;
+}
+
+.compose-title h3 {
+    color: var(--gray5);
+}
+
+.compose-title-btn>* {
+    color: var(--gray5);
+    margin-inline-start: 0.4rem;
+}
+.compose-title-btn {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.compose-email form {
+    padding: 0 0.8rem 1rem 0.8rem;
+}
+
+.compose-email form input, textarea {
+    border: none;
+    box-shadow: none;
+    outline: none;
+    border-bottom: 0.05rem solid rgba(245, 245, 245, 0.311);
+    background-color: var(--gray2);
+    color: var(--gray5);
+    padding: 0.5rem 0 0.5rem 0;
+}
+
+.compose-email form input::placeholder {
+    color: var(--gray4)
+}
+
+.compose-email form textarea {
+    resize: none;
+    height: 20rem; 
+    border: none;
+}
+
+.compose-email .send {
+    font-family: Roboto-regular;
+    max-width: 7rem;
+    padding: 0.7rem;
+    border-radius: 0.4rem;
+    border: none;
+    color: whitesmoke;
+    background-color: #2b87d8;
+}
