@@ -4,7 +4,7 @@ import emailDetailsData from "../cmps/email-details-data.cmp.js"
 export default {
     template: `
         <section v-if="email">
-          <email-details-data :email="email"/>
+            <email-details-data :email="email"/>
         </section>
     `,
     props: [

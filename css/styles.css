@@ -15,6 +15,7 @@
 @import 'cmps/footer.css';
 @import 'cmps/app-side.css';
 @import 'cmps/app-header.css';
+@import 'cmps/main-container.css';
 
 /* KEEP APP  */
 @import 'apps/keeps/keep-app.css';

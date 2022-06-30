@@ -8,11 +8,9 @@ export default {
     template: `
       
         <email-filter @onSearch="filter"/>
-        <section class="flex" >
+        <section class="main-container flex" >
             <email-side />
-            <email-list @selected="showEmail" 
-                :emails="emailsToShow"
-            />
+            <router-view :emails="emailsToShow" @selected="showEmail" />
         </section>
     `,
     data() {
