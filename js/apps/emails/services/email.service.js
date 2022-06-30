@@ -19,7 +19,7 @@ const emailsData = [
       body: "Would love to catch up sometimes",
       isRead: false,
       sentAt: 1551133930594,
-      to: "momo@momo.com",
+      to: "denis@momo.com",
       state: 'sent'
   },
   {
@@ -28,7 +28,7 @@ const emailsData = [
       body: "Would love to catch up sometimes",
       isRead: false,
       sentAt: 1551133930594,
-      to: "momo@momo.com",
+      to: "guy@momo.com",
       state: 'sent'
   },
   {
@@ -46,7 +46,7 @@ const emailsData = [
       body: "Would love to catch up sometimes",
       isRead: false,
       sentAt: 1551133930594,
-      to: "momo@momo.com",
+      to: "googel@momo.com",
       state: 'trash'
   },
   {
@@ -55,7 +55,7 @@ const emailsData = [
       body: "Would love to catch up sometimes",
       isRead: false,
       sentAt: 1551133930594,
-      to: "momo@momo.com",
+      to: "guy@momo.com",
       state: 'inbox'
   },
   {

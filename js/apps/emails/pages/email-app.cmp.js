@@ -7,7 +7,7 @@ import emailFilter from "../cmps/email-filter.cmp.js"
 export default {
     template: `
       
-        <email-filter @onSearch="filter"/>
+        <email-filter @search="filter"/>
         <section class="main-container flex" >
             <email-side />
             <router-view :emails="emailsToShow" @selected="showEmail" />
@@ -46,6 +46,9 @@ export default {
     computed: {
         emailsToShow() {
             if (!this.emails) return
+            if (this.filterBy) {
+                return this.emails.filter(email => email.to.includes(this.filterBy))
+            }
             if (this.sortState === 'unread') {
                 return this.emails.filter(email => {
                     return (!email.isRead && email.state === 'inbox')

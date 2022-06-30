@@ -7,7 +7,7 @@ export default {
         </div>
         <h2>Mail</h2>
         <div class="search">
-          <input type="text" v-model="filterBy.title" @input="filter" placeholder="Search by title">
+          <input type="text" v-model="filterBy.title" @input="filter" placeholder="Search">
           <i class="icon fa-solid fa-magnifying-glass"></i>
         </div>
         
@@ -23,7 +23,7 @@ export default {
   created() {},
   methods: {
     filter() {
-      this.$emit('filtered', this.filterBy)
+      this.$emit('search', this.filterBy.title)
     },
   },
   computed: {},
