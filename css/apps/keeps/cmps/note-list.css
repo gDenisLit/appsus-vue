@@ -4,7 +4,6 @@
   column-count: 1;
   vertical-align: baseline;
   position: relative;
-  width: 80vw;
   padding: var(--spacing-large);
 }
 
@@ -68,7 +67,7 @@
     min-width: 15.5375rem;
   } */
 
-  .side-nav .note-list {
+  .note-list {
     column-count: 4;
   }
 }

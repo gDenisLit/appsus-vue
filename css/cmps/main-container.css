@@ -1,3 +1,7 @@
 .main-container {
-    height: 75vh;
+  height: 75vh;
+}
+
+.inner-container {
+  width: 100vw;
 }
