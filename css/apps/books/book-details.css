@@ -1,0 +1,95 @@
+.book-details-container {
+  padding-bottom: 64px;
+}
+
+.book-details {
+  position: relative;
+  margin-bottom: 1.2rem;
+}
+
+.book-details img {
+  margin-inline-end: 1.2rem;
+}
+
+.book-details h2 {
+  font-size: 2.4rem;
+}
+
+.book-desc {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.book-desc .btn {
+  text-decoration: none;
+  font-size: 0.8rem;
+}
+
+.book-details .author {
+  color: var(--gray3);
+  font-size: 0.9rem;
+  margin-bottom: 1.2rem;
+}
+
+.book-details h4 {
+  margin-bottom: 0.5rem;
+}
+
+.book-details .price {
+  font-size: 2rem;
+  color: var(--gray2);
+}
+
+.price.high-price {
+  color: #e03131;
+}
+
+.price.low-price {
+  color: #74b816;
+}
+
+.toggle-text {
+  display: inline-block;
+  color: var(--gray2);
+  text-decoration: underline;
+  cursor: pointer;
+  margin-block-end: 0.8rem;
+}
+
+.more-details {
+  display: flex;
+  width: 100%;
+  margin-block-end: 1rem;
+}
+
+.more-details .detial {
+  margin-inline-end: 1rem;
+  padding: 3px;
+  background-color: var(--gray2);
+  color: var(--gray5);
+  margin-inline-end: 0.2rem;
+}
+
+.more-details .tag {
+  padding: 3px;
+  background-color: #b2f2bb;
+  margin-inline-end: 0.2rem;
+}
+
+.action-btns {
+  position: absolute;
+  bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.action-btns a {
+  margin-inline-end: 1rem;
+}
+
+.published {
+  color: var(--gray2);
+  margin-block-end: 0.5rem;
+}

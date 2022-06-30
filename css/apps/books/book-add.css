@@ -1,0 +1,27 @@
+.book-add {
+  margin-bottom: 1.2rem;
+  position: relative;
+}
+
+.book-add h3 {
+  margin-block-end: 0.5rem;
+}
+
+.books-search-container {
+  position: absolute;
+  margin-top: 0.5rem;
+  background-color: #fff;
+  z-index: 1;
+  padding: 0.9rem;
+  border-radius: 6px;
+}
+
+.books-search-container ul li {
+  display: flex;
+  justify-content: space-between;
+  margin-block-end: 0.4rem;
+}
+
+.books-search-container ul li:hover {
+  background-color: var(--gray4);
+}

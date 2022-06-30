@@ -33,3 +33,13 @@
 @import 'apps/emails/cmps/compose-email.css';
 @import 'apps/emails/cmps/email-side-nav.css';
 @import 'apps/emails/cmps/email-details.css';
+
+/* BOOKS APP  */
+@import 'apps/books/add-review.css';
+@import 'apps/books/book-add.css';
+@import 'apps/books/book-details.css';
+@import 'apps/books/book-filter.css';
+@import 'apps/books/book-list.css';
+@import 'apps/books/review-add.css';
+@import 'apps/books/review-list.css';
+@import 'apps/books/ribbon.css';

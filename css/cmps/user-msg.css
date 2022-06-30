@@ -1,0 +1,28 @@
+.user-msg {
+  position: fixed;
+  top: 20%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #fff;
+  width: 350px;
+  padding: 1rem;
+  z-index: 1;
+  border: 2px solid #000;
+  border-radius: 9px;
+  align-items: center;
+}
+
+.user-msg i {
+  font-size: 2rem;
+  margin-inline-end: 1.5rem;
+}
+
+.success {
+  border-color: #40c057;
+  color: #40c057;
+}
+
+.error {
+  border-color: #e03131;
+  color: #e03131;
+}

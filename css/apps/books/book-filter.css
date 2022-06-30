@@ -1,0 +1,21 @@
+.book-filter {
+  flex-direction: column;
+  /* justify-content: center; */
+  align-items: flex-start;
+  gap: 0.5rem;
+  margin-bottom: 1.2rem;
+}
+
+.price-filter {
+  display: flex;
+  justify-content: start;
+  gap: 1rem;
+  width: 20rem;
+  color: var(--gray2);
+  text-transform: uppercase;
+  padding: 0 1rem;
+}
+
+.price-filter input {
+  width: 15rem;
+}
