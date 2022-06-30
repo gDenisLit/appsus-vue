@@ -14,7 +14,7 @@ export default {
                placeholder="Enter audio url"
                @keyup.enter="addNote()">
                <span>Or</span>
-               <!-- <input type="file" @change="audioInput"> -->
+               <input type="file" @change="audioInput">
               </div>
           </div>
         </section>
@@ -33,7 +33,6 @@ export default {
   created() {},
   methods: {
     addNote() {
-      // const newNote = JSON.parse(JSON.stringify(this.note))
       addEmit(this.note)
       this.$emit('added')
     },
@@ -41,21 +40,17 @@ export default {
       this.loadAudioFromInput(ev, this.onAudioReady)
     },
     loadAudioFromInput(ev, onAudioReady) {
-      var reader = new FileReader()
+      const reader = new FileReader()
       //After we read the file
       reader.onload = function (event) {
-        var audio = new Audio(event.target.result) // Create a new html img element
-        // audio.src = event.target.result // Set the img src to the img file we read
-        //Run the callBack func , To render the img on the canvas
-        this.note.info.url = audio.src
-        addNote()
-        // audio.onload = onAudioReady.bind(null, audio)
+        const audio = new Audio(event.target.result)
+        onAudioReady(audio)
       }
       reader.readAsDataURL(ev.target.files[0]) // Read the file we picked
     },
     onAudioReady(audio) {
       this.note.info.url = audio.src
-      addNote()
+      this.addNote()
     },
   },
   computed: {},

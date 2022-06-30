@@ -41,10 +41,10 @@ export default {
       this.loadImageFromInput(ev, this.onImageReady)
     },
     loadImageFromInput(ev, onImageReady) {
-      var reader = new FileReader()
+      const reader = new FileReader()
       //After we read the file
       reader.onload = function (event) {
-        var img = new Image() // Create a new html img element
+        const img = new Image() // Create a new html img element
         img.src = event.target.result // Set the img src to the img file we read
         //Run the callBack func , To render the img on the canvas
         img.onload = onImageReady.bind(null, img)
@@ -53,7 +53,7 @@ export default {
     },
     onImageReady(img) {
       this.note.info.url = img.src
-      addNote()
+      this.addNote()
     },
   },
   computed: {},
