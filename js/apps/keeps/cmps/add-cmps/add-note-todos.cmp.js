@@ -48,7 +48,6 @@ export default {
     },
     removeTodo(idx) {
       this.todos.splice(idx, 1)
-      console.log(this.todos)
     },
   },
   computed: {},

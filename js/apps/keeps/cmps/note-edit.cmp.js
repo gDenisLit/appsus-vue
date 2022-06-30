@@ -17,7 +17,6 @@ export default {
   created() {},
   methods: {
     updateNote() {
-      console.log(this.note)
       if (this.title) this.note.info.title = this.title
       if (this.txt) this.note.info.txt = this.txt
       updateEmit(this.note)
