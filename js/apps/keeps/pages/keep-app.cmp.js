@@ -9,7 +9,7 @@ export default {
   template: `
     <section v-if="notes" class="keep-app main-countainer">
       <note-filter @filtered="setFilter" />
-      <div class="flex">
+      <div class="inner-container flex">
         <note-side/>
         <div class="notes">
           <note-add />

@@ -1,3 +1,5 @@
+import { eventBus } from '../../../services/eventBus.service.js'
+
 export default {
   template: `
       <div :class="collapse">
@@ -48,15 +50,22 @@ export default {
         },
       ],
       isCollapse: true,
+      isAlwaysOpen: false,
     }
   },
   components: {},
-  methods: {},
-  computed: {
-    collapse() {
-      return { 'hover-collapse': this.isCollapse }
+  methods: {
+    toggleSideNav() {
+      this.isAlwaysOpen = !this.isAlwaysOpen
     },
   },
-  created() {},
+  computed: {
+    collapse() {
+      return { 'hover-collapse': this.isCollapse && !this.isAlwaysOpen }
+    },
+  },
+  created() {
+    eventBus.on('toggled', this.toggleSideNav)
+  },
   unmounted() {},
 }
