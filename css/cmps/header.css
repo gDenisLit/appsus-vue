@@ -1,10 +1,11 @@
 header {
-  background-color: var(--primary-color);
+  background-image: linear-gradient(#c03a2b5d, var(--gray2));
   display: flex;
   justify-content: space-between;
+  align-items: center;
   padding: 0.5rem;
 }
 
 header .logo img {
-  width: 8rem;
+  width: 5rem;
 }

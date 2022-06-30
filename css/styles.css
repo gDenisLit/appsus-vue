@@ -11,6 +11,7 @@
 
 /* GENERAL COMPONENTS  */
 @import 'cmps/header.css';
+@import 'cmps/nav-bar.css';
 @import 'cmps/footer.css';
 @import 'cmps/app-side.css';
 @import 'cmps/app-header.css';

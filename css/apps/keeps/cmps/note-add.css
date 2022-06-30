@@ -1,6 +1,7 @@
 .note-add-container {
   max-width: 700px;
   margin: 0 auto;
+  margin-top: var(--spacing-medium2);
   background-color: var(--gray2);
   display: flex;
   justify-content: space-between;

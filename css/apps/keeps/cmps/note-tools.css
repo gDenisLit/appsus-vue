@@ -1,11 +1,19 @@
 .note-tools {
   justify-content: space-between;
   width: 100%;
+  opacity: 0;
+  transition: opacity 0.4s;
+}
+
+.note-preview:hover .note-tools {
+  opacity: 1;
 }
 
 .note-tools a {
+  padding: var(--spacing-smallest);
   cursor: pointer;
   border-radius: 6px;
+  font-size: 0.9rem;
 }
 
 .note-tools a:hover {
