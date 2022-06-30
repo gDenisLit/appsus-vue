@@ -3,7 +3,7 @@ import { starEmit } from "../../../services/eventBus.service.js"
 export default {
     template: `
         <div v-if="show">
-            <input type="checkbox" @click.stop="toggleStar" v-model="isStar">
+            <input class="star" type="checkbox" @click.stop="toggleStar" v-model="isStar">
         </div>
         <span class="email-to" :class="unread">{{to}}</span>
         <span class="email-sub-body" :class="unread">{{email.subject}} -</span>
