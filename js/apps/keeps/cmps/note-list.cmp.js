@@ -38,7 +38,9 @@ export default {
       const noteIdx = this.notes.findIndex(note => note.id === noteId)
 
       const indexes = { idx1: idx, idx2: noteIdx }
+
       console.log(indexes)
+
       this.$emit('switched', indexes)
     },
   },

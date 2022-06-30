@@ -19,7 +19,6 @@ export default {
   methods: {},
   computed: {
     url() {
-      console.log(this.info.videoId)
       return 'https://www.youtube.com/embed/' + this.info.videoId
     },
     info() {

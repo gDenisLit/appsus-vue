@@ -65,7 +65,6 @@ export default {
       this.filterBy = JSON.parse(JSON.stringify(filterBy))
     },
     filterPinned(notes) {
-      console.log(notes)
       const pinned = notes.filter(note => note.isPinned)
       const unpinned = notes.filter(note => !note.isPinned)
 

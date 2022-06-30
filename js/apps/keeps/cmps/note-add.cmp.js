@@ -3,6 +3,8 @@ import addNoteImg from './add-cmps/add-note-img.cmp.js'
 import addNoteVideo from './add-cmps/add-note-video.cmp.js'
 import addNoteTodos from './add-cmps/add-note-todos.cmp.js'
 import addNoteAudio from './add-cmps/add-note-audio.cmp.js'
+import addNoteDraw from './add-cmps/add-note-draw.cmp.js'
+
 export default {
   template: `
     <section class="note-add-container">
@@ -15,6 +17,7 @@ export default {
       <add-note-video v-if="type === 'video'" @added="type = null" />
       <add-note-todos v-if="type === 'todos'" @added="type = null" />
       <add-note-audio v-if="type === 'audio'" @added="type = null" />
+      <add-note-draw v-if="type === 'draw'" @added="type = null" />
 
       <div class="note-type-picker">
           <a @click="changeType('txt')"><i class="fa-solid fa-font"></i></a>
@@ -22,7 +25,7 @@ export default {
           <a @click="changeType('video')"><i class="fa-brands fa-youtube"></i></a>
           <a @click="changeType('todos')"><i class="fa-solid fa-list"></i></a>
           <a @click="changeType('audio')"><i class="fa-solid fa-volume-high"></i></a>
-          <a><i class="fa-solid fa-paintbrush"></i></a>
+          <a @click="changeType('draw')"><i class="fa-solid fa-paintbrush"></i></a>
         </div>
     </section>
     `,
@@ -32,6 +35,7 @@ export default {
     addNoteVideo,
     addNoteTodos,
     addNoteAudio,
+    addNoteDraw,
   },
   data() {
     return {
@@ -41,7 +45,6 @@ export default {
   created() {},
   methods: {
     changeType(type) {
-      console.log('hi')
       this.type = type
     },
   },

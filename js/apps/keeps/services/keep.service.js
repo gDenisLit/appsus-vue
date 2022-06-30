@@ -48,13 +48,17 @@ function addNote(note) {
 
 function switchNotes({ idx1, idx2 }) {
   return query(NOTES_KEY).then(notes => {
+    if (
+      (notes[idx1].isPinned && !notes[idx2].isPinned) ||
+      (!notes[idx1].isPinned && notes[idx2].isPinned)
+    ) {
+      console.log(notes[idx1], notes[idx2])
+      throw new Error('Cannot switched between pinned and unpinned')
+    }
+
     const temp = notes[idx1]
     notes[idx1] = notes[idx2]
     notes[idx2] = temp
-
-    if (notes[idx1].isPinned !== notes[idx2].isPinned) {
-      throw new Error('Cannot switched between pinned and unpinned')
-    }
 
     utilService.saveToStorage(NOTES_KEY, notes)
 
@@ -68,6 +72,5 @@ function _createNotes() {
     notes = notesData
     utilService.saveToStorage(NOTES_KEY, notes)
   }
-  console.log(notes)
   return notes
 }
