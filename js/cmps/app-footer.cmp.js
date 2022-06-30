@@ -1,7 +1,7 @@
 export default {
   template: `
   <footer>
-    <!-- <h2>Hello i am footer</h2> -->
+    <p>© Coffeerights - Guy Kadosh & Denis Lit - Sprint 3 - CaMay 2022</p>
   </footer>
   `,
   data() {

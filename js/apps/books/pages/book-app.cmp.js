@@ -5,9 +5,12 @@ import bookAdd from '../cmps/book-add.cmp.js'
 
 export default {
   template: `
-    <section class="main-layout">
-      <div class="main-layout flex space-between">
+    <section class="main-layout book-app">
+      <div class="book-app-header flex space-between">
         <book-filter @filtered="setFilter"/>
+        <div class="book-logo">
+          <img src="assets/img/logo-book.png" alt="">
+        </div>
         <book-add @added="getBooks"/>
       </div>
       <book-list :books="booksToShow" />

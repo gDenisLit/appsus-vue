@@ -1,6 +1,6 @@
 .book-filter {
   flex-direction: column;
-  /* justify-content: center; */
+  justify-content: center;
   align-items: flex-start;
   gap: 0.5rem;
   margin-bottom: 1.2rem;
@@ -11,7 +11,7 @@
   justify-content: start;
   gap: 1rem;
   width: 20rem;
-  color: var(--gray2);
+  color: var(--gray6);
   text-transform: uppercase;
   padding: 0 1rem;
 }

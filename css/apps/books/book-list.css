@@ -1,5 +1,9 @@
-.book-header {
-  width: 100%;
+.book-app-header {
+  margin-block-start: var(--spacing-medium);
+  margin-block-end: var(--spacing-large);
+}
+.book-logo img {
+  width: 180px;
 }
 
 .books-container {
@@ -29,7 +33,7 @@
   flex-direction: column;
   align-items: center;
   padding: 10px;
-  background-color: rgba(255, 255, 255, 0.287);
+  background-color: var(--gray3);
   border-radius: 6px;
   box-shadow: 0 2px 6px 0px rgb(0 0 0 / 15%);
   cursor: pointer;
