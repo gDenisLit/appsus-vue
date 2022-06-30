@@ -3,6 +3,7 @@
   column-gap: 0.25em;
   column-count: 4;
   vertical-align: baseline;
+  position: relative;
 }
 
 .note-list a {
@@ -14,4 +15,25 @@
 
 .note-list a:hover {
   background-color: var(--gray4);
+}
+
+.note-list div {
+  position: relative;
+}
+
+.note-list .pinned {
+  position: absolute;
+  backface-visibility: hidden;
+  top: 5px;
+  right: 20px;
+  height: 1.2rem;
+  width: 1.2rem;
+  background-color: #fab005;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.8rem;
+  transform: rotate(45deg);
+  z-index: 1;
 }

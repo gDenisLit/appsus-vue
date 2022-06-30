@@ -1,11 +1,12 @@
 .note-add-container {
   max-width: 700px;
   margin: 0 auto;
-  background-color: var(--gray3);
+  background-color: var(--gray2);
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-radius: 3px;
+  border-radius: 9px;
+  border: 1px solid var(--gray6);
 }
 
 .note-add {
@@ -15,7 +16,7 @@
 
 .note-add input {
   border: none;
-  background-color: var(--gray3);
+  background-color: var(--gray2);
   color: var(--gray6);
   padding: 0.5rem;
   outline: none;

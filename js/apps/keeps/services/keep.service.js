@@ -11,8 +11,8 @@ export const keepService = {
   remove,
   get,
   save,
-  changeNoteBgc,
   addNote,
+  switchNotes,
 }
 
 function query() {
@@ -46,10 +46,19 @@ function addNote(note) {
   return save(newNote)
 }
 
-function changeNoteBgc({ color, noteId }) {
-  return get(noteId).then(note => {
-    note.style.backgroundColor = color
-    return save(note)
+function switchNotes({ idx1, idx2 }) {
+  return query(NOTES_KEY).then(notes => {
+    const temp = notes[idx1]
+    notes[idx1] = notes[idx2]
+    notes[idx2] = temp
+
+    if (notes[idx1].isPinned !== notes[idx2].isPinned) {
+      throw new Error('Cannot switched between pinned and unpinned')
+    }
+
+    utilService.saveToStorage(NOTES_KEY, notes)
+
+    return notes
   })
 }
 
