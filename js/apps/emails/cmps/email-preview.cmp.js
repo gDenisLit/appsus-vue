@@ -2,6 +2,7 @@ import { starEmit } from "../../../services/eventBus.service.js"
 
 export default {
     template: `
+        
         <div v-if="show">
             <input class="star" type="checkbox" @click.stop="toggleStar" v-model="isStar">
         </div>

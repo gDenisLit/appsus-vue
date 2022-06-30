@@ -8,7 +8,7 @@ export default {
                 @click.native="select(email.id)" 
             >
                 <email-preview :email="email" />
-                <email-prev-actions :emailId="email.id"/>
+                <email-prev-actions :email="email"/>
             </article>
         </section>
 
