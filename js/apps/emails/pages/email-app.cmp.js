@@ -49,10 +49,9 @@ export default {
         filter(txt) {
             this.filterBy = txt
         },
-        startEmail(emailId) {
+        starEmail(emailId) {
             const currEmail = this.emails.find(email => email.id === emailId)
             currEmail.starred = !currEmail.starred
- 
         },
         markRead(emailId) {
             const currEmail = this.emails.find(email => email.id === emailId)
@@ -70,6 +69,9 @@ export default {
                     return (!email.isRead && email.state === 'inbox')
                 })
             }
+            if (this.sortState === 'starred') {
+                return this.emails.filter(email => email.starred)
+            }
             return this.emails.filter(email => email.state === this.sortState)
         },
     },
@@ -80,7 +82,7 @@ export default {
         eventBus.on('removed', this.deleteEmail )
         eventBus.on('added', this.sendEmail)
         eventBus.on('sortBy', this.sort)
-        eventBus.on('starred', this.startEmail)
+        eventBus.on('starred', this.starEmail)
         eventBus.on('isRead', this.markRead)
     },
     unmounted() {

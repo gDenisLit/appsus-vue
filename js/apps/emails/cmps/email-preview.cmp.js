@@ -4,7 +4,7 @@ export default {
     template: `
         
         <div v-if="show">
-            <input class="star" type="checkbox" @click.stop="toggleStar" v-model="isStar">
+            <input class="star" :class="isChecked" type="checkbox" @click.stop="toggleStar" v-model="isStar">
         </div>
         <span class="email-to" :class="unread">{{to}}</span>
         <span class="email-sub-body" :class="unread">{{email.subject}} -</span>
@@ -44,7 +44,10 @@ export default {
         },
         show() {
             return (this.email.state !== 'trash')
-        }
+        },
+        isChecked() {
+            return {checked: (this.email.starred)}
+        },
     },
     created() {
  
