@@ -8,11 +8,11 @@ export default {
                 @click="composeMode">
                 +Compose
             </button>
-            <email-side-sort @sort="setSort"/>
+            <email-side-sort />
         </section>
 
         <section v-if="compose" >
-            <email-compose @newEmail="sendNewEmail"/>
+            <email-compose @closeCompose="composeMode"/>
         </section>
     `,
     data() {
@@ -22,15 +22,8 @@ export default {
         }
     },
     methods: {
-        sendNewEmail(newEmail) {
-            this.$emit('send', newEmail)
-            this.compose = !this.compose
-        },
         composeMode() {
             this.compose = !this.compose
-        },
-        setSort(type) {
-            this.$emit('sort', type)
         },
     },
     computed: {

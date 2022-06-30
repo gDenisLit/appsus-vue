@@ -8,7 +8,7 @@ export default {
                 @click.native="select(email.id)" 
             >
                 <email-preview :email="email" />
-                <email-prev-actions @selectedDel="onDelete" :emailId="email.id"/>
+                <email-prev-actions :emailId="email.id"/>
             </article>
             
         </section>
@@ -21,11 +21,8 @@ export default {
         return {}
     },
     methods: {
-        select(email) {
-            this.$emit('selected', email)
-        },
-        onDelete(emailId) {
-            this.$emit('delete', emailId)
+        select(emailId) {
+            this.$emit('selected', emailId)
         },
     },
     computed: {
