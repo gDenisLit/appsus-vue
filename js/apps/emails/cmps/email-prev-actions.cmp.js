@@ -1,16 +1,16 @@
-import { removeEmit } from '../../../services/eventBus.service.js'
+import { removeEmit, readEmit } from '../../../services/eventBus.service.js'
+
 
 export default {
     template: `
         <section class="email-prev-actions">
-            <button class="delete-email" @click.stop="select">
+            <button class="read-email" @click.stop="selectRead">
+                <i v-if="email.isRead" class="fa-solid fa-envelope-open"></i>
+                <i v-else class="fa-solid fa-envelope"></i>
+            </button>
+            <button class="delete-email" @click.stop="selectDelete">
                 <i class="fa-solid fa-trash"></i>
             </button>
-            <button class="read-email" @click.stop="select">
-                <i v-if="" class="fa-solid fa-envelope-open"></i>
-                <i class="fa-solid fa-envelope"></i>
-            </button>
-
         </section>
     `,
     props: [
@@ -18,13 +18,16 @@ export default {
     ],
     data() {
         return {
-            isRead: null,
+            
         }
     },
     methods: {
-        select() {
+        selectDelete() {
             removeEmit(this.email.id)
-        }, 
+        },
+        selectRead() {
+            readEmit(this.email.id)
+        },
     },
     computed: {
  
