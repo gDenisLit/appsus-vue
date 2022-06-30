@@ -4,6 +4,7 @@ import noteTodos from './costumes/note-todos.cmp.js'
 import noteVideo from './costumes/note-video.cmp.js'
 import noteTools from './note-tools.cmp.js'
 import noteEdit from './note-edit.cmp.js'
+import noteAudio from './costumes/note-audio.cmp.js'
 
 export default {
   props: ['note'],
@@ -27,6 +28,7 @@ export default {
     noteVideo,
     noteTools,
     noteEdit,
+    noteAudio,
   },
   data() {
     return {
