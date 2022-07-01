@@ -73,7 +73,7 @@ export default {
       }
 
       this.$router.push({
-        path: `/email/inbox/compose?title=${title ? title : ''}&body=${body}`,
+        name: 'compose',
         params: { title: title || '', body },
       })
     },

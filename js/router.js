@@ -30,7 +30,8 @@ const routes = [
         component: emailList,
         children: [
           {
-            path: 'compose',
+            name: 'compose',
+            path: 'compose/:title?',
             component: emailCompose
           }
         ],

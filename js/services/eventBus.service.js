@@ -34,16 +34,28 @@ export function showErrorMsg(txt) {
   showUserMsg({ txt, type: 'error' })
 }
 
-export function addEmit(entity) {
-  emit('added', entity)
+export function addEmailEmit(email) {
+  emit('addedEmail', email)
 }
 
-export function removeEmit(entityId) {
-  emit('removed', entityId)
+export function addNoteEmit(note) {
+  emit('addedNote', note)
 }
 
-export function updateEmit(entity) {
-  emit('updated', entity)
+export function removeEmailEmit(emailId) {
+  emit('removedEmail', emailId)
+}
+
+export function removeNoteEmit(noteId) {
+  emit('removedNote', noteId)
+}
+
+export function updateEmailEmit(email) {
+  emit('updatedEmail', email)
+}
+
+export function updateNoteEmit(note) {
+  emit('updatedNote', note)
 }
 
 export function selectEmit(entity) {

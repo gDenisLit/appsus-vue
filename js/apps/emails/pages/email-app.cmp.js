@@ -1,5 +1,5 @@
 import { emailService } from "../services/email.service.js"
-import { eventBus } from "../../../services/eventBus.service.js"
+import { eventBus, showSuccessMsg } from "../../../services/eventBus.service.js"
 import emailList from "../cmps/email-list.cmp.js"
 import emailSide from "../cmps/email-side.cmp.js"
 import emailFilter from "../cmps/email-filter.cmp.js"
@@ -28,7 +28,11 @@ export default {
         },
         sendEmail(email) {
             emailService.save(email)
-            .then(email => this.emails.push(email))
+            .then(email => {
+                this.emails.push(email)
+                if (email.state === 'sent') showSuccessMsg('Message Sent')
+                if (email.state === 'draft') showSuccessMsg('Saved to Drafts')
+            })
         },
         deleteEmail(emailId) {
             emailService.remove(emailId)
@@ -86,15 +90,12 @@ export default {
         emailService.query()
         .then(emails => this.emails = emails)
 
-        eventBus.on('removed', this.deleteEmail )
-        eventBus.on('added', this.sendEmail)
+        eventBus.on('removedEmail', this.deleteEmail )
+        eventBus.on('addedEmail', this.sendEmail)
         eventBus.on('filterBy', this.filterState)
         eventBus.on('starred', this.starEmail)
         eventBus.on('isRead', this.markRead)
         eventBus.on('toggled', this.toggleSideNav)
-
-        console.log(new Date(1655457215189))
-        
     },
     unmounted() {
  
