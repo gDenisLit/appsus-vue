@@ -20,7 +20,7 @@ export default {
           <component class="note" :is="note.type"  
             :note="note"  >
           </component>
-          <note-tools :note="note"/>
+          <note-tools :note="note" @updating="isUpdating = true" />
         </div>
 
         <div v-if="isUpdating" class="note-edit-container">

@@ -8,7 +8,7 @@ import {
 export default {
   props: ['note'],
   template: `
-      <section class="note-tools flex">
+      <section class="note-tools flex" @click.stop>
         <a @click="togglePin"><i class="fa-solid fa-thumbtack"></i></a>
         <a class="color-palette-btn">
           <span>
