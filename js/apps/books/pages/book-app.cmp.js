@@ -7,10 +7,10 @@ export default {
   template: `
     <section class="main-layout book-app">
       <div class="book-app-header flex space-between">
-        <book-filter @filtered="setFilter"/>
         <div class="book-logo">
           <img src="assets/img/logo-book.png" alt="">
         </div>
+        <book-filter @filtered="setFilter"/>
         <book-add @added="getBooks"/>
       </div>
       <book-list :books="booksToShow" />

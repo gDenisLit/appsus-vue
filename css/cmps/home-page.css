@@ -1,30 +1,74 @@
 .home-page {
-  height: 80vh;
+  height: 81.8vh;
   width: 100%;
 
   background-image: linear-gradient(
-      to bottom,
-      rgba(33, 37, 41, 0.837),
-      rgba(192, 58, 43, 0.563)
-    ),
-    url(../../assets/img/home-page6.jpg);
-  background-size: cover;
-  background-position: center;
+    to bottom,
+    rgba(33, 37, 41, 0.84),
+    rgba(192, 58, 43, 0.563),
+    rgb(33, 37, 41)
+  );
 
-  position: absolute;
-
-  transition: transform 0.4s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-svg {
+.home-page .menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.home-page .menu a {
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 9px;
+  border: 2px solid rgba(255, 255, 255, 0.346);
+  padding: 0.4rem;
+}
+
+.home-page .menu a:not(:last-child) {
+  margin-inline-end: 4rem;
+}
+
+.home-page .menu img {
+  width: 100px;
+  height: 100px;
+}
+
+.home-page .menu a:nth-child(1) {
+  animation: moveInBottom 0.5s ease-in;
+  animation-fill-mode: backwards;
+}
+
+.home-page .menu a:nth-child(2) {
+  animation: moveInTop 0.5s ease-in 0.6s;
+  animation-fill-mode: backwards;
+}
+
+.home-page .menu a:nth-child(3) {
+  animation: moveInBottom 0.5s ease-in 1.1s;
+  animation-fill-mode: backwards;
+}
+
+.home-page .menu a:hover {
+  transform: scale(110%);
+}
+
+.home-page svg {
   display: block;
-  font: 10.5em 'Montserrat';
+  font: 8em 'Montserrat';
   width: 960px;
   height: 300px;
   margin: 0 auto;
 }
 
-.text-copy {
+.home-page .text-copy {
   fill: none;
   stroke: white;
   stroke-dasharray: 6% 29%;
@@ -33,33 +77,82 @@ svg {
   animation: stroke-offset 5.5s infinite linear;
 }
 
-.text-copy:nth-child(1) {
-  stroke: #fff4e6;
+.home-page .text-copy:nth-child(1) {
+  stroke: #f2d7d5;
   animation-delay: -1;
 }
 
-.text-copy:nth-child(2) {
-  stroke: #d9480f;
+.home-page .text-copy:nth-child(2) {
+  stroke: #d98880;
   animation-delay: -2s;
 }
 
-.text-copy:nth-child(3) {
-  stroke: #f76707;
+.home-page .text-copy:nth-child(3) {
+  stroke: #c0392b;
   animation-delay: -3s;
 }
 
-.text-copy:nth-child(4) {
-  stroke: #f76707;
+.home-page .text-copy:nth-child(4) {
+  stroke: #ad3327;
   animation-delay: -4s;
 }
 
-.text-copy:nth-child(5) {
-  stroke: #f8f9fa;
+.home-page .text-copy:nth-child(5) {
+  stroke: #ecc4bf;
   animation-delay: -5s;
 }
 
-@keyframes stroke-offset {
-  100% {
-    stroke-dashoffset: -35%;
-  }
+.home-page h2 {
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: var(--spacing-large2);
+  transform: scale(0.94);
+  animation: scale 3s forwards cubic-bezier(0.5, 1, 0.89, 1);
+}
+
+.home-page span {
+  display: inline-block;
+  opacity: 0;
+  filter: blur(4px);
+  margin-inline-end: 0.4rem;
+}
+
+.home-page span:nth-child(1) {
+  animation: fade-in 0.8s 0.1s forwards cubic-bezier(0.11, 0, 0.5, 0);
+}
+
+.home-page span:nth-child(2) {
+  animation: fade-in 0.8s 0.2s forwards cubic-bezier(0.11, 0, 0.5, 0);
+}
+
+.home-page span:nth-child(3) {
+  animation: fade-in 0.8s 0.3s forwards cubic-bezier(0.11, 0, 0.5, 0);
+}
+
+.home-page span:nth-child(4) {
+  animation: fade-in 0.8s 0.4s forwards cubic-bezier(0.11, 0, 0.5, 0);
+}
+
+.home-page span:nth-child(5) {
+  animation: fade-in 0.8s 0.5s forwards cubic-bezier(0.11, 0, 0.5, 0);
+}
+
+.home-page span:nth-child(6) {
+  animation: fade-in 0.8s 0.6s forwards cubic-bezier(0.11, 0, 0.5, 0);
+}
+
+.home-page span:nth-child(7) {
+  animation: fade-in 0.8s 0.7s forwards cubic-bezier(0.11, 0, 0.5, 0);
+}
+
+.home-page span:nth-child(8) {
+  animation: fade-in 0.8s 0.8s forwards cubic-bezier(0.11, 0, 0.5, 0);
+}
+
+.home-page span:nth-child(9) {
+  animation: fade-in 0.8s 0.9s forwards cubic-bezier(0.11, 0, 0.5, 0);
+}
+
+.home-page span:nth-child(10) {
+  animation: fade-in 0.8s 1s forwards cubic-bezier(0.11, 0, 0.5, 0);
 }

@@ -19,15 +19,34 @@ export default {
                 <use xlink:href="#s-text" class="text-copy"></use>
               </g>
             </svg>
-            <span class="heading-primary-sub">
-              Better keep all your important information in one place</span
-            >
           </h1>
+          <h2>
+            <span>Keep</span>
+            <span>and</span>
+            <span>manage</span>
+            <span>all</span>
+            <span>your</span>
+            <span>important</span>
+            <span>information</span>
+            <span>at</span>
+            <span>one</span>
+            <span>place</span>
+          </h2>
+
           <div class="menu">
-            <router-link to="/email/inbox">Emails</router-link>
-            <router-link to="/keep">Keeps</router-link>
-            <router-link to="/book">Books</router-link>
-            <router-link to="/about">About</router-link>
+            <router-link to="/email/inbox">
+              <img src="assets/img/logo-mail.png" alt="">
+              <!-- <span>Mails</span> -->
+            </router-link>
+            <router-link to="/keep">
+            <img src="assets/img/logo-keep.png" alt="">
+              <!-- <span>Keep</span> -->
+            </router-link>
+            <router-link to="/book">
+            <img src="assets/img/logo-book.png" alt="">
+              <!-- <span>Books</span> -->
+            </router-link>
+            <!-- <router-link to="/about">About</router-link> -->
           </div>
           
         </div>

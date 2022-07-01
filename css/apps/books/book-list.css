@@ -1,9 +1,10 @@
 .book-app-header {
   margin-block-start: var(--spacing-medium);
-  margin-block-end: var(--spacing-large);
+  margin-block-end: var(--spacing-medium2);
 }
+
 .book-logo img {
-  width: 180px;
+  width: 7rem;
 }
 
 .books-container {
