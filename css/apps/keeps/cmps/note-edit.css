@@ -1,0 +1,33 @@
+.note-edit {
+  position: fixed;
+  padding: var(--spacing-large);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 100;
+  background-color: var(--gray4);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1rem;
+  /* align-items: center; */
+  border-radius: 6px;
+  width: 50%;
+}
+
+.note-edit-inner {
+  flex-direction: column;
+}
+
+.note-edit .note-tools {
+  opacity: 1;
+}
+
+.note-edit input {
+  background-color: inherit;
+  color: inherit;
+  outline: none;
+  border: none;
+  border-bottom: 1px solid var(--gray6);
+  margin-block-end: 1rem;
+}

@@ -3,9 +3,14 @@ import { addEmit } from '../../../../services/eventBus.service.js'
 export default {
   template: `
         <section class="note-add-draw">
-            <input type="text"
-              v-model="note.info.title"
-             placeholder="Pick a title first">
+            <input class="input" type="text"
+                v-model="note.info.title"
+              placeholder="Pick a title first">
+              <div class="options-bar">
+                <input type="color" name="color" v-model="bgColor" />
+                <input type="color" name="color" v-model="color" />
+                <span @click="clearCanvas">Clear</span>
+            </div>
             <div class="canvas-container">
               <canvas 
               ref="canvas" 
@@ -18,7 +23,7 @@ export default {
               ></canvas>
             </div>
             
-            <button @click="addNote">Save</button>
+            <button class="btn" @click="addNote">Save</button>
           
         </section>
     `,
@@ -34,14 +39,25 @@ export default {
         ctx: null,
         isDrawing: false,
       },
+      color: '#000000',
+      bgColor: '#ffffff',
     }
   },
   created() {},
   mounted() {
     this.canvas = this.$refs.canvas
     this.ctx = this.canvas.getContext('2d')
-    this.ctx.fillStyle = '#fff'
-    this.ctx.fillRect(0, 0, this.canvas.width, this.canvas.height)
+    this.clearCanvas()
+  },
+  watch: {
+    color(newVal) {
+      console.log(newVal)
+      this.ctx.strokeStyle = newVal
+    },
+    bgColor(newVal) {
+      this.ctx.fillStyle = newVal
+      this.ctx.fillRect(0, 0, this.canvas.width, this.canvas.height)
+    },
   },
   methods: {
     addNote() {
@@ -72,6 +88,10 @@ export default {
       this.ctx.lineTo(x, y)
       this.ctx.stroke()
       this.ctx.moveTo(x, y)
+    },
+    clearCanvas() {
+      this.ctx.fillStyle = this.bgColor
+      this.ctx.fillRect(0, 0, this.canvas.width, this.canvas.height)
     },
     getEvPos(ev) {
       //Gets the offset pos , the default pos

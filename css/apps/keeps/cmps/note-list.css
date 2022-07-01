@@ -19,7 +19,7 @@
   background-color: var(--gray4);
 }
 
-.note-list div {
+.note-list .note-container {
   position: relative;
 }
 

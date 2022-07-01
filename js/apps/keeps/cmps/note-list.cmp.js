@@ -8,6 +8,7 @@ export default {
    
     <section class="note-list">
       <div v-for="(note, idx) in notes" 
+      class="note-container"
       @drop="onDrop($event, idx)"
       @dragenter.prevent @dragover.prevent
       :key="note.id" >

@@ -9,16 +9,24 @@ import noteAudio from './costumes/note-audio.cmp.js'
 export default {
   props: ['note'],
   template: `
-      <section class="note-preview" :style="bgc" 
-      @mouseover="mouseOver" 
-      @mouseleave="mouseLeave" 
-      draggable="true" 
-      @dragstart="startDrag($event)">
-        <component class="note" :is="note.type"  
-          :note="note"  >
-        </component>
-        <note-tools :note="note" @updating="isUpdating = true"/>
-        <note-edit v-if="isUpdating" :note="cloneNote"/>
+      <section class="note-preview" 
+        :style="bgc" 
+        @mouseover="mouseOver" 
+        @mouseleave="mouseLeave" 
+        draggable="true" 
+        @dragstart="startDrag($event)">
+
+        <div @click="isUpdating = true">
+          <component class="note" :is="note.type"  
+            :note="note"  >
+          </component>
+          <note-tools :note="note"/>
+        </div>
+
+        <div v-if="isUpdating" class="note-edit-container">
+          <note-edit  :note="clone" @closed="isUpdating = false"/>
+        </div>
+
       </section>
     `,
   components: {
@@ -55,7 +63,7 @@ export default {
     bgc() {
       return { backgroundColor: this.note.style.backgroundColor }
     },
-    cloneNote() {
+    clone() {
       return JSON.parse(JSON.stringify(this.note))
     },
   },
