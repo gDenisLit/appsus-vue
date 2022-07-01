@@ -1,4 +1,4 @@
-import { removeEmailEmit, readEmailEmit, addNoteEmit } from '../../../services/eventBus.service.js'
+import { removeEmailEmit, toggleIsReadEmit, addNoteEmit } from '../../../services/eventBus.service.js'
 
 
 export default {
@@ -29,7 +29,7 @@ export default {
             removeEmailEmit(this.email.id)
         },
         selectRead() {
-            readEmailEmit(this.email.id)
+            toggleIsReadEmit(this.email.id)
         },
         sendToNote() {
             const {subject, body} = this.email
@@ -40,7 +40,6 @@ export default {
                     body: body || '',
                 }
             }
-            console.log('adding note..', newNote)
             addNoteEmit(newNote)
         },
     },

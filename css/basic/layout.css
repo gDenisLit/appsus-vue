@@ -1,10 +1,9 @@
 .main-layout {
-  max-width: 980px;
   margin: 0 auto;
 }
 
 .email-container.open-side {
-  margin-inline-start: 10rem;
+  margin-inline-start: 13.8rem;
 }
 
 .email-details-container.open-side {

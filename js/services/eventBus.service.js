@@ -79,6 +79,10 @@ export function readEmailEmit(entity) {
   emit('isRead', entity)
 }
 
+export function toggleIsReadEmit(emailId) {
+  emit('toggleRead', emailId)
+}
+
 export function editEmailEmit(entity) {
   emit('edit', entity) 
 }

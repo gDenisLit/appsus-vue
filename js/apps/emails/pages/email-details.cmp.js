@@ -1,5 +1,5 @@
 import { emailService } from "../services/email.service.js"
-import { editEmailEmit } from "../../../services/eventBus.service.js"
+import { editEmailEmit, readEmailEmit } from "../../../services/eventBus.service.js"
 import emailDetailsData from "../cmps/email-details-data.cmp.js"
 
 export default {
@@ -13,7 +13,9 @@ export default {
                 <i class="fa-solid fa-pen-to-square"></i>
                 <span>Edit</span>
             </button>
+
             <email-details-data :email="email"/>
+
             <div class="details-actions">
                 <button class="email-reply">
                     <i class="fa-solid fa-reply"></i>
@@ -67,8 +69,7 @@ export default {
                 emailService.get(emailId)
                     .then(email => {
                         this.email = email
-                        email.isRead = true
-                        emailService.save(email)
+                        readEmailEmit(email.id)
                     })
             },
             immediate: true,

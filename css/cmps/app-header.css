@@ -33,9 +33,10 @@
 }
 
 .app-header .search {
-  position: relative;
+  position: absolute;
   display: flex;
   flex-direction: column;
+  left: 16.5rem;
 }
 
 .app-header .search .input-search {

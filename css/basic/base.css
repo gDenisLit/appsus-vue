@@ -4,10 +4,12 @@
   padding: 0;
   list-style: none;
   text-decoration: none;
+  
 }
 
 html {
   font-size: 75%;
+  
 }
 
 body {
@@ -15,5 +17,6 @@ body {
   color: var(--gray6);
   line-height: 1.4;
   font-family: Roboto-regular, sans-serif;
-  overflow-x: hidden;
+  overflow-x: hidden; 
+  overflow-y: hidden;
 }

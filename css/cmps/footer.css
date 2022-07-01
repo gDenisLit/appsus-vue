@@ -1,12 +1,13 @@
 footer {
   background-image: linear-gradient(to top, #c03a2b5d, var(--gray2));
   text-align: center;
-  height: 70px;
+  height: 50px;
   display: flex;
   justify-content: center;
   align-items: center;
   font-size: 0.8rem;
   color: var(--gray4);
+  padding-bottom: 2rem;
   /* position: fixed; */
   /* bottom: 0; */
   /* width: 100%; */
