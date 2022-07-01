@@ -10,6 +10,7 @@ export default {
                 <email-preview :email="email" />
                 <email-prev-actions :email="email"/>
             </article>
+            <router-view />
         </section>
 
     `,

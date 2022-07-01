@@ -31,9 +31,6 @@ export default {
           </div>
         </section>
       </div>
-      <section v-if="compose" >
-            <email-compose @closeCompose="composeMode" :email="emailToEdit"/>
-          </section>
           `,
   data() {
     return {
@@ -72,7 +69,6 @@ export default {
       isCollapse: true,
       isAlwaysOpen: false,
       active: 'inbox',
-      compose: false,
       sortBy: null,
       emailToEdit: null,
     }
@@ -88,11 +84,8 @@ export default {
       this.$router.push('inbox')
     }, 
     composeMode() {
-      this.compose = !this.compose
-    },
-    editMode(email) {
-      this.compose = !this.compose
-      this.emailToEdit = email
+      console.log(this.$router)
+      this.$router.replace('/email/inbox/compose')
     },
   },
   computed: {
@@ -112,7 +105,6 @@ export default {
     'sort',
   ],
   components: {
-    emailCompose,
   },
 }
 

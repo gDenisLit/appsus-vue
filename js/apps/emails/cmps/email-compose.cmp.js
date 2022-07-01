@@ -52,18 +52,18 @@ export default {
             }
             this.newEmail.state = 'sent'
             this.newEmail.sentAt = Date.now()
-            this.$emit('closeCompose')
+            this.$router.replace('/email/inbox')
             addEmit(this.newEmail)
             showSuccessMsg('Message Sent!')
         },
         saveDraft() {
             if (!this.newEmail.to && !this.newEmail.subject &&
                 !this.newEmail.body) {
-                    this.$emit('closeCompose')
+                    this.$router.replace('/email/inbox')
                     return
                 }
             this.newEmail.state = 'draft'
-            this.$emit('closeCompose')
+            this.$router.replace('/email/inbox')
             addEmit(this.newEmail)
             showSuccessMsg('Saved to Drafts')
         }
