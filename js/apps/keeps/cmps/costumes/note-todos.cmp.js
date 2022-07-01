@@ -1,4 +1,4 @@
-import { updateEmit } from '../../../../services/eventBus.service.js'
+import { updateNoteEmit } from '../../../../services/eventBus.service.js'
 
 export default {
   props: ['note'],
@@ -34,19 +34,19 @@ export default {
 
       newNote.info.todos.push(todo)
 
-      updateEmit(newNote)
+      updateNoteEmit(newNote)
 
       this.txtInput = ''
     },
     removeTodo(idx) {
       const newNote = this.clone()
       newNote.info.todos.splice(idx, 1)
-      updateEmit(newNote)
+      updateNoteEmit(newNote)
     },
     toggleIsDone(idx) {
       const newNote = this.clone()
       newNote.info.todos[idx].isDone = !newNote.info.todos[idx].isDone
-      updateEmit(newNote)
+      updateNoteEmit(newNote)
     },
     clone() {
       return JSON.parse(JSON.stringify(this.note))

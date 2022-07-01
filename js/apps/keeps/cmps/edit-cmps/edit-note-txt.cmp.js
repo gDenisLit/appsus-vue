@@ -1,4 +1,4 @@
-import { updateEmit } from '../../../../services/eventBus.service.js'
+import { updateNoteEmit } from '../../../../services/eventBus.service.js'
 
 export default {
   props: ['note'],
@@ -21,7 +21,7 @@ export default {
   methods: {
     updateNote() {
       const newNote = this.clone()
-      updateEmit(newNote)
+      updateNoteEmit(newNote)
     },
     clone() {
       return JSON.parse(JSON.stringify(this.note))
