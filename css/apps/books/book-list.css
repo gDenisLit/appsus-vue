@@ -1,3 +1,8 @@
+.book-app {
+  max-height: 55vh;
+  overflow-y: scroll;
+}
+
 .book-app-header {
   margin-block-start: var(--spacing-medium);
   margin-block-end: var(--spacing-medium2);

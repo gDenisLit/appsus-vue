@@ -1,5 +1,5 @@
 .home-page {
-  height: 81.8vh;
+  min-height: 82vh;
   width: 100%;
 
   background-image: linear-gradient(

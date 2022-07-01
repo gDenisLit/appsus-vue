@@ -4,6 +4,10 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 0.5rem;
+  flex-grow: 1;
+  /* max-height: 10vh; */
+  /* flex-basis: 10%; */
+  /* width: 100%; */
 }
 
 header .logo img {

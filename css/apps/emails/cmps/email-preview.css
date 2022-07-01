@@ -1,100 +1,104 @@
 .email-container {
-    margin-left: 3.83rem;
-    overflow-y: auto;
-    max-height: 525px;
+  overflow-y: auto;
+  max-height: 70vh;
+  overflow-y: scroll;
+  overflow-x: hidden;
 }
 
 ::-webkit-scrollbar {
-    width: 10px;
+  width: 10px;
 }
-  
-  /* Track */
+
+/* Track */
 ::-webkit-scrollbar-track {
-      background: #f1f1f1; 
+  background: #f1f1f1;
 }
-   
-  /* Handle */
+
+/* Handle */
 ::-webkit-scrollbar-thumb {
-    background: #888; 
+  background: #888;
 }
-  
-  /* Handle on hover */
+
+/* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-    background: #555; 
+  background: #555;
 }
 
 .emails-preview {
-    border-bottom: 0.01rem solid rgba(246, 246, 246, 0.147);
-    padding: 0.5rem;
-    position: relative;
-    cursor: pointer;
+  border-bottom: 0.01rem solid rgba(246, 246, 246, 0.147);
+  padding: 0.5rem;
+  position: relative;
+  cursor: pointer;
 }
 
 .emails-preview-none {
-    border-bottom: 0.01rem solid rgba(246, 246, 246, 0.147);
-    padding: 0.5rem;
-    margin-left: 3.83rem;
+  border-bottom: 0.01rem solid rgba(246, 246, 246, 0.147);
+  padding: 0.5rem;
+  margin-left: 3.83rem;
 }
 
 .emails-preview:hover {
-    box-shadow: 0px 0px 1px 2px rgba(251, 251, 251, 0.5);
+  box-shadow: 0px 0px 1px 2px rgba(251, 251, 251, 0.5);
 }
 
 .emails-preview .fa-star {
-    color: var(--gray3);
+  color: var(--gray3);
 }
 
 .fa-star.starred {
-    color: yellow;
+  color: yellow;
 }
 
-.emails-preview >* {
-    margin-inline-end: 0.5rem;
-    font-family: Roboto-regular;
-    font-size: 0.85rem;
-    color: var(--clr4)
+.emails-preview > * {
+  margin-inline-end: 0.5rem;
+  font-family: Roboto-regular;
+  font-size: 0.85rem;
+  color: var(--clr4);
 }
 
 .emails-preview .email-to {
-    text-transform: capitalize;
-    flex-basis: 15%;
+  text-transform: capitalize;
+  flex-basis: 15%;
 }
 
 .emails-preview.email-sub-body {
-    flex-basis: 80%;
+  flex-basis: 80%;
 }
 
 .emails-preview .sent-at {
-    position: absolute;
-    right: 0.5rem;
+  position: absolute;
+  right: 0.5rem;
 }
 
 .unread {
-    font-family: Roboto-bold;
-    color: rgb(234, 234, 134);
-    font-size: 0.9rem;
-} 
+  font-family: Roboto-bold;
+  color: rgb(234, 234, 134);
+  font-size: 0.9rem;
+}
 
 .email-prev-actions {
-    padding: 1px;
-    opacity: 0;
-    position: absolute;
-    right: 5rem;
-    z-index: 200;
+  padding: 1px;
+  opacity: 0;
+  position: absolute;
+  right: 5rem;
+  z-index: 200;
 }
 
-.email-prev-actions .delete-email, .read-email, .send-to-note {
-    background-color: transparent;
-    border: none;
+.email-prev-actions .delete-email,
+.read-email,
+.send-to-note {
+  background-color: transparent;
+  border: none;
 
-    cursor: pointer;
-    color: var(--grey4);
+  cursor: pointer;
+  color: var(--grey4);
 }
 
-.email-prev-actions .read-email, .send-to-note {
-    margin-inline-end: 1rem;
+.email-prev-actions .read-email,
+.send-to-note {
+  margin-inline-end: 1rem;
 }
 
 .emails-preview:hover .email-prev-actions {
-    opacity: 1;
+  opacity: 1;
 }

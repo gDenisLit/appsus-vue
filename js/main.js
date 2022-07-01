@@ -5,12 +5,12 @@ import userMsg from './cmps/user-msg.cmp.js'
 
 const options = {
   template: `
-        <section>
+        <section class="main-app-container">
             <app-header />
             <user-msg/>
             <router-view/>
             <app-footer />
-        </section>
+          </section>
     `,
   components: {
     userMsg,

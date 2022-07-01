@@ -6,7 +6,7 @@ import { bookService } from '../services/book-service.js'
 
 export default {
   template: `
-    <section v-if="book" class="book-details-container">
+    <section v-if="book" class="book-details-container app">
       <div class="book-details main-layout flex">
         <div class=img-box>
           <img :src="book.thumbnail" alt="">
