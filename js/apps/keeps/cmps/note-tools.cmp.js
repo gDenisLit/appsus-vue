@@ -18,7 +18,7 @@ export default {
         </a>
         <a @click="$emit('updating')"><i class="fa-solid fa-pen-to-square"></i></a>
         <a @click="addClone"><i class="fa-solid fa-clone"></i></a>
-        <a><i class="fa-solid fa-envelope-open-text"></i></a>
+        <a @click="composeEmail"><i class="fa-solid fa-envelope-open-text"></i></a>
         <a @click="removeNote()"><i class="fa-solid fa-trash-can"></i></a>
       </section>
     `,
@@ -52,6 +52,30 @@ export default {
     },
     clone() {
       return JSON.parse(JSON.stringify(this.note))
+    },
+    composeEmail() {
+      const type = this.note.type.split('-')[1]
+      console.log(type)
+      const info = this.note.info
+      const title = info.title
+
+      let body
+      if (type === 'txt') body = info.txt
+      if (type === 'img' || type === 'audio') body = info.url
+      if (type === 'video') {
+        body = 'https://www.youtube.com/watch?v=' + info.videoId
+      }
+      if (type === 'todos') {
+        const todosStr = info.todos
+          .map((todo, idx) => `${idx + 1}. ${todo.txt}\n`)
+          .join('')
+        body = todosStr
+      }
+
+      this.$router.push({
+        path: `/email/inbox/compose?title=${title ? title : ''}&body=${body}`,
+        params: { title: title || '', body },
+      })
     },
   },
   computed: {},
