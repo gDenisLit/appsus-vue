@@ -52,8 +52,18 @@
     "info": {
       "title": "Get my stuff together",
       "todos": [
-        { "txt": "Driving liscence", "isDone": true, "doneAt": null },
-        { "txt": "Coding power", "isDone": false, "doneAt": 187111111 }
+        {
+          "id": "1",
+          "txt": "Driving liscence",
+          "isDone": true,
+          "doneAt": null
+        },
+        {
+          "id": "2",
+          "txt": "Coding power",
+          "isDone": false,
+          "doneAt": 187111111
+        }
       ]
     },
     "style": {
@@ -67,8 +77,8 @@
     "info": {
       "title": "Get my stuff together",
       "todos": [
-        { "txt": "Driving liscence", "doneAt": null },
-        { "txt": "Coding power", "doneAt": 187111111 }
+        { "id": "1", "txt": "Driving liscence", "doneAt": null },
+        { "id": "2", "txt": "Coding power", "doneAt": 187111111 }
       ]
     },
     "style": {
@@ -82,8 +92,8 @@
     "info": {
       "title": "Get my stuff together",
       "todos": [
-        { "txt": "Driving liscence", "doneAt": null },
-        { "txt": "Coding power", "doneAt": 187111111 }
+        { "id": "1", "txt": "Driving liscence", "doneAt": null },
+        { "id": "2", "txt": "Coding power", "doneAt": 187111111 }
       ]
     },
     "style": {

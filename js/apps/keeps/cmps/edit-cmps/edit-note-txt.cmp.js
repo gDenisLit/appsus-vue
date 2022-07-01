@@ -26,9 +26,6 @@ export default {
     clone() {
       return JSON.parse(JSON.stringify(this.note))
     },
-    close() {
-      this.$emit('closed')
-    },
   },
   computed: {},
   unmounted() {},
