@@ -57,6 +57,11 @@ export default {
             showSuccessMsg('Message Sent!')
         },
         saveDraft() {
+            if (!this.newEmail.to && !this.newEmail.subject &&
+                !this.newEmail.body) {
+                    this.$emit('closeCompose')
+                    return
+                }
             this.newEmail.state = 'draft'
             this.$emit('closeCompose')
             addEmit(this.newEmail)

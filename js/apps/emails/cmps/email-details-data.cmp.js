@@ -30,6 +30,7 @@ export default {
             return this.email.to.slice(0, idx)
         },
         date() {
+            if (!this.email.sentAt) return
             const date = new Date(this.email.sentAt).toString()
             const idx = date.indexOf('GMT')
             return date.slice(0, idx)

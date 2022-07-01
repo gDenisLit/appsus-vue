@@ -32,6 +32,7 @@ export default {
             return this.email.to.slice(0, idx)
         },
         shortBody() {
+            if (!this.email.body) return
             return this.email.body.slice(0, 80) + '...'
         },
         date() {
