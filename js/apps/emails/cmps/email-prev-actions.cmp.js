@@ -1,8 +1,11 @@
-import { removeEmailEmit, readEmailEmit, addNoteEmit } from '../../../services/eventBus.service.js'
-
+import {
+  removeEmailEmit,
+  readEmailEmit,
+  addNoteEmit,
+} from '../../../services/eventBus.service.js'
 
 export default {
-    template: `
+  template: `
         <section class="email-prev-actions">
             <button class="send-to-note" @click.stop="sendToNote">
                 <i class="fa-solid fa-note-sticky"></i>
@@ -16,41 +19,31 @@ export default {
             </button>
         </section>
     `,
-    props: [
-        'email'
-    ],
-    data() {
-        return {
-            
-        }
+  props: ['email'],
+  data() {
+    return {}
+  },
+  methods: {
+    selectDelete() {
+      removeEmailEmit(this.email.id)
     },
-    methods: {
-        selectDelete() {
-            removeEmailEmit(this.email.id)
+    selectRead() {
+      readEmailEmit(this.email.id)
+    },
+    sendToNote() {
+      const { subject, body } = this.email
+      const newNote = {
+        type: 'note-txt',
+        info: {
+          title: subject || '',
+          txt: body || '',
         },
-        selectRead() {
-            readEmailEmit(this.email.id)
-        },
-        sendToNote() {
-            const {subject, body} = this.email
-            const newNote = {
-                type: 'note-txt',
-                info: {
-                    title: subject || '',
-                    body: body || '',
-                }
-            }
-            console.log('adding note..', newNote)
-            addNoteEmit(newNote)
-        },
+      }
+      console.log('adding note..', newNote)
+      addNoteEmit(newNote)
     },
-    computed: {
- 
-    },
-    created() {
-        
-    },
-    unmounted() {
- 
-    },
+  },
+  computed: {},
+  created() {},
+  unmounted() {},
 }
