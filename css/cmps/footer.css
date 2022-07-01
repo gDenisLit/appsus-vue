@@ -7,8 +7,8 @@ footer {
   align-items: center;
   font-size: 0.8rem;
   color: var(--gray4);
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  z-index: 100;
+  /* position: fixed; */
+  /* bottom: 0; */
+  /* width: 100%; */
+  /* z-index: 100; */
 }

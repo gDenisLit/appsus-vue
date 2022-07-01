@@ -7,10 +7,12 @@
 @import 'basic/layout.css';
 @import 'basic/helpers.css';
 @import 'basic/buttons.css';
+@import 'basic/animations.css';
 @import 'basic/input.css';
 
 /* GENERAL COMPONENTS  */
 @import 'cmps/header.css';
+@import 'cmps/home-page.css';
 @import 'cmps/nav-bar.css';
 @import 'cmps/footer.css';
 @import 'cmps/screen.css';
