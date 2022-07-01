@@ -64,19 +64,6 @@ export default {
       addEmit(this.newEmail)
       showSuccessMsg('Saved to Drafts')
     },
-<<<<<<< HEAD
-    computed: {
- 
-    },
-    created() {
-        if (this.email) this.newEmail = this.email
-        console.log(this.$route)
-    },
-    unmounted() {
- 
-    },
-}
-=======
   },
   computed: {},
   created() {
@@ -84,4 +71,3 @@ export default {
   },
   unmounted() {},
 }
->>>>>>> ee2a6e1871b0b8ac183475f469b9bf86745c6543
