@@ -54,7 +54,7 @@
     z-index: 200;
 }
 
-.email-prev-actions .delete-email, .read-email {
+.email-prev-actions .delete-email, .read-email, .send-to-note {
     background-color: transparent;
     border: none;
 
@@ -62,7 +62,7 @@
     color: var(--grey4);
 }
 
-.email-prev-actions .read-email {
+.email-prev-actions .read-email, .send-to-note {
     margin-inline-end: 1rem;
 }
 

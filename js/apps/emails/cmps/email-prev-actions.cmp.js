@@ -1,9 +1,12 @@
-import { removeEmailEmit, readEmailEmit } from '../../../services/eventBus.service.js'
+import { removeEmailEmit, readEmailEmit, addNoteEmit } from '../../../services/eventBus.service.js'
 
 
 export default {
     template: `
         <section class="email-prev-actions">
+            <button class="send-to-note" @click.stop="sendToNote">
+                <i class="fa-solid fa-note-sticky"></i>
+            </button>
             <button class="read-email" @click.stop="selectRead">
                 <i v-if="email.isRead" class="fa-solid fa-envelope-open"></i>
                 <i v-else class="fa-solid fa-envelope"></i>
@@ -27,6 +30,18 @@ export default {
         },
         selectRead() {
             readEmailEmit(this.email.id)
+        },
+        sendToNote() {
+            const {subject, body} = this.email
+            const newNote = {
+                type: 'note-txt',
+                info: {
+                    title: subject || '',
+                    body: body || '',
+                }
+            }
+            console.log('adding note..', newNote)
+            addNoteEmit(newNote)
         },
     },
     computed: {
