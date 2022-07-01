@@ -52,7 +52,6 @@ export default {
       this.newEmail.sentAt = Date.now()
       this.$router.replace('/email/inbox')
       addEmit(this.newEmail)
-      showSuccessMsg('Message Sent!')
     },
     saveDraft() {
       if (!this.newEmail.to && !this.newEmail.subject && !this.newEmail.body) {
@@ -62,12 +61,14 @@ export default {
       this.newEmail.state = 'draft'
       this.$router.replace('/email/inbox')
       addEmit(this.newEmail)
-      showSuccessMsg('Saved to Drafts')
     },
   },
   computed: {},
   created() {
     if (this.email) this.newEmail = this.email
+    const {title, body} = this.$route.params
+    this.newEmail.body = body? body : null
+    this.newEmail.subject = title? title : null 
   },
   unmounted() {},
 }
