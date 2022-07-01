@@ -62,7 +62,6 @@ export default {
             addEmit(this.newEmail)
             showSuccessMsg('Saved to Drafts')
         }
-        
     },
     computed: {
  
