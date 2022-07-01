@@ -4,15 +4,16 @@ import emailCompose from "./email-compose.cmp.js"
 
 export default {
   template: `
-      <div :class="collapse">
+      <div :class="collapse" 
+        @mouseenter="isCollapse = false"
+        @mouseleave="isCollapse = true"
+      >
         <section class="side-nav">
           <div class="side-nav-inner">
             <ul>
               <li>
                 <a class="email-compose" 
-                      @click="composeMode"
-                      @mouseenter="isCollapse = false"
-                      @mouseleave="isCollapse = true"
+                      @click="composeMode"  
                   >
                     <span class="icon"><i class="fa-solid fa-plus"></i></span>
                     <span class="text">Compose</span>
@@ -20,8 +21,6 @@ export default {
                 </li>
                 <li v-for="btn in navBtns" 
                 :key="btn.id"
-                @mouseenter="isCollapse = false"
-                @mouseleave="isCollapse = true"  
                 >
                   <a @click="sort(btn.type)">
                     <span class="icon"><i :class="btn.icon"></i></span>

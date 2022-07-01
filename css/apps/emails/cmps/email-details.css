@@ -1,6 +1,7 @@
 .email-details-container {
     padding: 1rem 2rem;
     position: relative;
+    margin-inline-start: 3.5rem;
 }
 
 .email-details-container .back {
