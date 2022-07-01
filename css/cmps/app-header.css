@@ -70,33 +70,3 @@
   cursor: pointer;
 }
 
-.app-header .adv-filter {
-  position: absolute;
-  background-color: var(--gray4);
-  color: black;
-  bottom: -95px;
-  width: 100%;
-  border-radius: 0.5rem;
-  z-index: 300;
-  padding: 1rem;
-}
-
-.app-header .adv-filter h1 {
-  margin-block-end: 1rem;
-}
-
-.app-header .adv-filter .by-date > * {
-  margin-inline-end: 0.5rem;
-}
-
-.adv-filter .by-date .sort-date {
-  cursor: pointer;
-}
-
-.adv-filter .by-date i {
-  cursor: pointer;
-}
-
-/* .app-header .adv-filter .sort-date {
-  margin-block-end: 1rem;
-}  */

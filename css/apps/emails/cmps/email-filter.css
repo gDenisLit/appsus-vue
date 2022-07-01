@@ -1,0 +1,42 @@
+.app-header .adv-filter {
+    position: absolute;
+    background-color: var(--gray4);
+    color: black;
+    top: 3.2rem;
+    width: 100%;
+    border-radius: 0.5rem;
+    z-index: 300;
+    padding: 1rem;
+}
+
+.app-header .adv-filter >* {
+    font-family: Roboto-regular;
+}
+ 
+.app-header .adv-filter .sort-date {
+    width: 100px;
+    background-color: transparent;
+    border: 0.1rem solid var(--gray1);
+    border-radius: 0.4rem;
+    color: var(--gray1);
+    padding: 0.5rem;
+    padding-left: 1rem;
+    margin-block-end: 1rem;
+    cursor: pointer;
+}
+
+.app-header .adv-filter .label {
+    margin-inline-end: 1rem;
+}
+
+.app-header .adv-filter input {
+    background-color: transparent;
+    border: none;
+    border-bottom: 0.1rem solid var(--gray3);
+    flex-grow: 1;
+    margin-block-end: 1.5rem;
+}  
+
+.app-header .adv-filter .date-from {
+    margin-inline-end: 1.5rem;
+}

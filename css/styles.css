@@ -39,6 +39,7 @@
 @import 'apps/emails/cmps/compose-email.css';
 @import 'apps/emails/cmps/email-side-nav.css';
 @import 'apps/emails/cmps/email-details.css';
+@import 'apps/emails/cmps/email-filter.css';
 
 /* BOOKS APP  */
 @import 'apps/books/add-review.css';
