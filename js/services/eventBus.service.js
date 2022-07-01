@@ -62,11 +62,11 @@ export function selectEmit(entity) {
   emit('selected', entity)
 }
 
-export function filterEmit(entity) {
+export function filterEmailEmit(entity) {
   emit('filterBy', entity)
 }
 
-export function starEmit(entity) {
+export function starEmailEmit(entity) {
   emit('starred', entity)
 }
 
@@ -75,10 +75,10 @@ export function toggleEmit() {
   emit('toggled')
 }
 
-export function readEmit(entity) {
+export function readEmailEmit(entity) {
   emit('isRead', entity)
 }
 
-export function editEmit(entity) {
+export function editEmailEmit(entity) {
   emit('edit', entity) 
 }

@@ -1,5 +1,5 @@
 import { eventBus } from '../../../services/eventBus.service.js'
-import { filterEmit } from "../../../services/eventBus.service.js"
+import { filterEmailEmit } from "../../../services/eventBus.service.js"
 import emailCompose from "./email-compose.cmp.js"
 
 export default {
@@ -80,7 +80,7 @@ export default {
     },
     filter(type) {
       this.active = type
-      filterEmit(type)
+      filterEmailEmit(type)
       this.$router.push('inbox')
     }, 
     composeMode() {

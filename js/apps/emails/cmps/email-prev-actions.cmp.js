@@ -1,4 +1,4 @@
-import { removeEmit, readEmit } from '../../../services/eventBus.service.js'
+import { removeEmailEmit, readEmailEmit } from '../../../services/eventBus.service.js'
 
 
 export default {
@@ -23,10 +23,10 @@ export default {
     },
     methods: {
         selectDelete() {
-            removeEmit(this.email.id)
+            removeEmailEmit(this.email.id)
         },
         selectRead() {
-            readEmit(this.email.id)
+            readEmailEmit(this.email.id)
         },
     },
     computed: {
