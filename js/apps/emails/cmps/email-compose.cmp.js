@@ -1,7 +1,7 @@
-import { addEmit, showSuccessMsg } from "../../../services/eventBus.service.js"
+import { addEmit, showSuccessMsg } from '../../../services/eventBus.service.js'
 
 export default {
-    template: `
+  template: `
     <section class="compose-email">
         <div class="compose-title flex space-between">
             <h3>New Message</h3>
@@ -29,52 +29,45 @@ export default {
         </section>
     </section>
     `,
-    props: [
-        'email'
-    ],
-    data() {
-        return {
-            newEmail: {
-                to: null,
-                subject: null,
-                body: null,
-                sentAt: null,
-                state: null,
-                starred: false,
-            },
-        }
+  props: ['email'],
+  data() {
+    return {
+      newEmail: {
+        to: null,
+        subject: null,
+        body: null,
+        sentAt: null,
+        state: null,
+        starred: false,
+      },
+    }
+  },
+  methods: {
+    send() {
+      if (!this.newEmail.to) {
+        this.saveDraft()
+        return
+      }
+      this.newEmail.state = 'sent'
+      this.newEmail.sentAt = Date.now()
+      this.$router.replace('/email/inbox')
+      addEmit(this.newEmail)
+      showSuccessMsg('Message Sent!')
     },
-    methods: {
-        send() {
-            if (!this.newEmail.to) {
-                this.saveDraft()
-                return
-            }
-            this.newEmail.state = 'sent'
-            this.newEmail.sentAt = Date.now()
-            this.$router.replace('/email/inbox')
-            addEmit(this.newEmail)
-            showSuccessMsg('Message Sent!')
-        },
-        saveDraft() {
-            if (!this.newEmail.to && !this.newEmail.subject &&
-                !this.newEmail.body) {
-                    this.$router.replace('/email/inbox')
-                    return
-                }
-            this.newEmail.state = 'draft'
-            this.$router.replace('/email/inbox')
-            addEmit(this.newEmail)
-            showSuccessMsg('Saved to Drafts')
-        }
+    saveDraft() {
+      if (!this.newEmail.to && !this.newEmail.subject && !this.newEmail.body) {
+        this.$router.replace('/email/inbox')
+        return
+      }
+      this.newEmail.state = 'draft'
+      this.$router.replace('/email/inbox')
+      addEmit(this.newEmail)
+      showSuccessMsg('Saved to Drafts')
     },
-    computed: {
- 
-    },
-    created() {
-        if (this.email) this.newEmail = this.email
-    },
-    unmounted() {
- 
-    },
+  },
+  computed: {},
+  created() {
+    if (this.email) this.newEmail = this.email
+  },
+  unmounted() {},
 }
