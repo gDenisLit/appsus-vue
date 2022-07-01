@@ -14,7 +14,7 @@ export default {
     <section v-if="notes" class="keep-app main-countainer">
       <note-filter @filtered="setFilter" />
       <div class="inner-container flex">
-        <note-side/>
+        <note-side @filtered="setFilter"/>
         <div class="notes">
           <note-add />
           <note-list @switched="switchNotes" :notes="notesToShow" /> 
@@ -31,24 +31,29 @@ export default {
   data() {
     return {
       notes: null,
-      filterBy: null,
+      filterBy: {
+        txt: '',
+        type: '',
+      },
     }
   },
   created() {
     this.getNotes()
-    eventBus.on('added', this.addNote)
-    eventBus.on('removed', this.removeNote)
-    eventBus.on('updated', this.updateNote)
+    eventBus.on('addedNote', this.addNote)
+    eventBus.on('removedNote', this.removeNote)
+    eventBus.on('updatedNote', this.updateNote)
   },
   methods: {
     getNotes() {
       keepService.query().then(notes => {
         this.notes = notes
-        console.log(this.notes)
       })
     },
     switchNotes(indexes) {
-      keepService.switchNotes(indexes).then(notes => (this.notes = notes))
+      keepService
+        .switchNotes(indexes)
+        .then(notes => (this.notes = notes))
+        .catch(err => showErrorMsg(err))
     },
     addNote(note) {
       keepService.addNote(note).then(note => {
@@ -68,8 +73,11 @@ export default {
         this.notes.splice(idx, 1, noteUpdated)
       })
     },
-    setFilter(filterBy) {
-      this.filterBy = JSON.parse(JSON.stringify(filterBy))
+    setFilter({ txt, type }) {
+      this.filterBy.txt = ''
+
+      if (txt) this.filterBy.txt = txt
+      if (type) this.filterBy.type = type === 'all' ? '' : type
     },
     filterPinned(notes) {
       const pinned = notes.filter(note => note.isPinned)
@@ -80,13 +88,22 @@ export default {
   },
   computed: {
     notesToShow() {
-      if (!this.filterBy) return this.filterPinned(this.notes)
+      // if (!this.filterBy) return this.filterPinned(this.notes)
 
       let notes = this.notes
 
-      if (this.filterBy.title) {
-        const regex = new RegExp(this.filterBy.title, 'i')
-        notes = notes.filter(note => regex.test(note.info.title))
+      const { type, txt } = this.filterBy
+
+      if (type) notes = notes.filter(note => note.type === type)
+
+      if (txt) {
+        const regex = new RegExp(txt, 'i')
+        notes = notes.filter(
+          note =>
+            regex.test(note.info.title) ||
+            regex.test(note.info.txt) ||
+            note.info.todos?.some(todo => regex.test(todo.txt))
+        )
       }
 
       return this.filterPinned(notes)

@@ -10,7 +10,7 @@ export default {
                 :key="btn.id"
                 @mouseenter="isCollapse = false"
                 @mouseleave="isCollapse = true"  >
-                  <a href="#">
+                  <a @click="filter(btn.type)">
                     <span class="icon"><i :class="btn.icon"></i></span>
                     <span class="text">{{btn.title}}</span>
                   </a>
@@ -26,27 +26,38 @@ export default {
         {
           id: 'btn1',
           title: 'Notes',
+          type: 'all',
           icon: ['fa-solid', 'fa-lightbulb'],
         },
         {
           id: 'btn2',
           title: 'Text',
+          type: 'note-txt',
           icon: ['fa-solid', 'fa-file-lines'],
         },
         {
           id: 'btn3',
           title: 'Images',
+          type: 'note-img',
           icon: ['fa-solid', 'fa-images'],
         },
         {
           id: 'btn4',
           title: 'Videos',
+          type: 'note-video',
           icon: ['fa-brands', 'fa-youtube'],
         },
         {
           id: 'btn5',
           title: 'Todos',
+          type: 'note-todos',
           icon: ['fa-solid', 'fa-list-ul'],
+        },
+        {
+          id: 'btn6',
+          title: 'Audios',
+          type: 'note-audio',
+          icon: ['fa-solid', 'fa-volume-high'],
         },
       ],
       isCollapse: true,
@@ -57,6 +68,10 @@ export default {
   methods: {
     toggleSideNav() {
       this.isAlwaysOpen = !this.isAlwaysOpen
+    },
+    filter(type) {
+      const filterBy = { type }
+      this.$emit('filtered', filterBy)
     },
   },
   computed: {
