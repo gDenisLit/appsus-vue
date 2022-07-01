@@ -1,0 +1,8 @@
+.keep-app {
+  min-width: 100%;
+}
+
+.keep-app .side-nav {
+  position: fixed;
+  z-index: 10;
+}

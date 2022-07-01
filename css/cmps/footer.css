@@ -6,10 +6,9 @@ footer {
   align-items: center;
   font-size: 0.8rem;
   color: var(--gray4);
-  flex-grow: 1;
   height: 4rem;
-  margin-top: auto;
   position: fixed;
   bottom: 0;
   width: 100%;
+  z-index: 20;
 }

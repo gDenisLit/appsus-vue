@@ -7,7 +7,7 @@
   opacity: 0;
   pointer-events: none;
   grid-template-columns: repeat(6, 1fr);
-  top: 20px;
+  top: -35px;
   left: 15px;
   border-radius: 3px;
   background-color: var(--gray2);

@@ -3,19 +3,23 @@ import { addNoteEmit } from '../../../../services/eventBus.service.js'
 export default {
   template: `
       <section class="note-add">
-        <div class="add-note-txt flex">
+        <div class="add-note-todos flex">
           <input v-model="note.info.title" type="text" placeholder="Title">
           <div v-for="(todo, idx) in todos" class="flex space-between" :key="todo.id"> 
-              <div>
-                <input v-if="todo.txt" type="checkbox" v-model="todo.isDone" >
+              <div class="flex">
+                <label v-if="todo.txt" class="cl-checkbox">
+                    <input checked="" type="checkbox"  v-model="todo.isDone">
+                    <span></span>
+                </label>
                 <span v-else>+</span>
+
                 <input 
                 type="text" 
                 v-model="todo.txt"  
                 @input.once="addListItem"
                 placeholder="List item">
               </div>
-              <span v-if="todo.txt" @click="removeTodo(idx)">x</span>
+              <span class="remove" v-if="todo.txt" @click="removeTodo(idx)">x</span>
           </div>
           <button @click="addNote">Add</button>
         </div>

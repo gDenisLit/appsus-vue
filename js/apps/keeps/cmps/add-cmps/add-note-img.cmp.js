@@ -13,9 +13,13 @@ export default {
                v-model="note.info.url"
                placeholder="Enter img url"
                @keyup.enter="addNote()">
-               <span>Or</span>
-               <input type="file" @change="imgInput">
-              </div>
+               <span>or</span>
+               <label for="file-upload" class="file-upload">
+                <i class="fa-solid fa-upload"></i>
+                 <span>Choose file</span>
+               </label>
+               <input id="file-upload" type="file" @change="imgInput">
+             </div>
           </div>
         </section>
     `,
