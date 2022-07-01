@@ -1,5 +1,5 @@
 import { emailService } from "../services/email.service.js"
-import { editEmit } from "../../../services/eventBus.service.js"
+import { editEmailEmit } from "../../../services/eventBus.service.js"
 import emailDetailsData from "../cmps/email-details-data.cmp.js"
 
 export default {
@@ -39,7 +39,7 @@ export default {
             this.$router.push('inbox')
         },
         editEmail() {
-            editEmit(this.email)
+            editEmailEmit(this.email)
         },
     },
     computed: {
