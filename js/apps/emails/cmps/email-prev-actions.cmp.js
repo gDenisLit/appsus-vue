@@ -1,13 +1,8 @@
-<<<<<<< HEAD
-import { removeEmailEmit, toggleIsReadEmit, addNoteEmit } from '../../../services/eventBus.service.js'
-
-=======
 import {
   removeEmailEmit,
   readEmailEmit,
   addNoteEmit,
 } from '../../../services/eventBus.service.js'
->>>>>>> 66e0d863f1bfb4b4e3536aa4f3d9c3e02ea20b1e
 
 export default {
   template: `
@@ -32,25 +27,6 @@ export default {
     selectDelete() {
       removeEmailEmit(this.email.id)
     },
-<<<<<<< HEAD
-    methods: {
-        selectDelete() {
-            removeEmailEmit(this.email.id)
-        },
-        selectRead() {
-            toggleIsReadEmit(this.email.id)
-        },
-        sendToNote() {
-            const {subject, body} = this.email
-            const newNote = {
-                type: 'note-txt',
-                info: {
-                    title: subject || '',
-                    body: body || '',
-                }
-            }
-            addNoteEmit(newNote)
-=======
     selectRead() {
       readEmailEmit(this.email.id)
     },
@@ -61,7 +37,6 @@ export default {
         info: {
           title: subject || '',
           txt: body || '',
->>>>>>> 66e0d863f1bfb4b4e3536aa4f3d9c3e02ea20b1e
         },
       }
       console.log('adding note..', newNote)
