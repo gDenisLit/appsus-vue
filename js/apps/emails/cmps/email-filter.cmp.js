@@ -36,8 +36,6 @@ export default {
                   <input class="date-from" type="date">
                   <input type="date">
                 </div>
-                <!-- <input class="sort-date" type="checkbox" v-model="sortBy.date" @change="sort"> -->
-              </div>
             </div>
           </div>
         </section>  
