@@ -84,7 +84,6 @@ export default {
       this.$router.push('inbox')
     }, 
     composeMode() {
-      console.log(this.$router)
       this.$router.replace('/email/inbox/compose')
     },
   },

@@ -73,6 +73,7 @@ export default {
     },
     created() {
         if (this.email) this.newEmail = this.email
+        console.log(this.$route)
     },
     unmounted() {
  
