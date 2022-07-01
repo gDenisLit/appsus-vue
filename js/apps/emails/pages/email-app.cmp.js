@@ -10,7 +10,7 @@ export default {
         <email-filter @search="filter" @sort="sortEmails"/>
         <section class="main-container flex" >
             <email-side />
-            <router-view :emails="emailsToShow" @selected="showEmail" />
+            <router-view :emails="emailsToShow" @selected="showEmail" :isSideNav="isSideOpen"/>
         </section>
     `,
     data() {
@@ -19,6 +19,7 @@ export default {
             sortState: 'inbox',
             sortBy: null,
             filterBy: null,
+            isSideOpen: false,
         }
     },
     methods: {
@@ -59,7 +60,10 @@ export default {
         markRead(emailId) {
             const currEmail = this.emails.find(email => email.id === emailId)
             currEmail.isRead = !currEmail.isRead
-        }
+        },
+        toggleSideNav() {
+            this.isSideOpen = !this.isSideOpen
+        },
     },
     computed: {
         emailsToShow() {
@@ -87,6 +91,8 @@ export default {
         eventBus.on('sortBy', this.sort)
         eventBus.on('starred', this.starEmail)
         eventBus.on('isRead', this.markRead)
+        eventBus.on('toggled', this.toggleSideNav)
+        
     },
     unmounted() {
  

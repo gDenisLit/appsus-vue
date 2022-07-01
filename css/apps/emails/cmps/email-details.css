@@ -2,32 +2,21 @@
     padding: 1rem 2rem;
     position: relative;
     margin-inline-start: 3.5rem;
+    max-width: 900px;
 }
-
 .email-details-container .back {
-    font-family: Roboto-regular;
-    font-size: 1.3rem;
-    background-color: transparent;
-    color: var(--gray5);
-    border: none;
     margin-block-end: 2rem;
-    cursor: pointer;
 }
 
 .email-details-container .back i {
     margin-inline-end: 0.5rem;
 }
 
-.email-details-container .details-actions {
-    position: absolute;
-    bottom: 3rem;
-}
-
-.details-actions .email-reply {
+.details-actions .email-reply  {
     margin-inline-end: 1rem;
 }
 
-.email-reply, .email-forward {
+.email-reply, .email-forward, .back {
     font-family: Roboto-regular;
     background-color: transparent;
     border: 0.5px solid var(--gray4);
@@ -38,14 +27,13 @@
     width: 7rem;
 }
 
-.email-reply i, .email-forward i {
+.email-reply i, .email-forward i, .back i {
     margin: 0.2rem;
 }
 
-.email-reply:hover, .email-forward:hover {
+.email-reply:hover, .email-forward:hover , .back:hover {
     background-color: rgba(255, 255, 255, 0.063);
 }
-
 
 .email-details h1 {
     font-family: Roboto-bold;
@@ -74,4 +62,6 @@
 .email-details pre {
     font-family: Roboto-regular;
     font-size: 0.8rem;
+    max-width: 900px;
+    margin-block-end: 3rem;
 }

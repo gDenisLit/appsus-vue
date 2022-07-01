@@ -1,4 +1,3 @@
-import { eventBus } from '../../../services/eventBus.service.js'
 import emailPreview from "./email-preview.cmp.js"
 import emailPrevActions from "./email-prev-actions.cmp.js"
 
@@ -15,19 +14,17 @@ export default {
 
     `,
     props: [
-        'emails'
+        'emails',
+        'isSideNav'
     ],
     data() {
         return {
-            isSideNav: false,
+
         }
     },
     methods: {
         select(emailId) {
             this.$emit('selected', emailId)
-        },
-        toggleSideNav() {
-            this.isSideNav = !this.isSideNav
         },
     },
     computed: {
@@ -36,7 +33,7 @@ export default {
         }
     },
     created() {
-        eventBus.on('toggled', this.toggleSideNav)
+
     },
     unmounted() {
  

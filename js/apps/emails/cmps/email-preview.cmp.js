@@ -32,7 +32,7 @@ export default {
             return this.email.to.slice(0, idx)
         },
         shortBody() {
-            return this.email.body.slice(0, 150) + '...'
+            return this.email.body.slice(0, 80) + '...'
         },
         date() {
             var date = new Date(this.email.sentAt).toString()

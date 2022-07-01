@@ -84,6 +84,7 @@ export default {
     sort(type) {
       this.active = type
       sortEmit(type)
+      this.$router.push('inbox')
     }, 
     composeMode() {
       this.compose = !this.compose
