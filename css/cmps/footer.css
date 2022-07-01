@@ -1,15 +1,15 @@
 footer {
-  background-image: linear-gradient(to top, #c03a2b5d, var(--gray2));
+  background-image: linear-gradient(to top, #c03a2bf2, var(--gray2));
   text-align: center;
   display: flex;
   justify-content: center;
   align-items: center;
   font-size: 0.8rem;
   color: var(--gray4);
-  /* padding-bottom: 2rem; */
+  flex-grow: 1;
+  height: 4rem;
+  margin-top: auto;
   position: fixed;
   bottom: 0;
-  height: 50px;
   width: 100%;
-  /* z-index: 100; */
 }

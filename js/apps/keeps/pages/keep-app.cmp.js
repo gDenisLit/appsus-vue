@@ -11,16 +11,18 @@ import noteSide from '../cmps/note-side.cmp.js'
 
 export default {
   template: `
-    <section v-if="notes" class="keep-app main-countainer">
-      <note-filter @filtered="setFilter" />
-      <div class="inner-container flex">
+  <div class="app">
+    <note-filter @filtered="setFilter" />
+      <section v-if="notes" class="keep-app flex">
         <note-side @filtered="setFilter"/>
-        <div class="notes">
-          <note-add />
-          <note-list @switched="switchNotes" :notes="notesToShow" /> 
+        <div class="flex">
+          <div class="notes">
+            <note-add />
+            <note-list @switched="switchNotes" :notes="notesToShow" /> 
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+  </div>
 `,
   components: {
     noteList,
