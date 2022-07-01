@@ -1,4 +1,5 @@
 import { emailService } from "../services/email.service.js"
+import { editEmit } from "../../../services/eventBus.service.js"
 import emailDetailsData from "../cmps/email-details-data.cmp.js"
 
 export default {
@@ -7,6 +8,10 @@ export default {
             <button class="back" @click="back">
                 <i class="fa-solid fa-arrow-left-long"></i>
                 <span>Back</span>
+            </button>
+            <button class="back" @click="back" v-if="showEdit" @click.stop="editEmail">
+                <i class="fa-solid fa-pen-to-square"></i>
+                <span>Edit</span>
             </button>
             <email-details-data :email="email"/>
             <div class="details-actions">
@@ -33,11 +38,17 @@ export default {
         back() {
             this.$router.push('inbox')
         },
+        editEmail() {
+            editEmit(this.email)
+        },
     },
     computed: {
         size() {
             return {'open-side': (this.isSideNav)}
-        }
+        },
+        showEdit() {
+            return (this.email.state === 'draft')
+        },
     },
     created() {
        

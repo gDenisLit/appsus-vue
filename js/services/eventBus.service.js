@@ -50,8 +50,8 @@ export function selectEmit(entity) {
   emit('selected', entity)
 }
 
-export function sortEmit(entity) {
-  emit('sortBy', entity)
+export function filterEmit(entity) {
+  emit('filterBy', entity)
 }
 
 export function starEmit(entity) {
@@ -65,4 +65,8 @@ export function toggleEmit() {
 
 export function readEmit(entity) {
   emit('isRead', entity)
+}
+
+export function editEmit(entity) {
+  emit('edit', entity) 
 }

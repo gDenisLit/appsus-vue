@@ -1,5 +1,5 @@
 import { eventBus } from '../../../services/eventBus.service.js'
-import { sortEmit } from "../../../services/eventBus.service.js"
+import { filterEmit } from "../../../services/eventBus.service.js"
 import emailCompose from "./email-compose.cmp.js"
 
 export default {
@@ -22,7 +22,7 @@ export default {
                 <li v-for="btn in navBtns" 
                 :key="btn.id"
                 >
-                  <a @click="sort(btn.type)">
+                  <a @click="filter(btn.type)">
                     <span class="icon"><i :class="btn.icon"></i></span>
                     <span class="text">{{btn.title}}</span>
                   </a>
@@ -32,7 +32,7 @@ export default {
         </section>
       </div>
       <section v-if="compose" >
-            <email-compose @closeCompose="composeMode"/>
+            <email-compose @closeCompose="composeMode" :email="emailToEdit"/>
           </section>
           `,
   data() {
@@ -74,6 +74,7 @@ export default {
       active: 'inbox',
       compose: false,
       sortBy: null,
+      emailToEdit: null,
     }
   },
   components: {},
@@ -81,13 +82,17 @@ export default {
     toggleSideNav() {
       this.isAlwaysOpen = !this.isAlwaysOpen
     },
-    sort(type) {
+    filter(type) {
       this.active = type
-      sortEmit(type)
+      filterEmit(type)
       this.$router.push('inbox')
     }, 
     composeMode() {
       this.compose = !this.compose
+    },
+    editMode(email) {
+      this.compose = !this.compose
+      this.emailToEdit = email
     },
   },
   computed: {
@@ -97,6 +102,7 @@ export default {
   },
   created() {
     eventBus.on('toggled', this.toggleSideNav)
+    eventBus.on('edit', this.editMode)
   },
   unmounted() {
 

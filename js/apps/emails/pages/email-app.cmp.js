@@ -16,7 +16,7 @@ export default {
     data() {
         return {
             emails: null,
-            sortState: 'inbox',
+            filterByState: 'inbox',
             sortBy: null,
             filterBy: null,
             isSideOpen: false,
@@ -37,8 +37,8 @@ export default {
             if (email.state !== 'trash') email.state = 'trash'
             else this.emails.splice(idx, 1)
         },
-        sort(type) {
-            this.sortState = type
+        filterState(type) {
+            this.filterByState = type
         },
         sortEmails({direction}) {
             this.emails.sort((a, b) => {
@@ -71,15 +71,15 @@ export default {
             if (this.filterBy) {
                 return this.emails.filter(email => email.to.includes(this.filterBy))
             }
-            if (this.sortState === 'unread') {
+            if (this.filterByState === 'unread') {
                 return this.emails.filter(email => {
                     return (!email.isRead && email.state === 'inbox')
                 })
             }
-            if (this.sortState === 'starred') {
+            if (this.filterByState === 'starred') {
                 return this.emails.filter(email => email.starred)
             }
-            return this.emails.filter(email => email.state === this.sortState)
+            return this.emails.filter(email => email.state === this.filterByState)
         },
     },
     created() {
@@ -88,10 +88,12 @@ export default {
 
         eventBus.on('removed', this.deleteEmail )
         eventBus.on('added', this.sendEmail)
-        eventBus.on('sortBy', this.sort)
+        eventBus.on('filterBy', this.filterState)
         eventBus.on('starred', this.starEmail)
         eventBus.on('isRead', this.markRead)
         eventBus.on('toggled', this.toggleSideNav)
+
+        console.log(new Date(1655457215189))
         
     },
     unmounted() {

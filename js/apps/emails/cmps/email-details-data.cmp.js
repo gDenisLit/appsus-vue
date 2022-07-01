@@ -25,6 +25,7 @@ export default {
     },
     computed: {
         from() {
+            if (!this.email.to) return
             const idx = this.email.to.indexOf('@')
             return this.email.to.slice(0, idx)
         },

@@ -12,7 +12,7 @@
     margin-inline-end: 0.5rem;
 }
 
-.details-actions .email-reply  {
+.details-actions .email-reply, .back  {
     margin-inline-end: 1rem;
 }
 

@@ -1,4 +1,4 @@
-import { addEmit } from "../../../services/eventBus.service.js"
+import { addEmit, showSuccessMsg } from "../../../services/eventBus.service.js"
 
 export default {
     template: `
@@ -29,7 +29,9 @@ export default {
         </section>
     </section>
     `,
- 
+    props: [
+        'email'
+    ],
     data() {
         return {
             newEmail: {
@@ -52,11 +54,13 @@ export default {
             this.newEmail.sentAt = Date.now()
             this.$emit('closeCompose')
             addEmit(this.newEmail)
+            showSuccessMsg('Message Sent!')
         },
         saveDraft() {
             this.newEmail.state = 'draft'
             this.$emit('closeCompose')
             addEmit(this.newEmail)
+            showSuccessMsg('Saved to Drafts')
         }
         
     },
@@ -64,7 +68,7 @@ export default {
  
     },
     created() {
- 
+        if (this.email) this.newEmail = this.email
     },
     unmounted() {
  
