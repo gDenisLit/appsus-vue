@@ -1,4 +1,4 @@
-import { updateEmit } from '../../../../services/eventBus.service.js'
+import { updateNoteEmit } from '../../../../services/eventBus.service.js'
 
 export default {
   props: ['note'],
@@ -29,7 +29,7 @@ export default {
   methods: {
     updateNote() {
       const newNote = this.clone()
-      updateEmit(newNote)
+      updateNoteEmit(newNote)
     },
     addListItem() {
       this.todos.push({ id: this.id++, txt: '', isDone: false, doneAt: null })
@@ -45,14 +45,14 @@ export default {
 
       newNote.info.todos.push(todo)
 
-      updateEmit(newNote)
+      updateNoteEmit(newNote)
 
       this.txtInput = ''
     },
     removeTodo(idx) {
       const newNote = this.clone()
       newNote.info.todos.splice(idx, 1)
-      updateEmit(newNote)
+      updateNoteEmit(newNote)
     },
     clone() {
       return JSON.parse(JSON.stringify(this.note))

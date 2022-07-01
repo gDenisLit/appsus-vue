@@ -1,4 +1,4 @@
-import { addEmit } from '../../../../services/eventBus.service.js'
+import { addNoteEmit } from '../../../../services/eventBus.service.js'
 
 export default {
   template: `
@@ -40,7 +40,7 @@ export default {
     addNote() {
       this.todos.pop()
       this.note.info.todos = this.todos
-      addEmit(this.note)
+      addNoteEmit(this.note)
       this.$emit('added')
     },
     addListItem() {

@@ -1,4 +1,4 @@
-import { addEmit } from '../../../../services/eventBus.service.js'
+import { addNoteEmit } from '../../../../services/eventBus.service.js'
 
 export default {
   template: ` 
@@ -24,7 +24,7 @@ export default {
   methods: {
     addNote() {
       // const newNote = JSON.parse(JSON.stringify(this.note))
-      addEmit(this.note)
+      addNoteEmit(this.note)
       this.$emit('added')
     },
   },
