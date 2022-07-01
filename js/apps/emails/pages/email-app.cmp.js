@@ -49,9 +49,12 @@ export default {
         filter(txt) {
             this.filterBy = txt
         },
-        starEmail(emailId) {
-            const currEmail = this.emails.find(email => email.id === emailId)
-            currEmail.starred = !currEmail.starred
+        starEmail(email) {
+            emailService.save(email)
+            .then(email => {
+                const idx = this.emails.findIndex(oldEmail => oldEmail.id === email.id)
+                this.emails.splice(idx, 1, email)
+            })
         },
         markRead(emailId) {
             const currEmail = this.emails.find(email => email.id === emailId)

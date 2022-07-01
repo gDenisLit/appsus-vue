@@ -4,7 +4,7 @@ export default {
     template: `
         
         <div v-if="show">
-            <input class="star" :class="isChecked" type="checkbox" @click.stop="toggleStar" v-model="isStar">
+            <i class="fa-solid fa-star" :class="isStarred"  @click.stop="toggleStar"></i>
         </div>
         <span class="email-to" :class="unread">{{to}}</span>
         <span class="email-sub-body" :class="unread">{{email.subject}} -</span>
@@ -16,13 +16,13 @@ export default {
     ],
     data() {
         return {
-            isStar: false,
+
         }
     },
     methods: {
         toggleStar() {
-            this.isStar = !this.isStar
-            starEmit(this.email.id)
+            this.email.starred = ! this.email.starred
+            starEmit(this.email)
         }
     },
     computed: {
@@ -45,12 +45,12 @@ export default {
         show() {
             return (this.email.state !== 'trash')
         },
-        isChecked() {
-            return {checked: (this.email.starred)}
-        },
+        isStarred() {
+            return {starred: (this.email.starred)}
+        }
     },
     created() {
- 
+
     },
     unmounted() {
  
