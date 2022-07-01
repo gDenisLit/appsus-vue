@@ -1,0 +1,50 @@
+@media screen and (min-width: 460px) {
+  html {
+    font-size: 80%;
+  }
+  .note-list {
+    column-count: 2;
+  }
+}
+
+@media screen and (min-width: 760px) {
+  html {
+    font-size: 90%;
+  }
+
+  .app-header h2 {
+    display: block;
+  }
+  .app-header .search .input-search {
+    width: 30rem;
+  }
+  .app-header .search {
+    left: 14rem;
+  }
+
+  .note-list {
+    column-count: 3;
+  }
+}
+
+@media screen and (min-width: 900px) {
+  html {
+    font-size: 100%;
+  }
+
+  /* .side-nav {
+    min-width: 15.5375rem;
+  } */
+
+  .note-list {
+    column-count: 4;
+  }
+
+  .app-header .search .input-search {
+    width: 40rem;
+  }
+
+  .app-header .search {
+    left: 16.5rem;
+  }
+}

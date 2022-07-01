@@ -24,6 +24,7 @@
 /* KEEP APP  */
 @import 'apps/keeps/keep-app.css';
 @import 'apps/keeps/cmps/note-add.css';
+@import 'apps/keeps/cmps/note-inner.css';
 @import 'apps/keeps/cmps/note-add-draw.css';
 @import 'apps/keeps/cmps/note-edit.css';
 @import 'apps/keeps/cmps/note-list.css';
@@ -48,3 +49,6 @@
 @import 'apps/books/review-add.css';
 @import 'apps/books/review-list.css';
 @import 'apps/books/ribbon.css';
+
+/* MEDIA  */
+@import 'mq/mq.css';
