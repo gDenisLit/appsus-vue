@@ -30,17 +30,19 @@
 .app-header h2 {
   margin-inline-end: 5rem;
   font-weight: 400;
+  display: none;
 }
 
 .app-header .search {
   position: absolute;
   display: flex;
   flex-direction: column;
-  left: 16.5rem;
+  left: 10rem;
 }
 
 .app-header .search .input-search {
-  width: 40rem;
+  /* width: 40rem; */
+  width: 20rem;
   padding: var(--spacing-medium2);
   padding-left: 2.5rem;
   background-color: var(--gray3);

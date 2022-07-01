@@ -4,8 +4,6 @@
   column-count: 1;
   vertical-align: baseline;
   position: relative;
-  padding: var(--spacing-large);
-  margin-left: 3.75rem;
 }
 
 .note-list a {
@@ -38,37 +36,4 @@
   font-size: 0.8rem;
   transform: rotate(45deg);
   z-index: 1;
-}
-
-@media screen and (min-width: 460px) {
-  html {
-    font-size: 80%;
-  }
-  .note-list {
-    column-count: 2;
-  }
-}
-
-@media screen and (min-width: 760px) {
-  html {
-    font-size: 90%;
-  }
-
-  .note-list {
-    column-count: 3;
-  }
-}
-
-@media screen and (min-width: 900px) {
-  html {
-    font-size: 100%;
-  }
-
-  /* .side-nav {
-    min-width: 15.5375rem;
-  } */
-
-  .note-list {
-    column-count: 4;
-  }
 }
