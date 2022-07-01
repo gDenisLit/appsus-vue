@@ -34,11 +34,6 @@ export function showErrorMsg(txt) {
   showUserMsg({ txt, type: 'error' })
 }
 
-// export function changeBgcEmit(color, noteId) {
-//   const noteProps = { color, noteId }
-//   emit('changed-bgc', noteProps)
-// }
-
 export function addEmit(entity) {
   emit('added', entity)
 }
