@@ -1,5 +1,9 @@
 import { keepService } from '../services/keep.service.js'
-import { eventBus } from '../../../services/eventBus.service.js'
+import {
+  eventBus,
+  showErrorMsg,
+  showSuccessMsg,
+} from '../../../services/eventBus.service.js'
 import noteAdd from '../cmps/note-add.cmp.js'
 import noteList from '../cmps/note-list.cmp.js'
 import noteFilter from '../cmps/note-filter.cmp.js'
@@ -47,7 +51,10 @@ export default {
       keepService.switchNotes(indexes).then(notes => (this.notes = notes))
     },
     addNote(note) {
-      keepService.addNote(note).then(note => this.notes.push(note))
+      keepService.addNote(note).then(note => {
+        this.notes.push(note)
+        showSuccessMsg('Added note successfuly!')
+      })
     },
     removeNote(noteId) {
       keepService.remove(noteId).then(() => {

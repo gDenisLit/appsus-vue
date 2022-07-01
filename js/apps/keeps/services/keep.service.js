@@ -70,6 +70,11 @@ function _createNotes() {
   let notes = utilService.loadFromStorage(NOTES_KEY)
   if (!notes || !notes.length) {
     notes = notesData
+    const pinned = notes.filter(note => note.isPinned)
+    const unpinned = notes.filter(note => !note.isPinned)
+
+    notes = [...pinned, ...unpinned]
+
     utilService.saveToStorage(NOTES_KEY, notes)
   }
   return notes

@@ -2,6 +2,7 @@ import { addEmit } from '../../../../services/eventBus.service.js'
 
 export default {
   template: `
+          <div class="screen" @click="this.$emit('added')"></div>
         <section class="note-add-draw">
             <input class="input" type="text"
                 v-model="note.info.title"

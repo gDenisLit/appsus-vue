@@ -10,7 +10,7 @@
   cursor: pointer;
   opacity: 1;
   /* pointer-events: none; */
-  z-index: 50;
+  z-index: 110;
 
   transition: opacity 0.6s;
 }
