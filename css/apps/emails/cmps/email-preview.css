@@ -1,8 +1,7 @@
 .email-container {
     margin-left: 3.83rem;
     overflow-y: auto;
-    flex-basis: 100%;
-    max-height: 520px;
+    max-height: 525px;
 }
 
 ::-webkit-scrollbar {
