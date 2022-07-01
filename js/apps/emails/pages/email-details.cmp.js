@@ -1,4 +1,3 @@
-import { eventBus } from '../../../services/eventBus.service.js'
 import { emailService } from "../services/email.service.js"
 import emailDetailsData from "../cmps/email-details-data.cmp.js"
 
@@ -23,20 +22,16 @@ export default {
         </section>
     `,
     props: [
-       
+        'isSideNav',
     ],
     data() {
         return {
             email: null,
-            isSideNav: false,
         }
     },
     methods: {
         back() {
             this.$router.push('inbox')
-        },
-        toggleSideNav() {
-            this.isSideNav = !this.isSideNav
         },
     },
     computed: {
@@ -45,7 +40,7 @@ export default {
         }
     },
     created() {
-        eventBus.on('toggled', this.toggleSideNav)
+       
     },
     mounted() {
 
