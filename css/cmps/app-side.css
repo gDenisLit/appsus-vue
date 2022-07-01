@@ -33,6 +33,12 @@
   font-size: 0.9rem;
 }
 
+.side-nav ul li a span.unread-count {
+  padding-top: 0.1rem;
+  font-size: 0.8rem;
+  margin-inline-start: 5rem;
+}
+
 .side-nav ul li a:hover {
   background-color: rgba(240, 222, 85, 0.285);
   color: var(--gray5);

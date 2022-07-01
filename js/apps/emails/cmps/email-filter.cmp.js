@@ -10,7 +10,7 @@ export default {
           </div>
           <h2>Mail</h2>
           <div class="search">
-            <input class="input-search" type="text" v-model="filterBy.title" @input="filter" placeholder="Search">
+            <input class="input-search" type="text" v-model="filterBy.txt" @input="filter" placeholder="Search">
             <i class="icon fa-solid fa-magnifying-glass"></i>
             <i class="fa-solid fa-sliders" @click="showDropDown"></i>
             <div class="adv-filter" v-if="isDropDown">
@@ -27,7 +27,7 @@ export default {
   data() {
     return {
       filterBy: {
-        title: '',
+        txt: '',
       },
       sortBy: {
         date: null,
@@ -39,7 +39,7 @@ export default {
   created() {},
   methods: {
     filter() {
-      this.$emit('search', this.filterBy.title)
+      this.$emit('search', this.filterBy.txt)
     },
     sort() {
       this.$emit('sort', this.sortBy)

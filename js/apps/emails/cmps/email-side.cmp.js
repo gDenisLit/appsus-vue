@@ -25,6 +25,7 @@ export default {
                   <a @click="filter(btn.type)">
                     <span class="icon"><i :class="btn.icon"></i></span>
                     <span class="text">{{btn.title}}</span>
+                    <span class="unread-count text" v-if="btn.type === 'inbox'">{{showUreadCount}}</span>
                   </a>
                 </li>
             </ul>
@@ -32,6 +33,9 @@ export default {
         </section>
       </div>
           `,
+  props: [
+    'unreadCount'
+  ],
   data() {
     return {
       navBtns: [
@@ -78,9 +82,12 @@ export default {
     toggleSideNav() {
       this.isAlwaysOpen = !this.isAlwaysOpen
     },
-    filter(type) {
-      this.active = type
-      filterEmailEmit(type)
+    filter(state) {
+      let filter 
+      if (state === 'starred') {
+        filter = {starred: true, state: null,} 
+      } else filter = {state, starred: false,}
+      this.$emit('filtered', filter)
       this.$router.push('inbox')
     }, 
     composeMode() {
@@ -91,6 +98,9 @@ export default {
     collapse() {
       return { 'hover-collapse': this.isCollapse && !this.isAlwaysOpen }
     },
+    showUreadCount() {
+      return (this.unreadCount)? this.unreadCount : ''
+    }
   },
   created() {
     eventBus.on('toggled', this.toggleSideNav)
@@ -102,6 +112,7 @@ export default {
   emits: [
     'send',
     'sort',
+    'filtered'
   ],
   components: {
   },

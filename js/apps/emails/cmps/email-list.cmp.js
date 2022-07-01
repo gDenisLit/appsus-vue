@@ -10,6 +10,9 @@ export default {
                 <email-preview :email="email" />
                 <email-prev-actions :email="email"/>
             </article>
+            <article class="emails-preview-none" v-if="noEmails">
+                <span>No Emails To Show</span>
+            </article>
             <router-view />
         </section>
 
@@ -31,7 +34,10 @@ export default {
     computed: {
         size() {
             return {'open-side': (this.isSideNav)}
-        }
+        },
+        noEmails() {
+            return (!this.emails || !this.emails.length)
+        },
     },
     created() {
 

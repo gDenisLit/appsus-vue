@@ -7,18 +7,21 @@ import emailFilter from "../cmps/email-filter.cmp.js"
 export default {
     template: `
       
-        <email-filter @search="filter" @sort="sortEmails"/>
+        <email-filter @search="setSearch" @sort="sortEmails"/>
         <section class="main-container flex" >
-            <email-side />
+            <email-side @filtered="setFilter" :unreadCount="unreadCount"/>
             <router-view :emails="emailsToShow" @selected="showEmail" :isSideNav="isSideOpen"/>
         </section>
     `,
     data() {
         return {
             emails: null,
-            filterByState: 'inbox',
             sortBy: null,
-            filterBy: null,
+            filterBy: {
+                txt: null,
+                state: null,
+                starred: false,
+            },
             isSideOpen: false,
         }
     },
@@ -41,9 +44,6 @@ export default {
             if (email.state !== 'trash') email.state = 'trash'
             else this.emails.splice(idx, 1)
         },
-        filterState(type) {
-            this.filterByState = type
-        },
         sortEmails({direction}) {
             this.emails.sort((a, b) => {
                 if(a.sentAt > b.sentAt) return (direction)? 1 : -1
@@ -51,8 +51,12 @@ export default {
                 else return 0
             })
         },
-        filter(txt) {
-            this.filterBy = txt
+        setFilter({state, starred}) {
+            this.filterBy.state = state
+            this.filterBy.starred = starred
+        },
+        setSearch(txt) {
+            this.filterBy.txt = txt
         },
         starEmail(email) {
             emailService.save(email)
@@ -72,19 +76,29 @@ export default {
     computed: {
         emailsToShow() {
             if (!this.emails) return
-            if (this.filterBy) {
-                return this.emails.filter(email => email.to.includes(this.filterBy))
-            }
-            if (this.filterByState === 'unread') {
-                return this.emails.filter(email => {
-                    return (!email.isRead && email.state === 'inbox')
+            let emails = this.emails
+            const {txt, state, starred} = this.filterBy
+
+            if (txt) {
+                const regex = new RegExp(txt, 'i')
+                emails = emails.filter(email => {
+                    return regex.test(email.to) ||
+                    regex.test(email.subject) ||
+                    regex.test(email.body)
                 })
             }
-            if (this.filterByState === 'starred') {
-                return this.emails.filter(email => email.starred)
+            if (state) {
+               emails = emails.filter(email => email.state === state)
             }
-            return this.emails.filter(email => email.state === this.filterByState)
+            if (starred) emails = emails.filter(email => email.starred)
+            return emails
         },
+        unreadCount() {
+            if (!this.emails) return
+            return this.emails.reduce((acc, email) => {
+                return (email.isRead) ? acc : acc + 1 
+            }, 0)
+        }
     },
     created() {
         emailService.query()
@@ -105,4 +119,7 @@ export default {
         emailSide,
         emailFilter,
     },
+    emits: [
+        'filtered'
+    ],
 }
