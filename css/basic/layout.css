@@ -1,5 +1,6 @@
 .main-layout {
   margin: 0 auto;
+  max-width: 980px;
 }
 
 .email-container.open-side {

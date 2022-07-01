@@ -18,5 +18,5 @@ body {
   line-height: 1.4;
   font-family: Roboto-regular, sans-serif;
   overflow-x: hidden; 
-  overflow-y: hidden;
+  /* overflow-y: hidden; */
 }
