@@ -35,6 +35,7 @@
 @import 'apps/keeps/cmps/note-tools.css';
 @import 'apps/keeps/cmps/note-todos.css';
 @import 'apps/keeps/cmps/color-palette.css';
+@import 'apps/keeps/cmps/recorder.css';
 
 /* EMAIL APP  */
 @import 'apps/emails/cmps/email-preview.css';

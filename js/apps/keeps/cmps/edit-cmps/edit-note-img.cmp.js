@@ -3,20 +3,34 @@ import { updateNoteEmit } from '../../../../services/eventBus.service.js'
 export default {
   props: ['note'],
   template: `
-        <section class="note-edit-inner edit-note-img flex">
+        <section class="note-edit-inner note-edit-img flex">
              <img :src="note.info.url" alt="">
              <input v-model="note.info.title"
                     type="text" 
                     placeholder="Title"
                      @change="updateNote">
-             <div class="img-inputs">
+                     <div class="img-inputs flex">
+               <input type="url"
+               v-model="note.info.url"
+               placeholder="Enter img url"
+               @keyup.enter="addNote()">
+               <div>
+                <span class="or">or</span>
+                <label for="file-upload" class="file-upload">
+                  <i class="fa-solid fa-upload"></i>
+                  <span>Choose file</span>
+                </label>
+                <input id="file-upload" type="file" @change="imgInput">
+               </div>   
+             </div>
+             <!-- <div class="img-inputs">
                <input type="url"
                v-model="note.info.url"
                placeholder="Enter new img url"
                @keyup.enter="updateNote">
                <span>Or</span>
                <input type="file" @change="imgInput">
-              </div>
+              </div> -->
         </section>
     `,
   data() {

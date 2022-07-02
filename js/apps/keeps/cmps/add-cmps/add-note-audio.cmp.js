@@ -137,8 +137,6 @@ export default {
       }
     },
     stopRecording() {
-      console.log('stopButton clicked')
-
       this.recordBtn = false
       this.stopBtn = true
       this.pauseBtn = true

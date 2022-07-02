@@ -4,7 +4,7 @@
     "type": "note-txt",
     "isPinned": true,
     "info": {
-      "txt": "Fullstack Me Baby!"
+      "txt": "Make me rich! 🙏"
     },
     "style": {
       "backgroundColor": "#495057"
@@ -12,56 +12,33 @@
   },
   {
     "id": "n102",
-    "type": "note-img",
+    "type": "note-todos",
     "isPinned": true,
     "info": {
-      "url": "https://images.pexels.com/photos/1293120/pexels-photo-1293120.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-      "title": "Bobi and Me"
-    },
-    "style": {
-      "backgroundColor": "#f03e3e"
-    }
-  },
-  {
-    "id": "n107",
-    "type": "note-audio",
-    "isPinned": false,
-    "info": {
-      "url": "assets/audio/forest-lullaby.mp3",
-      "title": "Forest lullaby"
-    },
-    "style": {
-      "backgroundColor": "#228be6"
-    }
-  },
-  {
-    "id": "n103",
-    "type": "note-video",
-    "isPinned": false,
-    "info": {
-      "videoId": "tgbNymZ7vqY"
-    },
-    "style": {
-      "backgroundColor": "#ff922b"
-    }
-  },
-  {
-    "id": "n104",
-    "type": "note-todos",
-    "isPinned": false,
-    "info": {
-      "title": "Get my stuff together",
+      "title": "Win sprint 3",
       "todos": [
         {
           "id": "1",
-          "txt": "Driving liscence",
-          "isDone": true,
+          "txt": "Avoid shit in the code",
+          "isDone": false,
           "doneAt": null
         },
         {
           "id": "2",
-          "txt": "Coding power",
+          "txt": "Resolve food from wolt",
+          "isDone": true,
+          "doneAt": 187111111
+        },
+        {
+          "id": "3",
+          "txt": "Catch brain errors",
           "isDone": false,
+          "doneAt": 187111111
+        },
+        {
+          "id": "4",
+          "txt": "Remember to shower",
+          "isDone": true,
           "doneAt": 187111111
         }
       ]
@@ -71,33 +48,117 @@
     }
   },
   {
-    "id": "n105",
-    "type": "note-todos",
+    "id": "n103",
+    "type": "note-img",
     "isPinned": false,
     "info": {
-      "title": "Get my stuff together",
-      "todos": [
-        { "id": "1", "txt": "Driving liscence", "doneAt": null },
-        { "id": "2", "txt": "Coding power", "doneAt": 187111111 }
-      ]
+      "url": "https://media0.giphy.com/media/Hld1RfHBeQDmM/giphy.gif?cid=ecf05e47oja2qakbdabac72p1kj31udw7j8ihd0bdeeag1fo&rid=giphy.gif&ct=g",
+      "title": "Satruday evening"
+    },
+    "style": {
+      "backgroundColor": "#228be6"
+    }
+  },
+  {
+    "id": "n104",
+    "type": "note-audio",
+    "isPinned": false,
+    "info": {
+      "url": "assets/audio/forest-lullaby.mp3",
+      "title": "Relaxing Forest lullaby"
+    },
+    "style": {
+      "backgroundColor": "#f03e3e"
+    }
+  },
+  {
+    "id": "n105",
+    "type": "note-img",
+    "isPinned": false,
+    "info": {
+      "url": "https://media3.giphy.com/media/ovxc9FB6VCBJC/giphy.gif?cid=ecf05e47usa0c4l3zo31bhkq41e2jsod8hbjswoxqqojiu93&rid=giphy.gif&ct=g",
+      "title": "Add note type: <note-map>"
+    },
+    "style": {
+      "backgroundColor": "#ff922b"
+    }
+  },
+  {
+    "id": "n106",
+    "type": "note-txt",
+    "isPinned": false,
+    "info": {
+      "title": "Check out the paintbrush",
+      "txt": "I owned the canvas"
     },
     "style": {
       "backgroundColor": "#fcc419"
     }
   },
   {
-    "id": "n106",
-    "type": "note-todos",
-    "isPinned": true,
+    "id": "n107",
+    "type": "note-img",
+    "isPinned": false,
     "info": {
-      "title": "Get my stuff together",
-      "todos": [
-        { "id": "1", "txt": "Driving liscence", "doneAt": null },
-        { "id": "2", "txt": "Coding power", "doneAt": 187111111 }
-      ]
+      "url": "https://memegenerator.net/img/instances/47086717.jpg",
+      "title": "Sprint 2 be like"
     },
     "style": {
       "backgroundColor": "#7950f2"
+    }
+  },
+  {
+    "id": "n108",
+    "type": "note-todos",
+    "isPinned": false,
+    "info": {
+      "title": "What's next...",
+      "todos": [
+        {
+          "id": "1",
+          "txt": "Figure out Vue's warnings 😥",
+          "isDone": false,
+          "doneAt": null
+        },
+        {
+          "id": "2",
+          "txt": "Sleep in september",
+          "isDone": true,
+          "doneAt": 187111111
+        },
+        {
+          "id": "3",
+          "txt": "Remember we can walk",
+          "isDone": false,
+          "doneAt": 187111111
+        }
+      ]
+    },
+    "style": {
+      "backgroundColor": "#ff922b"
+    }
+  },
+  {
+    "id": "n109",
+    "type": "note-txt",
+    "isPinned": false,
+    "info": {
+      "title": "Try to drag me",
+      "txt": "but not on a pinned note 🙊"
+    },
+    "style": {
+      "backgroundColor": "#15aabf"
+    }
+  },
+  {
+    "id": "n110",
+    "type": "note-video",
+    "isPinned": false,
+    "info": {
+      "videoId": "bpOSxM0rNPM"
+    },
+    "style": {
+      "backgroundColor": "#15aabf"
     }
   }
 ]

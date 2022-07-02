@@ -3,7 +3,7 @@ import { updateNoteEmit } from '../../../../services/eventBus.service.js'
 export default {
   props: ['note'],
   template: `
-        <section class="note-edit-inner edit-note-img flex">
+        <section class="note-edit-inner flex">
               <iframe
                 :src="currUrl"
 

@@ -128,5 +128,7 @@ export default {
     },
   },
   computed: {},
-  unmounted() {},
+  unmounted() {
+    window.removeEventListener('resize', this.resizeCanvas)
+  },
 }

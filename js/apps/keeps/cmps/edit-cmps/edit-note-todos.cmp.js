@@ -6,8 +6,10 @@ export default {
       <section class="note-edit-inner edit-note-img flex">
           <input v-model="note.info.title" type="text" placeholder="Title" @change="updateNote">
           <div v-for="(todo, idx) in note.info.todos" class="flex space-between" :key="todo.id"> 
-              <div>
-                <input v-if="todo.txt" type="checkbox" v-model="todo.isDone" @change="updateNote">
+              <div> <label v-if="todo.txt" class="cl-checkbox">
+                    <input checked="" type="checkbox"  v-model="todo.isDone" @change="updateNote">
+                    <span></span>
+                </label>
                 <input 
                   type="text" 
                   v-model="todo.txt"
