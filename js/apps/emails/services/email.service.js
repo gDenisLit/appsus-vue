@@ -87,7 +87,7 @@ const emailsData = [
     isRead: false,
     sentAt: 1654957215189,
     to: "Zoom@zoom.us",
-    state: 'inbox',
+    state: 'trash',
     starred: false,
     labels: [],
   },
@@ -260,7 +260,7 @@ const emailsData = [
     isRead: false,
     sentAt: 1654257215189,
     to: "	Google@accounts.google.com",
-    state: 'inbox',
+    state: 'trash',
     starred: false,
     labels: [],
   },
@@ -415,39 +415,51 @@ const emailsData = [
     state: 'sent',
     starred: false,
     labels: [],
-},
-{
-    id: 's102',
-    subject: "Program purchase",
-    body:  `
-    Hi Alin, there seems to be some problem with my email address. 
-    Please send everything to this email adress. 
-    `,
-    isRead: false,
-    sentAt: 1653357215189,
-    to: "alinpuian@itpm.com",
-    state: 'sent',
-    starred: false,
-    labels: [],
-},
-{
-    id: 's103',
-    subject: "Withdraw up119449179",
-    body: `
-    Hi Stefany, 
+  },
+  {
+      id: 's102',
+      subject: "Program purchase",
+      body:  `
+      Hi Alin, there seems to be some problem with my email address. 
+      Please send everything to this email adress. 
+      `,
+      isRead: false,
+      sentAt: 1653357215189,
+      to: "alinpuian@itpm.com",
+      state: 'sent',
+      starred: false,
+      labels: [],
+  },
+  {
+      id: 's104',
+      subject: "Footer is the worst",
+      body: `
+        Hi Guy, im having a hard time with the sprint,
+        I just cant seem to be able to get the footer 
+        stick to the bottom of the page, any ideas???
 
-    Unfortunatly it doesnt matter anymore, my bank will not accept funds 
-    associated with bitcoin. Where should I send back the money? 
-    Back to the sender? 
+      `,
+      isRead: false,
+      sentAt: 1653357215189,
+      to: "guy@gmail.com",
+      state: 'draft',
+      starred: false,
+      labels: [],
+  },
+  {
+      id: 's105',
+      subject: "Coding Academy Sign Up",
+      body: `
+        Hello Coding Academy
 
-    `,
-    isRead: false,
-    sentAt: 1653357215189,
-    to: "stefany.anderson@cexio.intercom",
-    state: 'sent',
-    starred: false,
-    labels: [],
-},
+      `,
+      isRead: false,
+      sentAt: 1653357215189,
+      to: "CodingAcademy@gmail.com",
+      state: 'draft',
+      starred: false,
+      labels: [],
+  },
 ]
 
 
