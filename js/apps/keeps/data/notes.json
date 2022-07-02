@@ -8,7 +8,8 @@
     },
     "style": {
       "backgroundColor": "#495057"
-    }
+    },
+    "labels": [{ "title": "Critical", "color": "#e03131" }]
   },
   {
     "id": "n102",
@@ -69,7 +70,11 @@
     },
     "style": {
       "backgroundColor": "#f03e3e"
-    }
+    },
+    "labels": [
+      { "title": "Memories", "color": "#ae3ec9" },
+      { "title": "Romantic", "color": "#1098ad" }
+    ]
   },
   {
     "id": "n105",
@@ -93,7 +98,8 @@
     },
     "style": {
       "backgroundColor": "#fcc419"
-    }
+    },
+    "labels": [{ "title": "Spam", "color": "#f76707" }]
   },
   {
     "id": "n107",
@@ -136,7 +142,8 @@
     },
     "style": {
       "backgroundColor": "#ff922b"
-    }
+    },
+    "labels": [{ "title": "Work", "color": "#37b24d" }]
   },
   {
     "id": "n109",
