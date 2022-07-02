@@ -1,8 +1,8 @@
 import noteColorPalette from './note-color-palette.cmp.js'
 import {
-  removeNoteEmit,
-  updateNoteEmit,
-  addNoteEmit,
+  removeEmit,
+  updateEmit,
+  addEmit,
 } from '../../../services/eventBus.service.js'
 
 export default {
@@ -41,19 +41,19 @@ export default {
       const newNote = this.clone()
       newNote.style.backgroundColor = color
 
-      updateNoteEmit(newNote)
+      updateEmit(newNote)
     },
     removeNote() {
-      removeNoteEmit(this.note.id)
+      removeEmit(this.note.id)
     },
     addClone() {
       const newNote = this.clone()
-      addNoteEmit(newNote)
+      addEmit(newNote)
     },
     togglePin() {
       const newNote = this.clone()
       newNote.isPinned = !newNote.isPinned
-      updateNoteEmit(newNote)
+      updateEmit(newNote)
     },
     clone() {
       return JSON.parse(JSON.stringify(this.note))

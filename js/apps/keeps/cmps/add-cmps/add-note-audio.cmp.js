@@ -1,4 +1,4 @@
-import { addNoteEmit } from '../../../../services/eventBus.service.js'
+import { addEmit } from '../../../../services/eventBus.service.js'
 
 export default {
   template: `
@@ -66,7 +66,7 @@ export default {
   },
   methods: {
     addNote() {
-      addNoteEmit(this.note)
+      addEmit(this.note)
       this.$emit('added')
     },
     audioInput(ev) {

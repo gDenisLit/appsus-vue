@@ -37,14 +37,17 @@ export default {
         txt: '',
         type: '',
       },
+      unsubAdded: null,
+      unsubRemove: null,
+      unsubUpdated: null,
     }
   },
   created() {
     this.getNotes()
-    // TODO: unsubscribe
-    eventBus.on('addedNote', this.addNote)
-    eventBus.on('removedNote', this.removeNote)
-    eventBus.on('updatedNote', this.updateNote)
+    this.unsubAdd = eventBus.on('added', this.addNote)
+    this.unsubRemove = eventBus.on('removed', this.removeNote)
+    this.unsubUpdated = eventBus.on('updated', this.updateNote)
+    eventBus.on('integration', this.updateNote)
   },
   methods: {
     getNotes() {
@@ -121,5 +124,9 @@ export default {
       return this.sortPinned(notes)
     },
   },
-  unmounted() {},
+  unmounted() {
+    this.unsubAdd()
+    this.unsubRemove()
+    this.unsubUpdated()
+  },
 }

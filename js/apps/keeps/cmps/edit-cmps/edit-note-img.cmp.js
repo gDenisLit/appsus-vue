@@ -1,4 +1,4 @@
-import { updateNoteEmit } from '../../../../services/eventBus.service.js'
+import { updateEmit } from '../../../../services/eventBus.service.js'
 
 export default {
   props: ['note'],
@@ -40,7 +40,7 @@ export default {
   methods: {
     updateNote() {
       const newNote = this.clone()
-      updateNoteEmit(newNote)
+      updateEmit(newNote)
     },
     imgInput(ev) {
       this.loadImageFromInput(ev, this.onImageReady)

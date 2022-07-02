@@ -68,46 +68,47 @@ export function interEmit(entity) {
 }
 
 // TODO: refactor all of this
-export function addEmailEmit(email) {
-  emit('addedEmail', email)
-}
 
-export function addNoteEmit(note) {
-  emit('addedNote', note)
-}
+// export function addEmailEmit(email) {
+//   emit('addedEmail', email)
+// }
 
-export function removeEmailEmit(emailId) {
-  emit('removedEmail', emailId)
-}
+// export function addNoteEmit(note) {
+//   emit('addedNote', note)
+// }
 
-export function removeNoteEmit(noteId) {
-  emit('removedNote', noteId)
-}
+// export function removeEmailEmit(emailId) {
+//   emit('removedEmail', emailId)
+// }
 
-export function updateEmailEmit(email) {
-  emit('updatedEmail', email)
-}
+// export function removeNoteEmit(noteId) {
+//   emit('removedNote', noteId)
+// }
 
-export function updateNoteEmit(note) {
-  emit('updatedNote', note)
-}
+// export function updateEmailEmit(email) {
+//   emit('updatedEmail', email)
+// }
 
-export function filterEmailEmit(entity) {
-  emit('filterBy', entity)
-}
+// export function updateNoteEmit(note) {
+//   emit('updatedNote', note)
+// }
 
-export function starEmailEmit(entity) {
-  emit('starred', entity)
-}
+// export function filterEmailEmit(entity) {
+//   emit('filterBy', entity)
+// }
 
-export function readEmailEmit(entity) {
-  emit('isRead', entity)
-}
+// export function starEmailEmit(entity) {
+//   emit('starred', entity)
+// }
 
-export function toggleIsReadEmit(emailId) {
-  emit('toggleRead', emailId)
-}
+// export function readEmailEmit(entity) {
+//   emit('isRead', entity)
+// }
 
-export function editEmailEmit(entity) {
-  emit('edit', entity)
-}
+// export function toggleIsReadEmit(emailId) {
+//   emit('toggleRead', emailId)
+// }
+
+// export function editEmailEmit(entity) {
+//   emit('edit', entity)
+// }

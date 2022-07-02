@@ -1,4 +1,4 @@
-import { addNoteEmit } from '../../../../services/eventBus.service.js'
+import { addEmit } from '../../../../services/eventBus.service.js'
 
 export default {
   emits: ['added'],
@@ -67,7 +67,7 @@ export default {
   methods: {
     addNote() {
       this.note.info.url = this.canvas.toDataURL('image/jpeg')
-      addNoteEmit(this.note)
+      addEmit(this.note)
       this.$emit('added')
     },
     startDrawing(ev) {
