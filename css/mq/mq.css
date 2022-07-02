@@ -5,6 +5,34 @@
   /* .note-list {
     column-count: 1;
   } */
+
+  .compose-email{
+    bottom: 0;
+    right: 5rem;
+    border-radius: 0.6rem 0.6rem 0 0; 
+    width: 28rem; 
+    height: 29em;
+    transform: none;
+  }
+
+  .compose-email .compose-title {
+    border-radius: 0.5rem 0.5rem 0 0;
+  }
+
+  .compose-title-btn:nth-of-type(1) {
+    display: inline;
+  }
+
+  .compose-title-btn:nth-of-type(2) {
+      display: inline;
+  }
+  .compose-email .send {
+    width: 10rem;
+  }
+
+  .compose-email .compose-form  input, textarea{
+    height: 100%;
+  }
 }
 
 @media screen and (min-width: 600px) {
@@ -69,9 +97,11 @@
   .app-header h2 {
     display: block;
   }
+  
   .app-header .search .input-search {
     width: 30rem;
   }
+
   .app-header .search {
     left: 14rem;
   }
