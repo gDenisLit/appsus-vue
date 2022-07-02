@@ -1,0 +1,27 @@
+.recorder-container {
+  align-items: center;
+}
+
+.recorder-container span {
+  margin-inline-end: var(--spacing-large);
+}
+
+.recorder button {
+  width: 2rem;
+  height: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--gray3);
+  color: #fff;
+  border-radius: 50%;
+  font-size: 1rem;
+  border: none;
+  transition: 0.5s;
+  cursor: pointer;
+  margin-inline-end: var(--spacing-medium);
+}
+
+.recorder button:hover {
+  transform: scale(1.1);
+}
