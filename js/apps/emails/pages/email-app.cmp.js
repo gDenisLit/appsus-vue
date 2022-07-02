@@ -39,10 +39,20 @@ export default {
     },
     deleteEmail(emailId) {
       emailService.remove(emailId)
-      const idx = this.emails.findIndex(email => email.id === emailId)
-      const email = this.emails[idx]
-      if (email.state !== 'trash') email.state = 'trash'
-      else this.emails.splice(idx, 1)
+      .then(() => {
+        const idx = this.emails.findIndex(email => email.id === emailId)
+        const email = this.emails[idx]
+        if (email.state !== 'trash') email.state = 'trash'
+        else this.emails.splice(idx, 1)  
+      })
+    },
+    updateEmail(newEmail) {
+      console.log('updating email starred...', newEmail)
+      emailService.save(newEmail).then(newEmail => {
+        const idx = this.emails.findIndex(email => email.id === newEmail.id)
+        this.emails.splice(idx, 1, newEmail)
+        console.log('updated...')
+      })
     },
     sortEmails({ direction }) {
       this.emails.sort((a, b) => {
@@ -110,7 +120,9 @@ export default {
   created() {
     emailService.query().then(emails => (this.emails = emails))
 
-    eventBus.on('removedEmail', this.deleteEmail)
+    eventBus.on('removed', this.deleteEmail)
+    eventBus.on('updated', this.updateEmail)
+
     eventBus.on('addedEmail', this.sendEmail)
     eventBus.on('filterBy', this.filterState)
     eventBus.on('starred', this.starEmail)

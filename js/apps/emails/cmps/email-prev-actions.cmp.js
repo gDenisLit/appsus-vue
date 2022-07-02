@@ -1,7 +1,7 @@
 import {
-  removeEmailEmit,
+  removeEmit,
   readEmailEmit,
-  addNoteEmit,
+  interEmit,
 } from '../../../services/eventBus.service.js'
 
 export default {
@@ -25,7 +25,7 @@ export default {
   },
   methods: {
     selectDelete() {
-      removeEmailEmit(this.email.id)
+      removeEmit(this.email.id)
     },
     selectRead() {
       readEmailEmit(this.email.id)
@@ -40,7 +40,7 @@ export default {
         },
       }
       console.log('adding note..', newNote)
-      addNoteEmit(newNote)
+      interEmit(newNote)
     },
   },
   computed: {},
