@@ -2,8 +2,7 @@ import { addNoteEmit } from '../../../../services/eventBus.service.js'
 
 export default {
   template: `
-      <section class="note-add">
-        <div class="add-note-todos flex">
+      <section class="note-add-inner note-add-todos flex">
           <input v-model="note.info.title" type="text" placeholder="Title">
           <div v-for="(todo, idx) in todos" class="flex space-between" :key="todo.id"> 
               <div class="flex">
@@ -22,7 +21,6 @@ export default {
               <span class="remove" v-if="todo.txt" @click="removeTodo(idx)">x</span>
           </div>
           <button @click="addNote">Add</button>
-        </div>
       </section>
 
   `,

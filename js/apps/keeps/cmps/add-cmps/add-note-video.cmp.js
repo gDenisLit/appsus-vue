@@ -2,13 +2,11 @@ import { addNoteEmit } from '../../../../services/eventBus.service.js'
 
 export default {
   template: ` 
-    <section class="note-add" @keyup.enter="addNote">
-      <div class="add-note-txt flex">
+    <section class="note-add-inner note-add-video flex" @keyup.enter="addNote">
       <input type="text"
-              v-model="note.info.title"
-             placeholder="Pick a title first">
-        <input v-model="url" type="url" placeholder="Enter video url from YouTube...">
-      </div>
+        v-model="note.info.title"
+        placeholder="Pick a title first">
+      <input v-model="url" type="url" placeholder="Enter video url from YouTube...">
     </section>
 `,
   data() {

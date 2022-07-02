@@ -1,0 +1,40 @@
+.note-add-audio .audio-inputs {
+  flex-direction: column;
+}
+
+.note-add-audio .audio-inputs div {
+  font-weight: 700;
+  font-family: Roboto-bold, sans-serif;
+}
+
+.note-add-audio .audio-inputs div:not(:last-child) {
+  margin-block-end: var(--spacing-medium2);
+}
+
+.note-add-audio .recorder-container {
+  align-items: center;
+}
+
+.note-add-audio .recorder-container span {
+  margin-inline-end: var(--spacing-large);
+}
+
+.note-add-audio .recorder button {
+  width: 2rem;
+  height: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--gray3);
+  color: #fff;
+  border-radius: 50%;
+  font-size: 1rem;
+  border: none;
+  transition: 0.5s;
+  cursor: pointer;
+  margin-inline-end: var(--spacing-medium);
+}
+
+.note-add-audio .recorder button:hover {
+  transform: scale(1.1);
+}

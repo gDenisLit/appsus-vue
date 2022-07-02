@@ -2,30 +2,28 @@ import { addNoteEmit } from '../../../../services/eventBus.service.js'
 
 export default {
   template: `
-          <div class="screen" @click="this.$emit('added')"></div>
+        <div class="screen" @click="this.$emit('added')"></div>
         <section class="note-add-draw">
+              <div class="canvas-container">
+                <div class="options-bar">
+                  <input type="color" name="color" v-model="bgColor" />
+                  <input type="color" name="color" v-model="color" />
+                  <span @click="clearCanvas">Clear</span>
+                </div>
+                <canvas 
+                ref="canvas" 
+                class="canvas" 
+                width="500" 
+                height="500"
+                @mousemove="draw"
+                @mousedown="startDrawing"
+                @mouseup="stopDrawing"
+                ></canvas>
+            </div>
             <input class="input" type="text"
                 v-model="note.info.title"
-              placeholder="Pick a title first">
-              <div class="options-bar">
-                <input type="color" name="color" v-model="bgColor" />
-                <input type="color" name="color" v-model="color" />
-                <span @click="clearCanvas">Clear</span>
-            </div>
-            <div class="canvas-container">
-              <canvas 
-              ref="canvas" 
-              class="canvas" 
-              width="500" 
-              height="500"
-              @mousemove="draw"
-              @mousedown="startDrawing"
-              @mouseup="stopDrawing"
-              ></canvas>
-            </div>
-            
-            <button class="btn" @click="addNote">Save</button>
-          
+              placeholder="Title">
+            <button class="btn" @click="addNote">Save</button> 
         </section>
     `,
   data() {

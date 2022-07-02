@@ -1,9 +1,9 @@
-import { keepService } from '../services/keep.service.js'
 import {
   eventBus,
   showErrorMsg,
   showSuccessMsg,
 } from '../../../services/eventBus.service.js'
+import { keepService } from '../services/keep.service.js'
 import noteAdd from '../cmps/note-add.cmp.js'
 import noteList from '../cmps/note-list.cmp.js'
 import noteFilter from '../cmps/note-filter.cmp.js'
@@ -11,8 +11,8 @@ import noteSide from '../cmps/note-side.cmp.js'
 
 export default {
   template: `
-  <div class="app">
-    <note-filter @filtered="setFilter" />
+  <main class="app">
+      <note-filter @filtered="setFilter" />
       <section v-if="notes" class="keep-app flex">
         <note-side @filtered="setFilter"/>
         <div class="flex">
@@ -22,7 +22,7 @@ export default {
           </div>
         </div>
       </section>
-  </div>
+  </main>
 `,
   components: {
     noteList,
@@ -41,6 +41,7 @@ export default {
   },
   created() {
     this.getNotes()
+    // TODO: unsubscribe
     eventBus.on('addedNote', this.addNote)
     eventBus.on('removedNote', this.removeNote)
     eventBus.on('updatedNote', this.updateNote)
@@ -58,22 +59,33 @@ export default {
         .catch(err => showErrorMsg(err))
     },
     addNote(note) {
-      keepService.addNote(note).then(note => {
-        this.notes.push(note)
-        showSuccessMsg('Added note successfuly!')
-      })
+      keepService
+        .addNote(note)
+        .then(note => {
+          this.notes.push(note)
+          showSuccessMsg('Added note successfuly!')
+        })
+        .catch(err => showErrorMsg('Somthing went wrong.. Try again!'))
     },
     removeNote(noteId) {
-      keepService.remove(noteId).then(() => {
-        const idx = this.notes.findIndex(note => note.id === noteId)
-        this.notes.splice(idx, 1)
-      })
+      keepService
+        .remove(noteId)
+        .then(() => {
+          const idx = this.notes.findIndex(note => note.id === noteId)
+          this.notes.splice(idx, 1)
+          showSuccessMsg('Note removed')
+        })
+        .catch(err => showErrorMsg('Somthing went wrong.. Try again!'))
     },
     updateNote(noteUpdated) {
-      keepService.save(noteUpdated).then(() => {
-        const idx = this.notes.findIndex(note => note.id === noteUpdated.id)
-        this.notes.splice(idx, 1, noteUpdated)
-      })
+      keepService
+        .save(noteUpdated)
+        .then(() => {
+          const idx = this.notes.findIndex(note => note.id === noteUpdated.id)
+          this.notes.splice(idx, 1, noteUpdated)
+          showSuccessMsg('Note updated')
+        })
+        .catch(err => showErrorMsg('Somthing went wrong.. Try again!'))
     },
     setFilter({ txt, type }) {
       this.filterBy.txt = ''
@@ -81,7 +93,7 @@ export default {
       if (txt) this.filterBy.txt = txt
       if (type) this.filterBy.type = type === 'all' ? '' : type
     },
-    filterPinned(notes) {
+    sortPinned(notes) {
       const pinned = notes.filter(note => note.isPinned)
       const unpinned = notes.filter(note => !note.isPinned)
 
@@ -90,8 +102,6 @@ export default {
   },
   computed: {
     notesToShow() {
-      // if (!this.filterBy) return this.filterPinned(this.notes)
-
       let notes = this.notes
 
       const { type, txt } = this.filterBy
@@ -108,7 +118,7 @@ export default {
         )
       }
 
-      return this.filterPinned(notes)
+      return this.sortPinned(notes)
     },
   },
   unmounted() {},

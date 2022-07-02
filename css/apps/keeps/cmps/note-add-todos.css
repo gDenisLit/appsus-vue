@@ -1,0 +1,20 @@
+.note-add .note-add-todos button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 6px 14px;
+  border-radius: 6px;
+  border: none;
+
+  background-color: var(--gray3);
+  color: var(--gray6);
+  cursor: pointer;
+}
+
+.note-add .note-add-todos .remove {
+  cursor: pointer;
+}
+
+.note-add .note-add-todos .flex {
+  align-items: center;
+}

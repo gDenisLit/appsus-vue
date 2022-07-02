@@ -34,6 +34,40 @@ export function showErrorMsg(txt) {
   showUserMsg({ txt, type: 'error' })
 }
 
+// TODO: refactor code to genertal listender and remove them accordintly
+export function addEmit(entity) {
+  emit('added', entity)
+}
+
+export function updateEmit(entity) {
+  emit('updated', entity)
+}
+
+export function removeEmit(entityId) {
+  emit('removed', entityId)
+}
+
+export function editEmit(entity) {
+  emit('edited', entity)
+}
+
+export function toggleEmit() {
+  emit('toggled')
+}
+
+export function selectEmit(entity) {
+  emit('selected', entity)
+}
+
+export function filterEmit(filterBy) {
+  emit('filtered', filterBy)
+}
+
+export function interEmit(entity) {
+  emit('intergration', entity)
+}
+
+// TODO: refactor all of this
 export function addEmailEmit(email) {
   emit('addedEmail', email)
 }
@@ -58,21 +92,12 @@ export function updateNoteEmit(note) {
   emit('updatedNote', note)
 }
 
-export function selectEmit(entity) {
-  emit('selected', entity)
-}
-
 export function filterEmailEmit(entity) {
   emit('filterBy', entity)
 }
 
 export function starEmailEmit(entity) {
   emit('starred', entity)
-}
-
-export function toggleEmit() {
-  console.log('called')
-  emit('toggled')
 }
 
 export function readEmailEmit(entity) {
@@ -84,5 +109,5 @@ export function toggleIsReadEmit(emailId) {
 }
 
 export function editEmailEmit(entity) {
-  emit('edit', entity) 
+  emit('edit', entity)
 }

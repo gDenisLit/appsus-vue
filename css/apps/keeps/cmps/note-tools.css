@@ -1,12 +1,7 @@
 .note-tools {
   justify-content: space-between;
   width: 100%;
-  opacity: 0;
   transition: opacity 0.4s;
-}
-
-.note-preview:hover .note-tools {
-  opacity: 1;
 }
 
 .note-tools a {

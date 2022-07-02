@@ -22,6 +22,10 @@
     left: 14rem;
   }
 
+  .notes {
+    margin-left: 2rem;
+  }
+
   .note-list {
     column-count: 3;
   }
@@ -31,10 +35,6 @@
   html {
     font-size: 100%;
   }
-
-  /* .side-nav {
-    min-width: 15.5375rem;
-  } */
 
   .note-list {
     column-count: 4;
@@ -46,5 +46,34 @@
 
   .app-header .search {
     left: 16.5rem;
+  }
+
+  .note-add .type-picker {
+    grid-template-columns: repeat(6, 1fr);
+  }
+
+  .note-add .note-add-img .img-inputs {
+    align-items: center;
+    flex-direction: row;
+  }
+
+  .note-add-img .img-inputs input:first-child {
+    margin-block-end: 0;
+  }
+
+  .note-add-img .img-inputs .or {
+    margin-inline-end: 0;
+  }
+
+  .note-add .file-upload {
+    margin-inline-start: 1rem;
+  }
+
+  .note-tools {
+    opacity: 0;
+  }
+
+  .note-preview:hover .note-tools {
+    opacity: 1;
   }
 }

@@ -2,25 +2,25 @@ import { addNoteEmit } from '../../../../services/eventBus.service.js'
 
 export default {
   template: `
-        <section class="note-add">
-          <div class="add-note-img">
+        <section class="note-add-inner note-add-img">
             <input type="text"
               v-model="note.info.title"
              placeholder="Pick a title first">
             
-             <div class="img-inputs">
+             <div class="img-inputs flex">
                <input type="url"
                v-model="note.info.url"
                placeholder="Enter img url"
                @keyup.enter="addNote()">
-               <span>or</span>
-               <label for="file-upload" class="file-upload">
-                <i class="fa-solid fa-upload"></i>
-                 <span>Choose file</span>
-               </label>
-               <input id="file-upload" type="file" @change="imgInput">
+               <div>
+                <span class="or">or</span>
+                <label for="file-upload" class="file-upload">
+                  <i class="fa-solid fa-upload"></i>
+                  <span>Choose file</span>
+                </label>
+                <input id="file-upload" type="file" @change="imgInput">
+               </div>   
              </div>
-          </div>
         </section>
     `,
   data() {

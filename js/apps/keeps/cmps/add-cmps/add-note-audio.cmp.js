@@ -2,30 +2,42 @@ import { addNoteEmit } from '../../../../services/eventBus.service.js'
 
 export default {
   template: `
-        <section class="note-add">
-          <div class="add-note-img">
+        <section class="note-add-inner note-add-audio">
             <input type="text"
               v-model="note.info.title"
              placeholder="Pick a title first">
             
-             <div class="img-inputs">
-               <input type="url"
-               v-model="note.info.url"
-               placeholder="Enter audio url"
-               @keyup.enter="addNote()">
-               <span>Or</span>
-               <input type="file" @change="audioInput">
-               <span>Or record yourself</span>
-               <div class="recorder flex">
-                  <button :style="recordStyle" :disabled="recordBtn" @click="startRecording"><i class="fa-solid fa-record-vinyl"></i></button>
-                  <button :disabled="pauseBtn" @click="pauseRecording">
-                    <i v-if="!isPaused" class="fa-solid fa-pause"></i>
-                    <i v-else class="fa-solid fa-play"></i>
-                  </button>
-                  <button @click="stopRecording" :disabled="stopBtn"><i class="fa-solid fa-stop"></i></button>
+             <div class="audio-inputs flex">
+
+                <div>
+                <input type="url"
+                  v-model="note.info.url"
+                  placeholder="Enter audio url"
+                  @keyup.enter="addNote()">
+                </div>
+               
+               <div>
+                <span>Or</span>
+                <label for="file-upload" class="file-upload">
+                  <i class="fa-solid fa-upload"></i>
+                  <span>Choose file</span>
+                </label>
+                <input type="file" id="file-upload" @change="audioInput">
                </div>
+
+               <div class="recorder-container flex">
+                <span>Or record yourself</span>
+                <div class="recorder flex">
+                    <button :style="recordStyle" :disabled="recordBtn" @click="startRecording"><i class="fa-solid fa-record-vinyl"></i></button>
+                    <button :disabled="pauseBtn" @click="pauseRecording">
+                      <i v-if="!isPaused" class="fa-solid fa-pause"></i>
+                      <i v-else class="fa-solid fa-play"></i>
+                    </button>
+                    <button @click="stopRecording" :disabled="stopBtn"><i class="fa-solid fa-stop"></i></button>
+                </div>
+
               </div>
-          </div>
+            </div>    
         </section>
     `,
   data() {
@@ -151,7 +163,7 @@ export default {
   },
   computed: {
     recordStyle() {
-      return { color: this.isRecording ? 'red' : 'black' }
+      return { color: this.isRecording ? 'var(--error)' : '#ffffff' }
     },
   },
   unmounted() {},

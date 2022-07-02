@@ -7,9 +7,9 @@ import addNoteDraw from './add-cmps/add-note-draw.cmp.js'
 
 export default {
   template: `
-  <div class="add-wrapper">
-      <section class="note-add-container">
-        <div v-if="!type" class="note-add flex">
+  <div class="note-add-wrapper">
+      <section class="note-add">
+        <div v-if="!type" class="text-box flex">
           <p @click="changeType('txt')">Take a note...</p>
         </div>
 
@@ -20,12 +20,22 @@ export default {
         <add-note-audio v-if="type === 'audio'" @added="type = null" />
         <add-note-draw v-if="type === 'draw'" @added="type = null" />
 
-        <div class="note-type-picker">
-            <a @click="changeType('txt')"><i class="fa-solid fa-font"></i></a>
-            <a @click="changeType('img')"><i class="fa-solid fa-image"></i></a>
-            <a @click="changeType('video')"><i class="fa-brands fa-youtube"></i></a>
-            <a @click="changeType('todos')"><i class="fa-solid fa-list"></i></a>
-            <a @click="changeType('audio')"><i class="fa-solid fa-volume-high"></i></a>
+        <div class="type-picker grid">
+            <a @click="changeType('txt')"
+              :class="{ active: type === 'txt'}">
+              <i class="fa-solid fa-font"></i></a>
+            <a @click="changeType('img')"
+              :class="{ active: type === 'img'}">
+              <i class="fa-solid fa-image"></i></a>
+            <a @click="changeType('video')"
+              :class="{ active: type === 'video'}">
+              <i class="fa-brands fa-youtube"></i></a>
+            <a @click="changeType('todos')"
+              :class="{ active: type === 'todos'}">
+              <i class="fa-solid fa-list"></i></a>
+            <a @click="changeType('audio')"
+              :class="{ active: type === 'audio'}">
+              <i class="fa-solid fa-volume-high"></i></a>
             <a @click="changeType('draw')"><i class="fa-solid fa-paintbrush"></i></a>
           </div>
       </section>

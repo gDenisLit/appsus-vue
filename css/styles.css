@@ -9,6 +9,7 @@
 @import 'basic/buttons.css';
 @import 'basic/animations.css';
 @import 'basic/input.css';
+@import 'basic/checkbox.css';
 
 /* GENERAL COMPONENTS  */
 @import 'cmps/main-app.css';
@@ -24,8 +25,10 @@
 /* KEEP APP  */
 @import 'apps/keeps/keep-app.css';
 @import 'apps/keeps/cmps/note-add.css';
-@import 'apps/keeps/cmps/note-inner.css';
 @import 'apps/keeps/cmps/note-add-draw.css';
+@import 'apps/keeps/cmps/note-add-todos.css';
+@import 'apps/keeps/cmps/note-add-audio.css';
+@import 'apps/keeps/cmps/note-inner.css';
 @import 'apps/keeps/cmps/note-edit.css';
 @import 'apps/keeps/cmps/note-list.css';
 @import 'apps/keeps/cmps/note-preview.css';
