@@ -74,16 +74,6 @@ export default {
         this.emails.splice(idx, 1, email)
       })
     },
-    markRead(emailId) {
-      const currEmail = this.emails.find(email => email.id === emailId)
-      if (!currEmail.isRead) currEmail.isRead = true
-      emailService.save(currEmail)
-    },
-    toggleRead(emailId) {
-      const currEmail = this.emails.find(email => email.id === emailId)
-      currEmail.isRead = !currEmail.isRead
-      emailService.save(currEmail)
-    },
     toggleSideNav() {
       this.isSideOpen = !this.isSideOpen
     },
@@ -120,14 +110,9 @@ export default {
   created() {
     emailService.query().then(emails => (this.emails = emails))
 
+    eventBus.on('added', this.sendEmail)
     eventBus.on('removed', this.deleteEmail)
     eventBus.on('updated', this.updateEmail)
-
-    eventBus.on('addedEmail', this.sendEmail)
-    eventBus.on('filterBy', this.filterState)
-    eventBus.on('starred', this.starEmail)
-    eventBus.on('isRead', this.markRead)
-    eventBus.on('toggleRead', this.toggleRead)
     eventBus.on('toggled', this.toggleSideNav)
   },
   unmounted() {},

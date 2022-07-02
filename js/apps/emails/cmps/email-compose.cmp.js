@@ -1,4 +1,4 @@
-import { addEmailEmit } from '../../../services/eventBus.service.js'
+import { addEmit } from '../../../services/eventBus.service.js'
 
 export default {
   template: `
@@ -51,7 +51,7 @@ export default {
       this.newEmail.state = 'sent'
       this.newEmail.sentAt = Date.now()
       this.$router.replace('/email/inbox')
-      addEmailEmit(this.newEmail)
+      addEmit(this.newEmail)
     },
     saveDraft() {
       if (!this.newEmail.to && !this.newEmail.subject && !this.newEmail.body) {
@@ -60,7 +60,7 @@ export default {
       }
       this.newEmail.state = 'draft'
       this.$router.replace('/email/inbox')
-      addEmailEmit(this.newEmail)
+      addEmit(this.newEmail)
     },
   },
   computed: {},
