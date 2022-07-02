@@ -1,21 +1,11 @@
-.book-app {
-  max-height: 55vh;
-  overflow-y: scroll;
-}
-
-.book-app-header {
-  margin-block-start: var(--spacing-medium);
-  margin-block-end: var(--spacing-medium2);
-}
-
 .book-logo img {
   width: 7rem;
 }
 
 .books-container {
-  grid-template-columns: repeat(auto-fit, 150px);
-  gap: 1rem;
-  justify-content: center;
+  grid-template-columns: repeat(auto-fit, 7.5rem);
+  gap: 0.5rem;
+  /* justify-content: center; */
   padding-bottom: 64px;
 }
 
