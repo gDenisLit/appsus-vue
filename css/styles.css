@@ -20,6 +20,8 @@
 @import 'cmps/screen.css';
 @import 'cmps/app-side.css';
 @import 'cmps/user-msg.css';
+@import 'cmps/label-picker.css';
+@import 'cmps/label-list.css';
 @import 'cmps/app-header.css';
 
 /* KEEP APP  */

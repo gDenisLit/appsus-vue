@@ -1,4 +1,5 @@
 import noteColorPalette from './note-color-palette.cmp.js'
+import labelPicker from '../../../cmps/label-picker.cmp.js'
 import {
   removeEmit,
   updateEmit,
@@ -8,6 +9,8 @@ import {
 export default {
   props: ['note'],
   template: `
+      <div>
+        <label-picker v-if="showLabels" @picked="addLabel" @click.stop />
       <section class="note-tools flex" @click.stop>
         <a @click="togglePin" title="Pin">
           <i class="fa-solid fa-thumbtack"></i></a>
@@ -23,16 +26,20 @@ export default {
           <i class="fa-solid fa-clone"></i></a>
         <a @click="composeEmail" title="Send as email">
           <i class="fa-solid fa-envelope-open-text"></i></a>
-        <a @click="removeNote()" title="Remove">
+        <a @click="removeNote" title="Remove">
           <i class="fa-solid fa-trash-can"></i></a>
+        <a @click="showLabels = !showLabels" title="Remove">
+        <i class="fa-solid fa-tags"></i></a>
       </section>
+      </div>
     `,
   components: {
     noteColorPalette,
+    labelPicker,
   },
   data() {
     return {
-      showColors: false,
+      showLabels: false,
     }
   },
   created() {},
@@ -53,6 +60,14 @@ export default {
     togglePin() {
       const newNote = this.clone()
       newNote.isPinned = !newNote.isPinned
+      updateEmit(newNote)
+    },
+    addLabel(label) {
+      this.showLabels = false
+      const newNote = this.clone()
+      if (!newNote.labels) newNote.labels = []
+      newNote.labels.push(label)
+      console.log(newNote)
       updateEmit(newNote)
     },
     clone() {

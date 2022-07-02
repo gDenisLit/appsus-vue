@@ -1,0 +1,27 @@
+.label-list {
+  font-size: 0.65rem;
+}
+
+.label {
+  padding: 0.2rem;
+  border-radius: 3px;
+  /* width: 2.8rem; */
+}
+
+.label:not(:last-child) {
+  margin-inline-end: 0.2rem;
+}
+
+.label span:first-child {
+  margin-inline-end: 0.2rem;
+}
+
+.label .remove {
+  opacity: 0;
+  transition: opacity 0.4s;
+  cursor: pointer;
+}
+
+.label:hover .remove {
+  opacity: 1;
+}

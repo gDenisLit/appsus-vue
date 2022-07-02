@@ -1,0 +1,20 @@
+.label-picker {
+  position: fixed;
+  right: 0;
+  top: 20%;
+  background-color: var(--gray3);
+  padding: var(--spacing-medium);
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  animation: moveInRight 0.4s ease-in;
+  border-radius: 3px;
+}
+
+.label-picker .label-option {
+  display: block;
+  width: 10rem;
+  padding: 0.5rem;
+  margin-block-end: var(--spacing-small);
+  border-radius: 3px;
+}

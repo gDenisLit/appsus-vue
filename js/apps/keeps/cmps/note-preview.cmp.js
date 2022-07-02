@@ -5,6 +5,8 @@ import noteVideo from './costumes/note-video.cmp.js'
 import noteTools from './note-tools.cmp.js'
 import noteEdit from './note-edit.cmp.js'
 import noteAudio from './costumes/note-audio.cmp.js'
+import labelList from '../../../cmps/label-list.cmp.js'
+import { updateEmit } from '../../../services/eventBus.service.js'
 
 export default {
   props: ['note'],
@@ -20,11 +22,14 @@ export default {
           <component class="note" :is="note.type"  
             :note="note"  >
           </component>
+          <div v-if="note.labels" @click.stop>
+            <label-list :labels="note.labels" @removed="updateNote" />
+          </div>
           <note-tools :note="note" @updating="isUpdating = true" />
         </div>
 
         <div v-if="isUpdating" class="note-edit-container">
-          <note-edit  :note="clone" @closed="isUpdating = false"/>
+          <note-edit  :note="clone()" @closed="isUpdating = false"/>
         </div>
 
       </section>
@@ -37,6 +42,7 @@ export default {
     noteTools,
     noteEdit,
     noteAudio,
+    labelList,
   },
   data() {
     return {
@@ -58,13 +64,18 @@ export default {
       this.isOver = false
       document.body.style.cursor = 'auto'
     },
+    updateNote(labels) {
+      const newNote = this.clone()
+      newNote.labels = labels
+      updateEmit(newNote)
+    },
+    clone() {
+      return JSON.parse(JSON.stringify(this.note))
+    },
   },
   computed: {
     bgc() {
       return { backgroundColor: this.note.style.backgroundColor }
-    },
-    clone() {
-      return JSON.parse(JSON.stringify(this.note))
     },
   },
   unmounted() {},
