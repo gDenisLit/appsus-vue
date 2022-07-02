@@ -8,7 +8,7 @@ export default {
   template: `
       <div class="app">
             <email-filter @search="setSearch" @sort="sortEmails"/>
-            <section class="flex">
+            <section class="email-app flex">
                 <email-side @filtered="setFilter" :unreadCount="unreadCount"/>
                 <router-view :emails="emailsToShow" @selected="showEmail" :isSideNav="isSideOpen"/>
             </section>
