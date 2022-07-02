@@ -45,6 +45,7 @@
 @import 'apps/emails/cmps/compose-email.css';
 @import 'apps/emails/cmps/email-details.css';
 @import 'apps/emails/cmps/email-filter.css';
+@import 'apps/emails/cmps/email-side-nav.css';
 
 /* BOOKS APP  */
 @import 'apps/books/book-header.css';

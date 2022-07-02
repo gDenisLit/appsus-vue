@@ -8,7 +8,7 @@ export default {
   template: `
       <div class="app">
             <email-filter @search="setSearch" @sort="sortEmails"/>
-            <section class="flex">
+            <section class="email-app flex">
                 <email-side @filtered="setFilter" :unreadCount="unreadCount"/>
                 <router-view :emails="emailsToShow" @selected="showEmail" :isSideNav="isSideOpen"/>
             </section>
@@ -20,6 +20,11 @@ export default {
       sortBy: null,
       filterBy: {
         txt: null,
+        to: null,
+        subject: null,
+        body: null,
+        dateFrom: null,
+        dateTo: null,
         state: null,
         starred: false,
       },
@@ -68,8 +73,13 @@ export default {
       this.filterBy.state = state
       this.filterBy.starred = starred
     },
-    setSearch(txt) {
+    setSearch({txt, to, subject, body, dateFrom, dateTo}) {
       this.filterBy.txt = txt
+      this.filterBy.to = to
+      this.filterBy.subject = subject
+      this.filterBy.body = body
+      this.filterBy.dateFrom = +new Date(dateFrom)
+      this.filterBy.dateTo = +new Date(dateTo)
     },
     toggleSideNav() {
       this.isSideOpen = !this.isSideOpen
@@ -79,7 +89,9 @@ export default {
     emailsToShow() {
       if (!this.emails) return
       let emails = this.emails
-      const { txt, state, starred } = this.filterBy
+      const { txt, to, subject, 
+              body, state, starred,
+              dateFrom, dateTo} = this.filterBy
 
       if (txt) {
         const regex = new RegExp(txt, 'i')
@@ -91,6 +103,31 @@ export default {
           )
         })
       }
+
+      if (to) {
+        const regex = new RegExp(to, 'i')
+        emails = emails.filter(email => regex.test(email.to))
+      }
+
+      if (subject) {
+        const regex = new RegExp(subject, 'i')
+        emails = emails.filter(email => regex.test(email.subject))
+      }
+
+      if (body) {
+        const regex = new RegExp(body, 'i')
+        emails = emails.filter(email => regex.test(email.body))
+      }
+
+      if (dateFrom) {
+        emails = emails.filter(email => email.sentAt > dateFrom)
+      }
+
+      if (dateTo) {
+        console.log(dateTo)
+        emails = emails.filter(email => email.sentAt < dateTo)
+      }
+
       if (state) {
         emails = emails.filter(email => email.state === state)
       }

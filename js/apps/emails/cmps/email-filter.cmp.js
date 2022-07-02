@@ -23,20 +23,20 @@ export default {
                 </div>
                 <div class="flex">
                   <span class="label">From</span>
-                  <input type="search">
+                  <input type="search" v-model="filterBy.to" @input="filter">
                 </div>
                 <div class="flex">
                   <span class="label">Subject</span>
-                  <input type="search">
+                  <input type="search" v-model="filterBy.subject" @input="filter">
                 </div>
                 <div class="flex"> 
                   <span class="label">Has the words</span>
-                  <input type="search">
+                  <input type="search" v-model="filterBy.body" @input="filter">
                 </div>
                 <div class="flex">
                   <span class="label">Date within</span>
-                  <input class="date-from" type="date">
-                  <input type="date">
+                  <input class="date-from" type="date" v-model="filterBy.dateFrom" @change="filter">
+                  <input type="date" v-model="filterBy.dateTo" @change="filter">
                 </div>
             </div>
           </div>
@@ -46,6 +46,11 @@ export default {
     return {
       filterBy: {
         txt: '',
+        to: '',
+        subject: '',
+        body: '',
+        dateFrom: '',
+        dateTo: '',
       },
       sortBy: {
         date: null,
@@ -57,7 +62,7 @@ export default {
   created() {},
   methods: {
     filter() {
-      this.$emit('search', this.filterBy.txt)
+      this.$emit('search', this.filterBy)
     },
     sort() {
       this.sortBy.date = !this.sortBy.date

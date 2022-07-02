@@ -26,6 +26,14 @@
     width: 50rem;
     height: 17rem;
   }
+
+  .email-container {
+    margin: 0;
+  }
+
+  .email-app .side-nav {
+    position: inherit;
+  }
 }
 
 @media screen and (min-width: 820px) {

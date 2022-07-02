@@ -8,7 +8,7 @@ export default {
                 <span>-</span>
                 <span class="sent-at">{{date}}</span>
             </div>
-            <pre>{{email.body}}</pre>
+            <p>{{email.body}}</p>
         </section>
  
     `,
