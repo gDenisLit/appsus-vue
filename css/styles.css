@@ -47,7 +47,6 @@
 @import 'apps/emails/cmps/email-filter.css';
 
 /* BOOKS APP  */
-@import 'apps/books/add-review.css';
 @import 'apps/books/book-header.css';
 @import 'apps/books/book-add.css';
 @import 'apps/books/book-details.css';
