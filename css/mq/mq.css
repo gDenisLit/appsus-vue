@@ -2,10 +2,9 @@
   html {
     font-size: 80%;
   }
-  .note-list {
-    column-count: 2;
-  }
- 
+  /* .note-list {
+    column-count: 1;
+  } */
 }
 
 @media screen and (min-width: 600px) {
@@ -40,22 +39,28 @@
   }
 
   .note-list {
-    column-count: 3;
+    column-count: 2;
   }
 
   .canvas-container {
     width: 32rem;
     height: 32rem;
   }
-  
+
   .emails-preview .email-body {
     display: block;
   }
 }
 
+@media screen and (min-width: 980px) {
+  .main-layout {
+    max-width: 980px;
+  }
+}
+
 @media screen and (min-width: 1180px) {
   html {
-    font-size: 100%;
+    font-size: 95%;
   }
 
   .main-layout {
@@ -71,7 +76,7 @@
   }
 
   .note-list {
-    column-count: 4;
+    column-count: 3;
   }
 
   .app-header .search .input-search {
@@ -110,12 +115,14 @@
   .note-preview:hover .note-tools {
     opacity: 1;
   }
-
-  
 }
 
-@media screen and (min-width: 900px) {
-  .main-layout {
-    max-width: 980px;
+@media screen and (min-width: 1300px) {
+  html {
+    font-size: 100%;
+  }
+
+  .note-list {
+    column-count: 4;
   }
 }
