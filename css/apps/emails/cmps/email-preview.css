@@ -54,20 +54,34 @@
   font-family: Roboto-regular;
   font-size: 0.85rem;
   color: var(--clr4);
+
+  /* display: flex;
+  flex-direction: column; */
 }
 
 .emails-preview .email-to {
   text-transform: capitalize;
+  min-width: 10rem;
   flex-basis: 15%;
+  background-color: var(--gray2);
 }
 
-.emails-preview.email-sub-body {
-  flex-basis: 80%;
+.emails-preview .email-sub{
+  margin-inline-end: 0.5rem;
+}
+.emails-preview .email-body {
+  display: none;
+  min-width: 30%;
+  overflow: hidden;
+  margin-inline-start: 0.5rem;
 }
 
 .emails-preview .sent-at {
   position: absolute;
   right: 0.5rem;
+  z-index: 200;
+  background-color: var(--gray2);
+  padding-inline-start: 1.5rem;
 }
 
 .unread {
@@ -77,11 +91,14 @@
 }
 
 .email-prev-actions {
+  display: flex;
   padding: 1px;
+  padding-left: 3rem;
   opacity: 0;
   position: absolute;
-  right: 5rem;
+  right: 4rem;
   z-index: 200;
+  background-color: var(--gray2);
 }
 
 .email-prev-actions .delete-email,

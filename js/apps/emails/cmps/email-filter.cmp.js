@@ -4,11 +4,13 @@ export default {
   template: `
 
       <section class="app-header">
+       
           <button href="#" @click="toggleSideNav">☰</button>
           <div class="logo">
               <img src="assets/img/logo-mail.png" alt="">
           </div>
           <h2>Mail</h2>
+      
           <div class="search">
             <input class="input-search" type="text" v-model="filterBy.txt" @input="filter" placeholder="Search">
             <i class="icon fa-solid fa-magnifying-glass"></i>

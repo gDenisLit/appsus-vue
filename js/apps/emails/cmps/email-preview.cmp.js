@@ -6,9 +6,12 @@ export default {
         <div v-if="show">
             <i class="fa-solid fa-star" :class="isStarred"  @click.stop="toggleStar"></i>
         </div>
-        <span class="email-to" :class="unread">{{to}}</span>
-        <span class="email-sub-body" :class="unread">{{email.subject}} -</span>
-        <span>{{shortBody}}</span>
+        <div class="preview-data">
+            <div class="email-to" :class="unread">{{to}}</div>
+            <span class="email-sub" :class="unread">{{email.subject}}</span>
+            <span :class="unread">-</span>
+            <span class="email-body" ref="body">{{shortBody}}</span>
+        </div>
         <span class="sent-at" :class="unread">{{date}}</span>
     `,
     props: [
@@ -16,7 +19,7 @@ export default {
     ],
     data() {
         return {
-
+            
         }
     },
     methods: {
@@ -48,10 +51,13 @@ export default {
         },
         isStarred() {
             return {starred: (this.email.starred)}
-        }
+        },
     },
     created() {
-
+        
+    },
+    mounted() {
+        
     },
     unmounted() {
  

@@ -3,7 +3,6 @@
   align-items: center;
   padding: 0.45rem;
   border-bottom: 0.05rem solid rgba(255, 255, 255, 0.11);
-  position: relative;
 }
 
 .app-header button {
@@ -28,16 +27,14 @@
 }
 
 .app-header h2 {
-  margin-inline-end: 5rem;
   font-weight: 400;
   display: none;
 }
 
 .app-header .search {
-  position: absolute;
+  position: relative;
   display: flex;
   flex-direction: column;
-  left: 10rem;
 }
 
 .app-header .search .input-search {
@@ -63,10 +60,10 @@
   color: var(--gray6);
 }
 
-.app-header .fa-sliders {
+.app-header .search .fa-sliders {
   position: absolute;
-  top: 35%;
-  right: 20px;
+  bottom: 1rem;
+  right: 1rem;
   cursor: pointer;
 }
 

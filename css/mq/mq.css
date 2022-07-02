@@ -5,9 +5,16 @@
   .note-list {
     column-count: 2;
   }
+ 
 }
 
-@media screen and (min-width: 760px) {
+@media screen and (min-width: 600px) {
+  .emails-preview .preview-data {
+    display: flex;
+  }
+}
+
+@media screen and (min-width: 820px) {
   html {
     font-size: 90%;
   }
@@ -34,9 +41,13 @@
     width: 32rem;
     height: 32rem;
   }
+  
+  .emails-preview .email-body {
+    display: block;
+  }
 }
 
-@media screen and (min-width: 900px) {
+@media screen and (min-width: 1180px) {
   html {
     font-size: 100%;
   }
@@ -81,4 +92,6 @@
   .note-preview:hover .note-tools {
     opacity: 1;
   }
+
+  
 }
