@@ -10,7 +10,9 @@ export default {
                 :key="btn.id"
                 @mouseenter="isCollapse = false"
                 @mouseleave="isCollapse = true"  >
-                  <a @click="filter(btn.type)">
+                  <a @click="filter(btn.type)" @mouseenter="hover(btn.type)" @mouseleave="noHover"
+                    :class="{'active-side': (btn.type === active), 'hover-side': (btn.type === isHover)}"
+                  >
                     <span class="icon"><i :class="btn.icon"></i></span>
                     <span class="text">{{btn.title}}</span>
                   </a>
@@ -62,6 +64,8 @@ export default {
       ],
       isCollapse: true,
       isAlwaysOpen: false,
+      active: 'all',
+      isHover: null,
     }
   },
   components: {},
@@ -72,6 +76,13 @@ export default {
     filter(type) {
       const filterBy = { type }
       this.$emit('filtered', filterBy)
+      this.active = type
+    },
+    hover(type) {
+      this.isHover = type
+    },
+    noHover() {
+      this.isHover = null
     },
   },
   computed: {

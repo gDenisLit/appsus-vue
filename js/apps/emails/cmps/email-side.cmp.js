@@ -20,7 +20,8 @@ export default {
                 <li v-for="btn in navBtns" 
                 :key="btn.id"
                 >
-                  <a @click="filter(btn.type)">
+                  <a @click="filter(btn.type)" @mouseenter="hover(btn.type)" @mouseleave="noHover"
+                    :class="{'active-side': (btn.type === active), 'hover-side': (btn.type === isHover)}">
                     <span class="icon"><i :class="btn.icon"></i></span>
                     <span class="text">{{btn.title}}</span>
                     <span class="unread-count text" v-if="btn.type === 'inbox'">{{showUreadCount}}</span>
@@ -71,6 +72,7 @@ export default {
       isCollapse: true,
       isAlwaysOpen: false,
       active: 'inbox',
+      isHover: null,
       sortBy: null,
       emailToEdit: null,
     }
@@ -87,9 +89,16 @@ export default {
       } else filter = {state, starred: false,}
       this.$emit('filtered', filter)
       this.$router.push('inbox')
+      this.active = state
     }, 
     composeMode() {
       this.$router.replace('/email/inbox/compose')
+    },
+    hover(type) {
+      this.isHover = type
+    },
+    noHover() {
+      this.isHover = null
     },
   },
   computed: {
@@ -98,11 +107,13 @@ export default {
     },
     showUreadCount() {
       return (this.unreadCount)? this.unreadCount : ''
-    }
+    },
   },
   created() {
     eventBus.on('toggled', this.toggleSideNav)
   },
+  
+
   unmounted() {
 
   },

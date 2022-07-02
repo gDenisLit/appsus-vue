@@ -34,8 +34,8 @@
   margin-inline-start: 5rem;
 }
 
-.side-nav ul li a:hover {
-  background-color: rgba(240, 222, 85, 0.285);
+.hover-side {
+  background-color: rgba(94, 94, 91, 0.16);
   color: var(--gray5);
 }
 
@@ -52,6 +52,9 @@
   justify-content: center;
   align-items: center;
   overflow: hidden;
+  border-radius: 50%;
+  padding: 0.8rem 0.6rem 1rem 0.2rem;
+  margin-inline-start: 0.2rem;
 }
 
 .hover-collapse .side-nav ul li a .icon {
@@ -86,6 +89,11 @@
 
 .side-nav ul li a.email-compose:hover {
   background-color: rgba(240, 222, 85, 0.285);
+  color: var(--gray5);
+}
+
+.active-side {
+  background-color: rgba(240, 222, 85, 0.573);
   color: var(--gray5);
 }
 
