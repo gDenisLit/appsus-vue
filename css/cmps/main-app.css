@@ -7,5 +7,5 @@
 .app {
   min-height: 70vh;
   animation: fade-in 0.4s ease-in;
-  animation: moveInRight 0.3s ease-in;
+  animation: moveInRight 0.1s ease-in;
 }

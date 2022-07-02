@@ -1,0 +1,34 @@
+.about-page {
+  margin-top: var(--spacing-large);
+  animation: fadeIn 0.2s ease-in;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 60vh;
+  width: 90%;
+  margin: 0 auto;
+}
+
+.about-page .imgs {
+  margin: 0 auto;
+  justify-content: space-between;
+}
+
+.about-page .imgs img {
+  width: 13rem;
+  border-radius: 6px;
+}
+
+.about-page .imgs img:first-child {
+  margin-inline-end: 2rem;
+}
+
+.about-page h2 {
+  text-align: center;
+  animation: moveInRight 0.5s ease-out;
+}
+
+.about-page p {
+  text-align: center;
+  animation: moveInLeft 0.5s ease-out;
+}

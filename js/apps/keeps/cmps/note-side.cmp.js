@@ -2,14 +2,14 @@ import { eventBus } from '../../../services/eventBus.service.js'
 
 export default {
   template: `
-      <div :class="collapse">
+      <div :class="collapse" 
+            @mouseenter="isCollapse = false"
+            @mouseleave="isCollapse = true" >
         <section class="side-nav">
           <div class="side-nav-inner">
             <ul>
                 <li v-for="btn in navBtns" 
-                :key="btn.id"
-                @mouseenter="isCollapse = false"
-                @mouseleave="isCollapse = true"  >
+                :key="btn.id">
                   <a @click="filter(btn.type)" @mouseenter="hover(btn.type)" @mouseleave="noHover"
                     :class="{'active-side': (btn.type === active), 'hover-side': (btn.type === isHover)}"
                   >
