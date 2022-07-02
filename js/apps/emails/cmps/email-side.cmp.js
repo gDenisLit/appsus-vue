@@ -1,6 +1,4 @@
 import { eventBus } from '../../../services/eventBus.service.js'
-import { filterEmailEmit } from "../../../services/eventBus.service.js"
-import emailCompose from "./email-compose.cmp.js"
 
 export default {
   template: `
@@ -104,7 +102,6 @@ export default {
   },
   created() {
     eventBus.on('toggled', this.toggleSideNav)
-    eventBus.on('edit', this.editMode)
   },
   unmounted() {
 

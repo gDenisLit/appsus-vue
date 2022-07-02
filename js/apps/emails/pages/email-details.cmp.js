@@ -1,5 +1,5 @@
 import { emailService } from "../services/email.service.js"
-import { editEmailEmit, readEmailEmit } from "../../../services/eventBus.service.js"
+import { updateEmit, removeEmit } from "../../../services/eventBus.service.js"
 import emailDetailsData from "../cmps/email-details-data.cmp.js"
 
 export default {
@@ -41,7 +41,12 @@ export default {
             this.$router.push('inbox')
         },
         editEmail() {
-            editEmailEmit(this.email)
+            const {subject, body} = this.email
+            this.$router.push({
+                name: 'compose',
+                params: { title: subject || '', body: body || '' },
+              })
+              removeEmit(this.email.id)
         },
     },
     computed: {
@@ -68,8 +73,9 @@ export default {
                 if (!emailId) return 
                 emailService.get(emailId)
                     .then(email => {
+                        email.isRead = true,
                         this.email = email
-                        readEmailEmit(email.id)
+                        updateEmit(email)
                     })
             },
             immediate: true,
