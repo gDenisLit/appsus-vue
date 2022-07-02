@@ -2,7 +2,7 @@
     padding: 1rem 2rem;
     position: relative;
     margin-inline-start: 2rem;
-    max-width: 300px;
+    /* max-width: 300px; */
 }
 
 .email-details-container .back {
@@ -27,6 +27,10 @@
     cursor: pointer;
     width: 8rem;
     margin-block-end: 1rem;
+}
+
+.email-reply, .email-forward{ 
+    margin-bottom: 5rem;
 }
 
 .email-reply i, .email-forward i, .back i {
@@ -64,6 +68,6 @@
 .email-details p {
     font-family: Roboto-regular;
     font-size: 0.8rem;
-    max-width: 300px;
+    /* max-width: 300px; */
     margin-block-end: 3rem;
 }

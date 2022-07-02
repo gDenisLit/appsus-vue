@@ -67,11 +67,9 @@ export default {
       addEmit(this.newEmail)
     },
     minimize() {
-      console.log('minimize..')
       this.isMinimize = !this.isMinimize
     },
     expand() {
-      console.log('expand...')
       this.isExpand = !this.isExpand
     }
   },
@@ -82,7 +80,8 @@ export default {
   },
   created() {
     if (this.email) this.newEmail = this.email
-    const {title, body} = this.$route.params
+    const {title, body, to} = this.$route.params
+    this.newEmail.to = to? to : null
     this.newEmail.body = body? body : null
     this.newEmail.subject = title? title : null 
   },

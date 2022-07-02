@@ -1,3 +1,5 @@
+import { updateEmit } from "../../../services/eventBus.service.js"
+
 export default {
     template: `
         <section class="email-details">
@@ -21,7 +23,7 @@ export default {
         }
     },
     methods: {
-           
+        
     },
     computed: {
         from() {
@@ -34,12 +36,20 @@ export default {
             const date = new Date(this.email.sentAt).toString()
             const idx = date.indexOf('GMT')
             return date.slice(0, idx)
-        }
+        },
+        removeLabel(labels) {
+            const email = JSON.parse(JSON.stringify(this.email))
+            email.labels = labels
+            updateEmit(email)
+        },
     },
     created() {
  
     },
     unmounted() {
  
+    },
+    components: {
+
     },
 }

@@ -17,6 +17,7 @@ const emailsData = [
     to: "noreply@discord.com",
     state: 'inbox',
     starred: false,
+    labels: [],
   },
   {
     id: 'e102',
@@ -31,6 +32,7 @@ const emailsData = [
     to: "Guy-Kadosh@discord.com",
     state: 'inbox',
     starred: false,
+    labels: [],
   },
   {
     id: 'e103',
@@ -41,6 +43,7 @@ const emailsData = [
     to: "service@paypal.co.il",
     state: 'inbox',
     starred: true,
+    labels: [],
   },
   {
     id: 'e104',
@@ -61,6 +64,7 @@ const emailsData = [
     to: "mishloha@mishloha.co.il",
     state: 'inbox',
     starred: false,
+    labels: [],
   },
   {
     id: 'e105',
@@ -85,6 +89,7 @@ const emailsData = [
     to: "Zoom@zoom.us",
     state: 'inbox',
     starred: false,
+    labels: [],
   },
   {
     id: 'e106',
@@ -110,6 +115,7 @@ const emailsData = [
     to: "skrill@news.skrill.com",
     state: 'inbox',
     starred: true,
+    labels: [],
   },
   {
     id: 'e107',
@@ -126,6 +132,7 @@ const emailsData = [
     to: "avocode@avocode.com",
     state: 'inbox',
     starred: false,
+    labels: [],
   },
   {
     id: 'e108',
@@ -179,6 +186,7 @@ const emailsData = [
     to: "quincy@freecodecamp.org",
     state: 'inbox',
     starred: false,
+    labels: [],
   },
   {
     id: 'e109',
@@ -193,6 +201,7 @@ const emailsData = [
     to: "linkedin@linkedin.com",
     state: 'inbox',
     starred: false,
+    labels: [],
   },
   {
     id: 'e110',
@@ -235,6 +244,7 @@ const emailsData = [
     to: "education@itpm.com",
     state: 'inbox',
     starred: false,
+    labels: [],
   },
   {
     id: 'e111',
@@ -252,6 +262,7 @@ const emailsData = [
     to: "	Google@accounts.google.com",
     state: 'inbox',
     starred: false,
+    labels: [],
   },
   {
     id: 'e112',
@@ -281,6 +292,7 @@ const emailsData = [
     to: "binance@mailersp1.binance.com",
     state: 'inbox',
     starred: false,
+    labels: [],
   },
   {
     id: 'e113',
@@ -298,6 +310,7 @@ const emailsData = [
     to: "fontawesome@fontawesome.com",
     state: 'inbox',
     starred: false,
+    labels: [],
   },
   {
     id: 'e114',
@@ -359,6 +372,7 @@ const emailsData = [
     to: "education@itpm.com",
     state: 'inbox',
     starred: false,
+    labels: [],
   },
   {
     id: 'e115',
@@ -372,6 +386,7 @@ const emailsData = [
     to: "NoReplyGoogleMaps@google.com",
     state: 'inbox',
     starred: false,
+    labels: [],
   },
   {
     id: 'e116',
@@ -388,6 +403,7 @@ const emailsData = [
     to: "DeviantArt@deviantart.com",
     state: 'inbox',
     starred: true,
+    labels: [],
   },
   {
     id: 's101',
@@ -398,6 +414,7 @@ const emailsData = [
     to: "momo@momo.com",
     state: 'sent',
     starred: false,
+    labels: [],
 },
 {
     id: 's102',
@@ -411,6 +428,7 @@ const emailsData = [
     to: "alinpuian@itpm.com",
     state: 'sent',
     starred: false,
+    labels: [],
 },
 {
     id: 's103',
@@ -428,6 +446,7 @@ const emailsData = [
     to: "stefany.anderson@cexio.intercom",
     state: 'sent',
     starred: false,
+    labels: [],
 },
 ]
 
