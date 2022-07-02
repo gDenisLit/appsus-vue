@@ -17,6 +17,7 @@ const emailsData = [
     to: "noreply@discord.com",
     state: 'inbox',
     starred: false,
+    labels: [],
   },
   {
     id: 'e102',
@@ -31,6 +32,7 @@ const emailsData = [
     to: "Guy-Kadosh@discord.com",
     state: 'inbox',
     starred: false,
+    labels: [],
   },
   {
     id: 'e103',
@@ -41,6 +43,7 @@ const emailsData = [
     to: "service@paypal.co.il",
     state: 'inbox',
     starred: true,
+    labels: [],
   },
   {
     id: 'e104',
@@ -61,6 +64,7 @@ const emailsData = [
     to: "mishloha@mishloha.co.il",
     state: 'inbox',
     starred: false,
+    labels: [],
   },
   {
     id: 'e105',
@@ -83,8 +87,9 @@ const emailsData = [
     isRead: false,
     sentAt: 1654957215189,
     to: "Zoom@zoom.us",
-    state: 'inbox',
+    state: 'trash',
     starred: false,
+    labels: [],
   },
   {
     id: 'e106',
@@ -110,6 +115,7 @@ const emailsData = [
     to: "skrill@news.skrill.com",
     state: 'inbox',
     starred: true,
+    labels: [],
   },
   {
     id: 'e107',
@@ -126,6 +132,7 @@ const emailsData = [
     to: "avocode@avocode.com",
     state: 'inbox',
     starred: false,
+    labels: [],
   },
   {
     id: 'e108',
@@ -179,6 +186,7 @@ const emailsData = [
     to: "quincy@freecodecamp.org",
     state: 'inbox',
     starred: false,
+    labels: [],
   },
   {
     id: 'e109',
@@ -193,6 +201,7 @@ const emailsData = [
     to: "linkedin@linkedin.com",
     state: 'inbox',
     starred: false,
+    labels: [],
   },
   {
     id: 'e110',
@@ -235,6 +244,7 @@ const emailsData = [
     to: "education@itpm.com",
     state: 'inbox',
     starred: false,
+    labels: [],
   },
   {
     id: 'e111',
@@ -250,8 +260,9 @@ const emailsData = [
     isRead: false,
     sentAt: 1654257215189,
     to: "	Google@accounts.google.com",
-    state: 'inbox',
+    state: 'trash',
     starred: false,
+    labels: [],
   },
   {
     id: 'e112',
@@ -281,6 +292,7 @@ const emailsData = [
     to: "binance@mailersp1.binance.com",
     state: 'inbox',
     starred: false,
+    labels: [],
   },
   {
     id: 'e113',
@@ -298,6 +310,7 @@ const emailsData = [
     to: "fontawesome@fontawesome.com",
     state: 'inbox',
     starred: false,
+    labels: [],
   },
   {
     id: 'e114',
@@ -359,6 +372,7 @@ const emailsData = [
     to: "education@itpm.com",
     state: 'inbox',
     starred: false,
+    labels: [],
   },
   {
     id: 'e115',
@@ -372,6 +386,7 @@ const emailsData = [
     to: "NoReplyGoogleMaps@google.com",
     state: 'inbox',
     starred: false,
+    labels: [],
   },
   {
     id: 'e116',
@@ -388,6 +403,7 @@ const emailsData = [
     to: "DeviantArt@deviantart.com",
     state: 'inbox',
     starred: true,
+    labels: [],
   },
   {
     id: 's101',
@@ -398,37 +414,52 @@ const emailsData = [
     to: "momo@momo.com",
     state: 'sent',
     starred: false,
-},
-{
-    id: 's102',
-    subject: "Program purchase",
-    body:  `
-    Hi Alin, there seems to be some problem with my email address. 
-    Please send everything to this email adress. 
-    `,
-    isRead: false,
-    sentAt: 1653357215189,
-    to: "alinpuian@itpm.com",
-    state: 'sent',
-    starred: false,
-},
-{
-    id: 's103',
-    subject: "Withdraw up119449179",
-    body: `
-    Hi Stefany, 
+    labels: [],
+  },
+  {
+      id: 's102',
+      subject: "Program purchase",
+      body:  `
+      Hi Alin, there seems to be some problem with my email address. 
+      Please send everything to this email adress. 
+      `,
+      isRead: false,
+      sentAt: 1653357215189,
+      to: "alinpuian@itpm.com",
+      state: 'sent',
+      starred: false,
+      labels: [],
+  },
+  {
+      id: 's104',
+      subject: "Footer is the worst",
+      body: `
+        Hi Guy, im having a hard time with the sprint,
+        I just cant seem to be able to get the footer 
+        stick to the bottom of the page, any ideas???
 
-    Unfortunatly it doesnt matter anymore, my bank will not accept funds 
-    associated with bitcoin. Where should I send back the money? 
-    Back to the sender? 
+      `,
+      isRead: false,
+      sentAt: 1653357215189,
+      to: "guy@gmail.com",
+      state: 'draft',
+      starred: false,
+      labels: [],
+  },
+  {
+      id: 's105',
+      subject: "Coding Academy Sign Up",
+      body: `
+        Hello Coding Academy
 
-    `,
-    isRead: false,
-    sentAt: 1653357215189,
-    to: "stefany.anderson@cexio.intercom",
-    state: 'sent',
-    starred: false,
-},
+      `,
+      isRead: false,
+      sentAt: 1653357215189,
+      to: "CodingAcademy@gmail.com",
+      state: 'draft',
+      starred: false,
+      labels: [],
+  },
 ]
 
 

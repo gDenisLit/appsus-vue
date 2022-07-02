@@ -79,6 +79,7 @@
     resize: none;
     height: 20rem; 
     border: none;
+    font-family: Roboto-regular;
 }
 
 .compose-email .send {

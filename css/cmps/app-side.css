@@ -8,6 +8,7 @@
 
 .side-nav ul li a {
   display: flex;
+  align-items: center;
   color: inherit;
   padding: 0.4rem;
   border-radius: 0 1.1rem 1.1rem 0;

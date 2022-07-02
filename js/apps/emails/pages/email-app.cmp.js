@@ -55,11 +55,9 @@ export default {
       })
     },
     updateEmail(newEmail) {
-      console.log('updating email starred...', newEmail)
       emailService.save(newEmail).then(newEmail => {
         const idx = this.emails.findIndex(email => email.id === newEmail.id)
         this.emails.splice(idx, 1, newEmail)
-        console.log('updated...')
       })
     },
     sortEmails({ direction }) {

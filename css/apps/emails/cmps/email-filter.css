@@ -25,6 +25,14 @@
     cursor: pointer;
 }
 
+.app-header .adv-filter .sort-date:active {
+    box-shadow: 0px 0px 1px 1px #000 inset;
+}
+
+.app-header .adv-filter .sort-date i:active{
+    text-shadow: 0px 0px 2px #000000;
+}
+
 .app-header .adv-filter .label {
     margin-inline-end: 1rem;
 }

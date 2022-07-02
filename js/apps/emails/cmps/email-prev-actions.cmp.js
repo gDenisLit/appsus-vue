@@ -7,6 +7,7 @@ import {
 export default {
   template: `
         <section class="email-prev-actions">
+
             <button class="send-to-note" @click.stop="sendToNote">
                 <i class="fa-solid fa-note-sticky"></i>
             </button>
@@ -21,7 +22,9 @@ export default {
     `,
   props: ['email'],
   data() {
-    return {}
+    return {
+     
+    }
   },
   methods: {
     selectDelete() {
@@ -43,10 +46,13 @@ export default {
       console.log('adding note..', newNote)
       Promise.resolve(this.$router.push('/keep'))
       .then(() => integEmit(newNote))
-      
     },
+  
   },
   computed: {},
   created() {},
   unmounted() {},
+  components: {
+
+  },
 }
