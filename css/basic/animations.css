@@ -34,6 +34,18 @@
   }
 }
 
+@keyframes moveInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
 @keyframes stroke-offset {
   100% {
     stroke-dashoffset: -35%;
