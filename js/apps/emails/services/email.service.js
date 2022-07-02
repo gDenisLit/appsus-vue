@@ -14,7 +14,7 @@ const emailsData = [
     If you did not request a new password, please ignore this email.`,
     isRead: false,
     sentAt: 1656668326189,
-    to: "noreply@discord.com",
+    to: "discord@discord.com",
     state: 'inbox',
     starred: false,
     labels: [],

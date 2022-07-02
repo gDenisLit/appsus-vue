@@ -25,7 +25,7 @@ export default {
         body: null,
         dateFrom: null,
         dateTo: null,
-        state: null,
+        state: 'inbox',
         starred: false,
       },
       isSideOpen: false,
@@ -46,13 +46,18 @@ export default {
       })
     },
     deleteEmail(emailId) {
-      emailService.remove(emailId)
-      .then(() => {
-        const idx = this.emails.findIndex(email => email.id === emailId)
-        const email = this.emails[idx]
-        if (email.state !== 'trash') email.state = 'trash'
-        else this.emails.splice(idx, 1)  
-      })
+      const email = this.emails.find(email => email.id === emailId)
+      if (email.state !== 'trash') {
+        email.state = 'trash'
+        showSuccessMsg('Moved To Trash')
+      } else {
+        emailService.remove(emailId)
+        .then(() => {
+          const idx = this.emails.findIndex(email => email.id === emailId)
+          this.emails.splice(idx, 1)
+          showSuccessMsg('Permanently Removed')
+        })
+    }
     },
     updateEmail(newEmail) {
       emailService.save(newEmail).then(newEmail => {
