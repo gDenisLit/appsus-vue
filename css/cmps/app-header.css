@@ -21,6 +21,7 @@
   background-color: rgba(255, 255, 255, 0.177);
   border-radius: 50%;
 }
+
 .app-header img {
   width: 2.5rem;
   margin-inline-end: var(--spacing-medium);
