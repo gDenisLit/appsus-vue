@@ -36,6 +36,9 @@
     flex-grow: 1;
     margin-block-end: 1.5rem;
 }  
+.app-header .adv-filter input:focus {
+    outline: none;
+}
 
 .app-header .adv-filter .date-from {
     margin-inline-end: 1.5rem;
