@@ -12,6 +12,12 @@
     font-size: 90%;
   }
 
+  .main-layout {
+    max-width: 720px;
+    margin: 0 auto;
+    margin-top: var(--spacing-large);
+  }
+
   .app-header h2 {
     display: block;
   }
@@ -39,6 +45,18 @@
 @media screen and (min-width: 900px) {
   html {
     font-size: 100%;
+  }
+
+  .main-layout {
+    max-width: 880px;
+  }
+
+  .book-app-header {
+    flex-direction: row;
+  }
+
+  .book-app-header .book-logo {
+    display: block;
   }
 
   .note-list {
@@ -80,5 +98,11 @@
 
   .note-preview:hover .note-tools {
     opacity: 1;
+  }
+}
+
+@media screen and (min-width: 900px) {
+  .main-layout {
+    max-width: 980px;
   }
 }

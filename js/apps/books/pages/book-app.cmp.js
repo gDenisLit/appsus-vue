@@ -6,7 +6,7 @@ import bookAdd from '../cmps/book-add.cmp.js'
 export default {
   template: `
     <div class="app">
-      <div class="flex book-app">
+      <div class="flex main-layout book-app-header">
         <div class="book-logo">
           <img src="assets/img/logo-book.png" alt="">
         </div>

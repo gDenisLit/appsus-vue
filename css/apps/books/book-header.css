@@ -1,0 +1,13 @@
+.book-app {
+  max-height: 55vh;
+  overflow-y: scroll;
+}
+
+.book-app-header {
+  justify-content: space-between;
+  flex-direction: column;
+}
+
+.book-app-header .book-logo {
+  display: none;
+}

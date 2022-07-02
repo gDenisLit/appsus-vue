@@ -48,6 +48,7 @@
 
 /* BOOKS APP  */
 @import 'apps/books/add-review.css';
+@import 'apps/books/book-header.css';
 @import 'apps/books/book-add.css';
 @import 'apps/books/book-details.css';
 @import 'apps/books/book-filter.css';

@@ -1,6 +1,9 @@
 .main-layout {
-  margin: 0 auto;
-  max-width: 980px;
+  padding-inline-start: var(--spacing-large);
+  padding-inline-end: var(--spacing-large);
+  /* max-width: 980px;
+  margin: 0 auto; */
+  margin-top: 3rem;
 }
 
 .email-container.open-side {
