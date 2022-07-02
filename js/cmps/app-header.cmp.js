@@ -19,7 +19,7 @@ export default {
         </label>
     </div>
     
-      <nav v-if="navOpen" class="nav-bar">
+      <nav v-if="navOpen" @click="navOpen= false" class="nav-bar">
           <router-link to="/">
           <i class="fa-solid fa-house"></i>
           <span>Home</span>
