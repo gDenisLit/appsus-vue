@@ -56,7 +56,6 @@ export default {
   },
   watch: {
     color(newVal) {
-      console.log(newVal)
       this.ctx.strokeStyle = newVal
     },
     bgColor(newVal) {
@@ -110,7 +109,6 @@ export default {
         ev.preventDefault()
         //Gets the first touch point
         ev = ev.changedTouches[0]
-        console.log(ev)
         //Calc the right pos according to the touch screen
         pos = {
           x: ev.pageX - ev.target.offsetLeft + ev.target.clientLeft - 90,
@@ -120,7 +118,6 @@ export default {
       return pos
     },
     resizeCanvas() {
-      console.log(this.$refs)
       const canvasContainer = this.$refs['canvas-container']
 
       this.canvas.width = canvasContainer.offsetWidth

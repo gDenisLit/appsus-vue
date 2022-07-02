@@ -67,7 +67,6 @@ export default {
       const newNote = this.clone()
       if (!newNote.labels) newNote.labels = []
       newNote.labels.push(label)
-      console.log(newNote)
       updateEmit(newNote)
     },
     clone() {
@@ -75,7 +74,6 @@ export default {
     },
     composeEmail() {
       const type = this.note.type.split('-')[1]
-      console.log(type)
       const info = this.note.info
       const title = info.title
 

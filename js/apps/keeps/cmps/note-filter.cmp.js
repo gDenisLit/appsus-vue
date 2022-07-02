@@ -29,7 +29,6 @@ export default {
     },
     toggleSideNav() {
       toggleEmit()
-      console.log('called')
     },
   },
   computed: {},

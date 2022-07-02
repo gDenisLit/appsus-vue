@@ -61,9 +61,7 @@ export default {
       isRecording: false,
     }
   },
-  created() {
-    console.log(this.recordBtn)
-  },
+  created() {},
   methods: {
     addNote() {
       addEmit(this.note)
@@ -86,7 +84,6 @@ export default {
       this.addNote()
     },
     startRecording() {
-      console.log('recordButton clicked')
       this.isRecording = true
       let constraints = { audio: true, video: false }
 
@@ -98,10 +95,6 @@ export default {
       navigator.mediaDevices
         .getUserMedia(constraints)
         .then(function (stream) {
-          console.log(
-            'getUserMedia() success, stream created, initializing Recorder.js ...'
-          )
-
           that.audioCtx = new AudioContext()
 
           that.gumStream = stream
@@ -112,20 +105,15 @@ export default {
 
           //start the recording process
           that.rec.record()
-
-          console.log('Recording started')
         })
         .catch(function (err) {
           //enable the record button if getUserMedia() fails
           that.recordBtn = false
           that.stopBtn = true
           that.pauseBtn = true
-
-          console.log(err)
         })
     },
     pauseRecording() {
-      console.log('pauseButton clicked rec.recording=', this.rec.recording)
       if (this.rec.recording) {
         //pause
         this.rec.stop()

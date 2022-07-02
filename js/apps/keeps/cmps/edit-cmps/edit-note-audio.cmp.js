@@ -72,7 +72,6 @@ export default {
     },
     onAudioReady(audio) {
       this.note.info.url = audio.src
-      console.log(this.note.info.url)
       this.updateNote()
     },
   },

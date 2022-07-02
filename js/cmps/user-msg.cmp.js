@@ -17,7 +17,6 @@ export default {
     }
   },
   created() {
-    console.log(this.msg)
     this.unsubscribe = eventBus.on('show-msg', this.showMsg)
   },
   methods: {

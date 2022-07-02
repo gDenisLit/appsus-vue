@@ -52,7 +52,6 @@ export default {
   created() {},
   methods: {
     startDrag(event) {
-      console.log(this.note)
       const props = { event, note: this.note }
       this.$emit('dragging', props)
     },

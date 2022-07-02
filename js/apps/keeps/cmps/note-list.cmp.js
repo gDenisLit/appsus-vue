@@ -40,8 +40,6 @@ export default {
 
       const indexes = { idx1: idx, idx2: noteIdx }
 
-      console.log(indexes)
-
       this.$emit('switched', indexes)
     },
   },
