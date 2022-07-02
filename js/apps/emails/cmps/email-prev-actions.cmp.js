@@ -1,6 +1,6 @@
 import {
   removeEmit,
-  readEmailEmit,
+  updateEmit,
   interEmit,
 } from '../../../services/eventBus.service.js'
 
@@ -28,7 +28,8 @@ export default {
       removeEmit(this.email.id)
     },
     selectRead() {
-      readEmailEmit(this.email.id)
+      this.email.isRead = !this.email.isRead
+      updateEmit(this.email)
     },
     sendToNote() {
       const { subject, body } = this.email
