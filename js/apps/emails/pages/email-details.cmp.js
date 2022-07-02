@@ -58,7 +58,7 @@ export default {
               })
         },
         forwardEmail() {
-            const {subject, bodyg} = this.email
+            const {subject, body} = this.email
             this.$router.push({
                 name: 'compose',
                 params: { title: subject || '', body: body || '' },
