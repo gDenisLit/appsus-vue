@@ -47,7 +47,7 @@ export default {
     this.unsubAdd = eventBus.on('added', this.addNote)
     this.unsubRemove = eventBus.on('removed', this.removeNote)
     this.unsubUpdated = eventBus.on('updated', this.updateNote)
-    eventBus.on('integration', this.updateNote)
+    eventBus.on('integration', this.addNote)
   },
   methods: {
     getNotes() {

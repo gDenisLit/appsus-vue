@@ -63,8 +63,8 @@ export function filterEmit(filterBy) {
   emit('filtered', filterBy)
 }
 
-export function interEmit(entity) {
-  emit('intergration', entity)
+export function integEmit(entity) {
+  emit('integration', entity)
 }
 
 // TODO: refactor all of this
