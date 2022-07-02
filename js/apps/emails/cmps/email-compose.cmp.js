@@ -2,14 +2,16 @@ import { addEmit } from '../../../services/eventBus.service.js'
 
 export default {
   template: `
-    <section class="compose-email">
+    <div class="screen" v-if="isExpand" @click="expand"></div>
+    <section class="compose-email" :class="expanded">
         <div class="compose-title flex space-between">
             <h3>New Message</h3>
             <div>
-                <button class="compose-title-btn">
-                    <i class="fa-solid fa-window-minimize"></i>
+                <button class="compose-title-btn" @click="minimize">
+                    <i class="fa-solid fa-window-minimize" v-if="!isMinimize"></i>
+                    <i class="fa-solid fa-plus" v-else></i>
                 </button>
-                <button class="compose-title-btn">
+                <button class="compose-title-btn" @click="expand">
                     <i class="fa-solid fa-up-right-and-down-left-from-center"></i>
                 </button>
                 <button class="compose-title-btn" @click="saveDraft">
@@ -17,7 +19,7 @@ export default {
                 </button>
             </div>
         </div>
-        <section class="compose-form flex column">
+        <section class="compose-form flex column" v-if="!isMinimize">
             <input type="email" v-model="newEmail.to" 
                 placeholder="Recipient" required
             >
@@ -40,6 +42,8 @@ export default {
         state: null,
         starred: false,
       },
+      isMinimize: false,
+      isExpand: false,
     }
   },
   methods: {
@@ -62,8 +66,20 @@ export default {
       this.$router.replace('/email/inbox')
       addEmit(this.newEmail)
     },
+    minimize() {
+      console.log('minimize..')
+      this.isMinimize = !this.isMinimize
+    },
+    expand() {
+      console.log('expand...')
+      this.isExpand = !this.isExpand
+    }
   },
-  computed: {},
+  computed: {
+    expanded() {
+      return {expanded: (this.isExpand)}
+    }
+  },
   created() {
     if (this.email) this.newEmail = this.email
     const {title, body} = this.$route.params

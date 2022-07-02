@@ -7,8 +7,20 @@
     border-radius: 0.6rem 0.6rem 0 0;
     width: 28rem;
     z-index: 1000;
-
+    
     outline: 1px solid #f8f9fa79;
+}
+
+.compose-email.expanded {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 120;
+
+    width: 40rem;
+    height: 30rem;
+    border-radius: 0.6rem;
 }
 
 .compose-email>* {
@@ -18,6 +30,7 @@
 .compose-email .compose-title {
     border-radius: 0.5rem 0.5rem 0 0;
     background-color: var(--gray3);
+    
     font-size: 0.8rem;
     padding: 0.6rem 0.8rem;
 }
@@ -77,4 +90,5 @@
     color: whitesmoke;
     background-color: #2b87d8;
     cursor: pointer;
+    
 }
