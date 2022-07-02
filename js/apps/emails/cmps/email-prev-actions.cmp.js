@@ -41,7 +41,9 @@ export default {
         },
       }
       console.log('adding note..', newNote)
-      integEmit(newNote)
+      Promise.resolve(this.$router.push('/keep'))
+      .then(() => integEmit(newNote))
+      
     },
   },
   computed: {},

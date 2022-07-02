@@ -71,12 +71,6 @@ export default {
     setSearch(txt) {
       this.filterBy.txt = txt
     },
-    starEmail(email) {
-      emailService.save(email).then(email => {
-        const idx = this.emails.findIndex(oldEmail => oldEmail.id === email.id)
-        this.emails.splice(idx, 1, email)
-      })
-    },
     toggleSideNav() {
       this.isSideOpen = !this.isSideOpen
     },
@@ -119,7 +113,9 @@ export default {
     this.unsubUpdate = eventBus.on('updated', this.updateEmail)
   },
   unmounted() {
-
+    this.unsubAdd()
+    this.unsubRemove()
+    this.unsubUpdate()
   },
   components: {
     emailList,
