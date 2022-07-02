@@ -1,4 +1,4 @@
-import { starEmailEmit } from "../../../services/eventBus.service.js"
+import { updateEmit } from "../../../services/eventBus.service.js"
 
 export default {
     template: `
@@ -22,7 +22,7 @@ export default {
     methods: {
         toggleStar() {
             this.email.starred = ! this.email.starred
-            starEmailEmit(this.email)
+            updateEmit(this.email)
         }
     },
     computed: {
