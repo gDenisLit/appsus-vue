@@ -9,17 +9,22 @@ export default {
   props: ['note'],
   template: `
       <section class="note-tools flex" @click.stop>
-        <a @click="togglePin"><i class="fa-solid fa-thumbtack"></i></a>
-        <a class="color-palette-btn">
+        <a @click="togglePin" title="Pin">
+          <i class="fa-solid fa-thumbtack"></i></a>
+        <a class="color-palette-btn" title="background color">
           <span>
             <i class="fa-solid fa-palette"></i>
           </span>
           <note-color-palette @picked="changeBgc" />
         </a>
-        <a @click="$emit('updating')"><i class="fa-solid fa-pen-to-square"></i></a>
-        <a @click="addClone"><i class="fa-solid fa-clone"></i></a>
-        <a @click="composeEmail"><i class="fa-solid fa-envelope-open-text"></i></a>
-        <a @click="removeNote()"><i class="fa-solid fa-trash-can"></i></a>
+        <a @click="$emit('updating')" title="Edit">
+          <i class="fa-solid fa-pen-to-square"></i></a>
+        <a @click="addClone" title="Duplicate">
+          <i class="fa-solid fa-clone"></i></a>
+        <a @click="composeEmail" title="Send as email">
+          <i class="fa-solid fa-envelope-open-text"></i></a>
+        <a @click="removeNote()" title="Remove">
+          <i class="fa-solid fa-trash-can"></i></a>
       </section>
     `,
   components: {

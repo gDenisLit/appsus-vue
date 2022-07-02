@@ -29,6 +29,11 @@
   .note-list {
     column-count: 3;
   }
+
+  .canvas-container {
+    width: 32rem;
+    height: 32rem;
+  }
 }
 
 @media screen and (min-width: 900px) {

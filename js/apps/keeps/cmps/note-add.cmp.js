@@ -22,21 +22,28 @@ export default {
 
         <div class="type-picker grid">
             <a @click="changeType('txt')"
-              :class="{ active: type === 'txt'}">
+              :class="{ active: type === 'txt'}"
+              title="Text note">
               <i class="fa-solid fa-font"></i></a>
             <a @click="changeType('img')"
-              :class="{ active: type === 'img'}">
+              :class="{ active: type === 'img'}"
+              title="Image note">
               <i class="fa-solid fa-image"></i></a>
             <a @click="changeType('video')"
-              :class="{ active: type === 'video'}">
+              :class="{ active: type === 'video'}"
+              title="Video note">
               <i class="fa-brands fa-youtube"></i></a>
             <a @click="changeType('todos')"
-              :class="{ active: type === 'todos'}">
+              :class="{ active: type === 'todos'}"
+              title="Todo note">
               <i class="fa-solid fa-list"></i></a>
             <a @click="changeType('audio')"
-              :class="{ active: type === 'audio'}">
+              :class="{ active: type === 'audio'}"
+              title="Audio note">
               <i class="fa-solid fa-volume-high"></i></a>
-            <a @click="changeType('draw')"><i class="fa-solid fa-paintbrush"></i></a>
+            <a @click="changeType('draw')"
+              title="Draw image note">
+            <i class="fa-solid fa-paintbrush"></i></a>
           </div>
       </section>
     </div>
