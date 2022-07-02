@@ -1,6 +1,6 @@
 .home-page {
   min-height: 82vh;
-  width: 100%;
+  max-width: 100%;
 
   background-image: linear-gradient(
     to bottom,
@@ -21,6 +21,10 @@
 }
 
 .home-page .menu a {
+  padding: 0.4rem;
+}
+
+.home-page .menu a {
   text-decoration: none;
   color: inherit;
   display: flex;
@@ -29,16 +33,20 @@
   align-items: center;
   border-radius: 9px;
   border: 2px solid rgba(255, 255, 255, 0.346);
-  padding: 0.4rem;
+  padding: 0.2rem;
 }
 
 .home-page .menu a:not(:last-child) {
   margin-inline-end: 4rem;
 }
 
+.home-page .menu a:not(:last-child) {
+  margin-inline-end: 1rem;
+}
+
 .home-page .menu img {
-  width: 100px;
-  height: 100px;
+  width: 4rem;
+  height: 4rem;
 }
 
 .home-page .menu a:nth-child(1) {
@@ -63,8 +71,8 @@
 .home-page svg {
   display: block;
   font: 8em 'Montserrat';
-  width: 960px;
-  height: 300px;
+  width: 40rem;
+  height: 15rem;
   margin: 0 auto;
 }
 
@@ -103,7 +111,8 @@
 }
 
 .home-page h2 {
-  font-size: 2rem;
+  font-size: 1rem;
+  /* max-width: 80%; */
   text-align: center;
   margin-bottom: var(--spacing-large2);
   transform: scale(0.94);

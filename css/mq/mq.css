@@ -12,6 +12,21 @@
     display: flex;
   }
 
+  .home-page h2 {
+    font-size: 1.6rem;
+  }
+
+  .home-page .menu img {
+    width: 5rem;
+    height: 5rem;
+  }
+
+  .home-page svg {
+    font: 8em 'Montserrat';
+    width: 50rem;
+    height: 17rem;
+  }
+
   .email-container {
     margin: 0;
   }
@@ -24,6 +39,21 @@
 @media screen and (min-width: 820px) {
   html {
     font-size: 90%;
+  }
+
+  .home-page h2 {
+    font-size: 2rem;
+  }
+
+  .home-page .menu img {
+    width: 6.25rem;
+    height: 6.25rem;
+  }
+
+  .home-page svg {
+    font: 8em 'Montserrat';
+    width: 60rem;
+    height: 19rem;
   }
 
   .main-layout {
