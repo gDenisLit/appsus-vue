@@ -1,7 +1,7 @@
 import {
   removeEmit,
   updateEmit,
-  interEmit,
+  integEmit,
 } from '../../../services/eventBus.service.js'
 
 export default {
@@ -41,7 +41,7 @@ export default {
         },
       }
       console.log('adding note..', newNote)
-      interEmit(newNote)
+      integEmit(newNote)
     },
   },
   computed: {},

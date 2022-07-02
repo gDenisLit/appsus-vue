@@ -24,6 +24,9 @@ export default {
         starred: false,
       },
       isSideOpen: false,
+      unsubAdd: null,
+      unsubRemove: null,
+      unsubUpdate: null,
     }
   },
   methods: {
@@ -110,12 +113,14 @@ export default {
   created() {
     emailService.query().then(emails => (this.emails = emails))
 
-    eventBus.on('added', this.sendEmail)
-    eventBus.on('removed', this.deleteEmail)
-    eventBus.on('updated', this.updateEmail)
     eventBus.on('toggled', this.toggleSideNav)
+    this.unsubAdd = eventBus.on('added', this.sendEmail)
+    this.unsubRemove = eventBus.on('removed', this.deleteEmail)
+    this.unsubUpdate = eventBus.on('updated', this.updateEmail)
   },
-  unmounted() {},
+  unmounted() {
+
+  },
   components: {
     emailList,
     emailSide,
