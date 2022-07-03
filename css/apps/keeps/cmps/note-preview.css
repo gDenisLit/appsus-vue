@@ -13,6 +13,14 @@
   box-shadow: 0px 0px 3px 1px rgba(0, 0, 0, 0.15);
 }
 
+.note-preview .note-img {
+  text-align: center;
+}
+
+.note-preview .note-video {
+  text-align: center;
+}
+
 .note-preview img {
   max-width: 100%;
   object-fit: cover;

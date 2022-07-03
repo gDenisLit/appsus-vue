@@ -71,19 +71,19 @@ export default {
     },
     expand() {
       this.isExpand = !this.isExpand
-    }
+    },
   },
   computed: {
     expanded() {
-      return {expanded: (this.isExpand)}
-    }
+      return { expanded: this.isExpand }
+    },
   },
   created() {
     if (this.email) this.newEmail = this.email
-    const {title, body, to} = this.$route.params
-    this.newEmail.to = to? to : null
-    this.newEmail.body = body? body : null
-    this.newEmail.subject = title? title : null 
+    const { title, body, to } = this.$route.params
+    this.newEmail.to = to ? to : null
+    this.newEmail.body = body ? body : null
+    this.newEmail.subject = title ? title : null
   },
   unmounted() {},
 }
