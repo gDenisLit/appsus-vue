@@ -68,6 +68,7 @@ export default {
     },
     minimize() {
       this.isMinimize = !this.isMinimize
+      if (this.isExpand) this.isExpand = false
     },
     expand() {
       this.isExpand = !this.isExpand
