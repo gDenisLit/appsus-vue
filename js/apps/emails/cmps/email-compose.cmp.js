@@ -72,6 +72,7 @@ export default {
     },
     expand() {
       this.isExpand = !this.isExpand
+      if (this.isMinimize) this.isMinimize = false
     },
   },
   computed: {
