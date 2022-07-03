@@ -37,7 +37,6 @@ export default {
       todos: [{ id: this.id, txt: '', isDone: false, doneAt: null }],
     }
   },
-  created() {},
   methods: {
     addNote() {
       this.todos.pop()
@@ -52,6 +51,4 @@ export default {
       this.todos.splice(idx, 1)
     },
   },
-  computed: {},
-  unmounted() {},
 }

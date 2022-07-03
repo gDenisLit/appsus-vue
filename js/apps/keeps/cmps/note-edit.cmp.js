@@ -31,11 +31,6 @@ export default {
   },
   created() {},
   methods: {
-    // updateNote() {
-    //   if (this.title) this.note.info.title = this.title
-    //   if (this.txt) this.note.info.txt = this.txt
-    //   updateEmit(this.note)
-    // },
     close() {
       this.$emit('closed')
     },
@@ -49,5 +44,4 @@ export default {
       return { backgroundColor: this.note.style.backgroundColor }
     },
   },
-  unmounted() {},
 }

@@ -11,8 +11,7 @@ export default {
         <div class="search">
           <input class="input-search" type="text" v-model="filterBy.txt" @input="filter" placeholder="Search note...">
           <i class="icon fa-solid fa-magnifying-glass"></i>
-        </div>
-        
+        </div>       
     </section>  
 `,
   data() {

@@ -2,9 +2,6 @@
   html {
     font-size: 80%;
   }
-  /* .note-list {
-    column-count: 1;
-  } */
 
   .compose-email {
     bottom: 0;
@@ -132,60 +129,6 @@
   .about-page .imgs img {
     width: 19rem;
   }
-
-  /* .nav-bar a {
-    color: #f6f4e6;
-    text-decoration: none;
-    font-size: 0.85em;
-    text-transform: uppercase;
-    display: inline-block;
-    width: 5rem;
-    transition: all 0.2s ease-in-out;
-  }
-
-  .nav-bar a:hover {
-    color: var(--primary-color);
-  }
-
-  .nav-bar .dot {
-    width: 0.375rem;
-    height: 0.375rem;
-    background: var(--primary-color);
-    border-radius: 50%;
-    opacity: 0;
-    transform: translateX(1rem);
-    transition: all 0.2s ease-in-out;
-  }
-
-  .nav-bar a:nth-child(1):hover ~ .dot {
-    transform: translateX(1rem);
-    transition: all 0.2s ease-in-out;
-    opacity: 1;
-  }
-
-  .nav-bar a:nth-child(2):hover ~ .dot {
-    transform: translateX(6.3rem);
-    transition: all 0.2s ease-in-out;
-    opacity: 1;
-  }
-
-  .nav-bar a:nth-child(3):hover ~ .dot {
-    transform: translateX(11rem);
-    transition: all 0.2s ease-in-out;
-    opacity: 1;
-  }
-
-  .nav-bar a:nth-child(4):hover ~ .dot {
-    transform: translateX(16.2rem);
-    transition: all 0.2s ease-in-out;
-    opacity: 1;
-  }
-
-  .nav-bar a:nth-child(5):hover ~ .dot {
-    transform: translateX(21.3rem);
-    transition: all 0.2s ease-in-out;
-    opacity: 1;
-  } */
 }
 
 @media screen and (min-width: 980px) {

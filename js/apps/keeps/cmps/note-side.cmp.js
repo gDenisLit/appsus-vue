@@ -10,8 +10,10 @@ export default {
             <ul>
                 <li v-for="btn in navBtns" 
                 :key="btn.id">
-                  <a @click="filter(btn.type)" @mouseenter="hover(btn.type)" @mouseleave="noHover"
-                    :class="{'active-side': (btn.type === active), 'hover-side': (btn.type === isHover)}"
+                  <a @click="filter(btn.type)" 
+                     @mouseenter="hover(btn.type)" 
+                     @mouseleave="noHover"
+                     :class="{'active-side': (btn.type === active), 'hover-side': (btn.type === isHover)}"
                   >
                     <span class="icon"><i :class="btn.icon"></i></span>
                     <span class="text">{{btn.title}}</span>
@@ -93,5 +95,4 @@ export default {
   created() {
     eventBus.on('toggled', this.toggleSideNav)
   },
-  unmounted() {},
 }

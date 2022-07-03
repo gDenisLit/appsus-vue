@@ -1,4 +1,4 @@
-import { addEmit } from '../../../../services/eventBus.service.js'
+import { addEmit, showErrorMsg } from '../../../../services/eventBus.service.js'
 
 export default {
   template: `
@@ -111,6 +111,7 @@ export default {
           that.recordBtn = false
           that.stopBtn = true
           that.pauseBtn = true
+          showErrorMsg(err)
         })
     },
     pauseRecording() {
@@ -152,5 +153,4 @@ export default {
       return { color: this.isRecording ? 'var(--error)' : '#ffffff' }
     },
   },
-  unmounted() {},
 }

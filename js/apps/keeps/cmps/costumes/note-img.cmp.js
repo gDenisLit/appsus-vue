@@ -6,15 +6,9 @@ export default {
         <h4>{{ info.title }}</h4>
     </section>
 `,
-  data() {
-    return {}
-  },
-  created() {},
-  methods: {},
   computed: {
     info() {
       return this.note.info
     },
   },
-  unmounted() {},
 }

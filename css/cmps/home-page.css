@@ -112,7 +112,6 @@
 
 .home-page h2 {
   font-size: 1rem;
-  /* max-width: 80%; */
   text-align: center;
   margin-bottom: var(--spacing-large2);
   transform: scale(0.94);

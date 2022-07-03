@@ -6,12 +6,6 @@
   top: 10px;
   padding: var(--spacing-medium);
   border-radius: 9px;
-  /* background: rgb(44, 42, 46);
-  background: radial-gradient(
-    circle,
-    rgba(192, 57, 43, 0.9164040616246498) 0%,
-    rgba(44, 42, 46, 1) 100%
-  ); */
   background-color: #212529a4;
   background-image: linear-gradient();
   display: grid;

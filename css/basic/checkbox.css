@@ -37,7 +37,6 @@
   box-sizing: border-box;
   margin: 3px 11px 3px 1px;
   border: solid 2px;
-  /* Safari */
   border-color: var(--gray);
   border-radius: 2px;
   width: 1.125rem;

@@ -11,12 +11,13 @@ export default {
                 encrypted-media; gyroscope; picture-in-picture"
                 allowfullscreen>
               </iframe> 
-             <input v-model="note.info.title"
-                    type="text" 
-                    placeholder="Title"
-                     @change="updateNote" />
-              <input v-model="url" type="url" placeholder="Enter new video url from YouTube..." 
-              @keyup.enter="updateNote"/>
+              <input v-model="note.info.title"
+                      type="text" 
+                      placeholder="Title"
+                      @change="updateNote" />
+              <input v-model="url" type="url"
+                      placeholder="Enter new video url from YouTube..." 
+                      @keyup.enter="updateNote"/>
         </section>
     `,
   data() {
@@ -53,5 +54,4 @@ export default {
       return 'https://www.youtube.com/embed/' + this.note.info.videoId
     },
   },
-  unmounted() {},
 }

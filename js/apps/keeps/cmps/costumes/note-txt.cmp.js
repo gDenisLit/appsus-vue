@@ -7,15 +7,9 @@ export default {
       </section>
       
       `,
-  data() {
-    return {}
-  },
-  created() {},
-  methods: {},
   computed: {
     info() {
       return this.note.info
     },
   },
-  unmounted() {},
 }

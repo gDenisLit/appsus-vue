@@ -77,5 +77,4 @@ export default {
       return { backgroundColor: this.note.style.backgroundColor }
     },
   },
-  unmounted() {},
 }

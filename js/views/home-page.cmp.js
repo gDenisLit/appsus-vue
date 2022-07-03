@@ -39,11 +39,11 @@ export default {
               <!-- <span>Mails</span> -->
             </router-link>
             <router-link to="/keep">
-            <img src="assets/img/logo-keep.png" alt="">
+              <img src="assets/img/logo-keep.png" alt="">
               <!-- <span>Keep</span> -->
             </router-link>
             <router-link to="/book">
-            <img src="assets/img/logo-book.png" alt="">
+              <img src="assets/img/logo-book.png" alt="">
               <!-- <span>Books</span> -->
             </router-link>
             <!-- <router-link to="/about">About</router-link> -->
@@ -52,11 +52,4 @@ export default {
         </div>
     </main>
 `,
-  data() {
-    return {}
-  },
-  created() {},
-  methods: {},
-  computed: {},
-  unmounted() {},
 }

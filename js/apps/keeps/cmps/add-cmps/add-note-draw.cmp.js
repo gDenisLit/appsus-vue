@@ -46,7 +46,6 @@ export default {
       bgColor: '#ffffff',
     }
   },
-  created() {},
   mounted() {
     this.canvas = this.$refs.canvas
     this.ctx = this.canvas.getContext('2d')
@@ -124,7 +123,6 @@ export default {
       this.canvas.height = canvasContainer.offsetHeight
     },
   },
-  computed: {},
   unmounted() {
     window.removeEventListener('resize', this.resizeCanvas)
   },

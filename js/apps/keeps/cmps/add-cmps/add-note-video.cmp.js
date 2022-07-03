@@ -1,4 +1,5 @@
 import { addEmit } from '../../../../services/eventBus.service.js'
+import { showErrorMsg } from '../../../../services/eventBus.service.js'
 
 export default {
   template: ` 
@@ -27,7 +28,7 @@ export default {
       // const newNote = JSON.parse(JSON.stringify(this.note))
       const videoId = this.extractId(this.url)
       if (!videoId) {
-        // Show user error msg user note found
+        showErrorMsg("Couldn't load video, check your link")
         return
       }
 
@@ -43,6 +44,4 @@ export default {
       return match && match[7].length == 11 ? match[7] : null
     },
   },
-  computed: {},
-  unmounted() {},
 }

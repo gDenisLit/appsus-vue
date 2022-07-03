@@ -9,11 +9,11 @@ export default {
                     type="text" 
                     placeholder="Title"
                      @change="updateNote">
-                     <div class="img-inputs flex">
+             <div class="img-inputs flex">
                <input type="url"
-               v-model="note.info.url"
-               placeholder="Enter img url"
-               @keyup.enter="addNote()">
+                  v-model="note.info.url"
+                  placeholder="Enter img url"
+                  @keyup.enter="addNote()">
                <div>
                 <span class="or">or</span>
                 <label for="file-upload" class="file-upload">
@@ -23,14 +23,6 @@ export default {
                 <input id="file-upload" type="file" @change="imgInput">
                </div>   
              </div>
-             <!-- <div class="img-inputs">
-               <input type="url"
-               v-model="note.info.url"
-               placeholder="Enter new img url"
-               @keyup.enter="updateNote">
-               <span>Or</span>
-               <input type="file" @change="imgInput">
-              </div> -->
         </section>
     `,
   data() {

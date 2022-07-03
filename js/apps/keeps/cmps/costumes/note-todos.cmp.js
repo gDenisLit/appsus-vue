@@ -21,7 +21,6 @@ export default {
       id: 201,
     }
   },
-  created() {},
   methods: {
     addTodo() {
       const newNote = this.clone()
@@ -57,5 +56,4 @@ export default {
       return this.note.info
     },
   },
-  unmounted() {},
 }

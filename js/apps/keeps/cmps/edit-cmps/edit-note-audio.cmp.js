@@ -14,13 +14,12 @@ export default {
              @change="updateNote">
             
              <div class="audio-inputs flex">
-
-           <div>
-              <input type="url"
-                v-model="note.info.url"
-                placeholder="Enter audio url"
-                @keyup.enter="addNote()">
-              </div>
+               <div>
+                <input type="url"
+                  v-model="note.info.url"
+                  placeholder="Enter audio url"
+                  @keyup.enter="addNote()">
+                </div>
 
                 <div>
                   <span>Or </span>
@@ -42,7 +41,7 @@ export default {
                     <button @click="stopRecording" :disabled="stopBtn"><i class="fa-solid fa-stop"></i></button>
                  </div> -->
 
-                </div>
+                <!-- </div> -->
             </div>    
         </section>
     `,
@@ -75,6 +74,4 @@ export default {
       this.updateNote()
     },
   },
-  computed: {},
-  unmounted() {},
 }

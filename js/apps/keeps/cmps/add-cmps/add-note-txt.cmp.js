@@ -21,11 +21,8 @@ export default {
   created() {},
   methods: {
     addNote() {
-      // const newNote = JSON.parse(JSON.stringify(this.note))
       addEmit(this.note)
       this.$emit('added')
     },
   },
-  computed: {},
-  unmounted() {},
 }

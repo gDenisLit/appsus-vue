@@ -9,11 +9,4 @@ export default {
         <p>This webapp is one of Coding Academy Bootcamp major projects, made by Denis Lit and Guy Kadosh, two ambitious  kinda young full stack students at your services</p>
       </section>
 `,
-  data() {
-    return {}
-  },
-  created() {},
-  methods: {},
-  computed: {},
-  unmounted() {},
 }

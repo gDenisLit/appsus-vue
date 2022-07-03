@@ -27,6 +27,4 @@ export default {
       return JSON.parse(JSON.stringify(this.note))
     },
   },
-  computed: {},
-  unmounted() {},
 }
