@@ -6,13 +6,18 @@
     column-count: 1;
   } */
 
-  .compose-email{
+  .compose-email {
     bottom: 0;
     right: 5rem;
-    border-radius: 0.6rem 0.6rem 0 0; 
-    width: 28rem; 
-    height: 29em;
+    border-radius: 0.6rem 0.6rem 0 0;
+    width: 28rem;
+    height: auto;
+    /* height: 29em; */
     transform: none;
+  }
+
+  .compose-email .compose-form {
+    height: 29em;
   }
 
   .compose-email .compose-title {
@@ -24,14 +29,15 @@
   }
 
   .compose-title-btn:nth-of-type(2) {
-      display: inline;
+    display: inline;
   }
   .compose-email .send {
     width: 10rem;
   }
 
-  .compose-email .compose-form  input, textarea{
-    height: 100%;
+  .compose-email .compose-form input,
+  textarea {
+    /* height: 100%; */
   }
 }
 
@@ -97,7 +103,7 @@
   .app-header h2 {
     display: block;
   }
-  
+
   .app-header .search .input-search {
     width: 30rem;
   }
